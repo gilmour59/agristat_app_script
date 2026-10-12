@@ -110,7 +110,7 @@
 .province-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start}
 .province-map{min-width:0;padding-right:20px;border-right:1px solid #e1e8e0}
 .province-map svg{display:block;width:100%;max-height:390px}
-.province-map path{stroke:#fff;stroke-width:1.4;cursor:pointer;transition:fill .15s ease,stroke-width .15s ease}
+.province-map path{stroke:#fff;stroke-width:1.4;cursor:pointer;transition:fill .15s ease}
 .province-map path:hover,.province-map path.active{stroke:#19445b;stroke-width:2.2}
 .province-map path:focus-visible{outline:3px solid #c18d36;outline-offset:2px}
 .province-map-readout{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-top:1px solid #dfe8e0;padding:10px 0;color:#2b523a;font-size:13px}
