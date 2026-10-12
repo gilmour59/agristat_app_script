@@ -15,7 +15,7 @@
 .brand small{font-size:10px;letter-spacing:.13em}
 .nav-item>svg{flex:none;color:var(--accent)}
 .nav-item:not(.selected)>svg{color:#deca98}
-.nav-item.selected{background:var(--accent-soft);color:var(--accent-deep);box-shadow:inset 4px 0 var(--accent)}
+.nav-item.selected{background:var(--accent-soft);color:var(--accent-deep);box-shadow:inset 0 0 0 1px var(--accent)}
 .page-heading h1{color:var(--accent-deep)}
 .story-lead{background:var(--accent-soft);border-color:var(--accent)}
 .story-mark{color:var(--accent-deep)}
@@ -23,5 +23,5 @@
 .metric-row strong{color:var(--accent-deep)}
 .unit-tag{background:var(--accent-soft);color:var(--accent-deep)}
 .ranked-bars .bar-track>div{background:var(--accent)}
-.coverage-note{border-left:4px solid var(--accent);background:var(--accent-soft);padding:24px}
+.coverage-note{border:1px solid var(--accent);background:var(--accent-soft);padding:24px}
 .coverage-note p{margin-bottom:0}
