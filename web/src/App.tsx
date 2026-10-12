@@ -255,9 +255,20 @@ export default function App() {
     </aside>
     <main className="main">
       <header className="topline"><div><span className="topline-mark"><MapPin size={15} /> WESTERN VISAYAS</span><span className="topline-divider" /> <span>DEPARTMENT OF AGRICULTURE</span></div></header>
-      <div className="content"><div className="page-heading"><div><h1>{section.label}</h1><p>{section.scope} · Figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
+      <div className="content">
+        <section className="nsm-banner" aria-label="37th National Statistics Month">
+          <div className="nsm-banner-copy">
+            <span className="nsm-kicker">Celebrating the 37th National Statistics Month · October 2026</span>
+            <p><strong>Tuklas Pilipinas:</strong> Statistics as Beacon Towards Inclusive, Resilient, and Sustainable Tourism</p>
+          </div>
+          <div className="nsm-banner-art">
+            <img className="nsm-statman" src="/assets/statman-cutout.png" alt="Statman mascot from the supplied NSM artwork" />
+            <img className="nsm-logos" src="/assets/37th-nsm-logos.png" alt="Philippine Statistics Authority and Bagong Pilipinas logos" />
+          </div>
+        </section>
+        <div className="page-heading"><div><h1>{section.label}</h1><p>{section.scope} · Figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
         {loading && !current ? <div className="loading-state" role="status"><span className="loading-bar" /><h2>Reading the data snapshot…</h2><p>Preparing the figures and comparisons.</p></div> : error ? <div className="error-state" role="alert"><h2>We couldn’t load this section.</h2><p>{error}</p><p>The published data file may be unavailable.</p><button onClick={() => setReload(value => value + 1)}>Try again</button></div> : current ? <CommodityPage key={sector} sector={sector} data={current} /> : null}
-        <footer><span>DAWV AGRI PORTAL / DA · NSM 2026</span><span>Source: supplied PSA OpenSTAT exports. Snapshot built 12 Oct 2026.</span></footer>
+        <footer><span>DAWV AGRI PORTAL / DA · 37th NSM 2026</span><span>Source: supplied PSA OpenSTAT exports. Snapshot built 12 Oct 2026.</span></footer>
       </div>
     </main>
   </div>;

@@ -56,3 +56,17 @@
 @media(max-width:1100px){.preview-shell .content{grid-template-columns:1fr}.preview-shell .data-section{grid-column:1/-1}.preview-shell .metric-row{grid-template-columns:repeat(2,minmax(0,1fr))}.preview-shell .metric-row>div:nth-child(2){border-right:0}.preview-shell .metric-row>div:nth-child(-n+2){border-bottom:1px solid #e4d6a6}.preview-shell .ranked-bars{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.preview-shell{display:block}.preview-shell .sidebar{position:static;height:auto;padding:16px}.preview-shell .brand{padding:0}.preview-shell .brand-logo{width:54px;height:42px}.preview-shell .topline{padding:11px 16px}.preview-shell .topline>div>span:last-child{display:none}.preview-shell .topline .design-link{margin-left:0;font-size:10px}.preview-shell .content{padding:16px;gap:12px}.preview-shell .page-heading,.preview-shell .story-lead,.preview-shell .filter-strip,.preview-shell .data-section{padding:17px}.preview-shell .page-heading h1{font-size:23px}.preview-shell .story-lead{display:block}.preview-shell .story-mark{display:none}.preview-shell .metric-row>div,.preview-shell .metric-row>div:first-child,.preview-shell .metric-row>div:nth-child(3){padding:14px}.preview-shell .ranked-bars{grid-template-columns:1fr}.preview-shell .ranked-bars li{display:flex}}
 @media(max-width:760px){.preview-shell .topline{gap:10px}.preview-shell .topline-mark{white-space:nowrap}.preview-shell .topline>div:last-child>span{display:none}}
+
+/* The commemorative artwork keeps its transparent silhouette rather than a logo tile. */
+.preview-shell .brand-logo{background:transparent;padding:0;border-radius:0;filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)}
+.nsm-banner{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 250px;align-items:center;gap:20px;min-width:0;padding:12px 22px;background:linear-gradient(105deg,#e8f2fc 0%,#f1f7fb 72%,#e7f0fc 100%);border-top:3px solid #2070b7}
+.nsm-banner-copy{min-width:0}
+.nsm-kicker{display:block;color:#135493;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.nsm-banner p{margin:7px 0 0;color:#183a62;font-size:clamp(14px,1.35vw,18px);line-height:1.35;font-weight:500;max-width:850px}
+.nsm-banner p strong{font-weight:800}
+.nsm-banner-art{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+.nsm-banner-art img{display:block;max-width:100%;height:auto;filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)}
+.nsm-banner-art .nsm-statman{width:auto;height:98px;max-width:69px;object-fit:contain}
+.nsm-banner-art .nsm-logos{width:165px;filter:drop-shadow(1px 0 0 #24466d) drop-shadow(-1px 0 0 #24466d) drop-shadow(0 1px 0 #24466d) drop-shadow(0 -1px 0 #24466d)}
+@media(max-width:760px){.nsm-banner{gap:12px;padding:13px 17px;grid-template-columns:minmax(0,1fr) 170px}.nsm-banner-art{gap:5px}.nsm-banner-art .nsm-statman{height:75px;max-width:53px}.nsm-banner-art .nsm-logos{width:112px}.nsm-banner p{font-size:13px}.nsm-kicker{font-size:9px;line-height:1.4}}
+@media(max-width:520px){.nsm-banner{grid-template-columns:1fr;gap:6px}.nsm-banner-art{justify-content:flex-start}.nsm-banner-art .nsm-statman{height:62px;max-width:44px}.nsm-banner-art .nsm-logos{width:125px}}

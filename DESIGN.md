@@ -59,6 +59,8 @@ Literata gives findings an editorial voice. DM Sans supports controls, annotatio
 
 Desktop uses a 220px navigation rail, a green top bar, a pale harvest metric strip, and a compact two-column data workspace. Full-width sections hold the production trend, province comparison, and table. On narrow screens, the content becomes one column and navigation scrolls horizontally. Tables scroll within their own area. The RSBSA navigation opens the separate public Power BI report.
 
+During the 37th National Statistics Month, a slim blue ribbon above the report carries the official theme, the provided PSA and Bagong Pilipinas logos, and a Statman cutout derived from the supplied artwork. Logos sit directly on the ribbon or green rail with a light silhouette outline; they have no rectangular backing.
+
 ## Elevation & Depth
 
 Surface color and thin borders provide depth. Shadows are not part of the core system.
