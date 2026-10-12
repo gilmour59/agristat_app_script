@@ -1,4 +1,4 @@
-export type Sector = 'crops' | 'livestock' | 'poultry' | 'farmers';
+export type Sector = 'crops' | 'fruit' | 'vegetables' | 'major' | 'livestock' | 'poultry' | 'farmers';
 export type Period = 'Annual' | 'Quarter 1' | 'Quarter 2' | 'Quarter 3' | 'Quarter 4';
 
 export interface TimeColumn { index: number; year: string; period: string }
@@ -9,8 +9,6 @@ export interface FarmerRow {
   total: number; male: number; female: number; averageAge: number;
   seniors: number; farmers: number;
 }
-
-export const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1muaZSkxWoVbHAsI7934gYycYuIf7QR2UC9P2rmNwPXE/edit';
 
 export function parseCsv(input: string): string[][] {
   const rows: string[][] = [];
@@ -37,7 +35,7 @@ export function parseCsv(input: string): string[][] {
 }
 
 export function valueOf(value: string | undefined): number | null {
-  if (!value || value.trim() === '' || value.trim() === '..' || value.trim() === '-') return null;
+  if (!value || ['', '..', '...', '-'].includes(value.trim())) return null;
   const number = Number(value.replace(/,/g, '').replace(/%$/, '').trim());
   return Number.isFinite(number) ? number : null;
 }
@@ -64,16 +62,14 @@ export function parseCommoditySheet(csv: string): CommoditySheet {
 
 export function parseFarmersSheet(csv: string): FarmerRow[] {
   const rows = parseCsv(csv);
-  if (rows[0]?.[0]?.trim().toLowerCase() !== 'province' ||
-      rows[0]?.[3]?.trim().toLowerCase() !== 'total registrants' ||
-      rows[1]?.[5]?.trim().toLowerCase() !== 'total') {
-    throw new Error('The FarmersProfile headers have changed.');
+  if (rows[0]?.[0]?.trim().toLowerCase() !== 'province' || rows[0]?.[5]?.trim().toLowerCase() !== 'total') {
+    throw new Error('The RSBSA snapshot headers have changed.');
   }
-  const records = rows.slice(2).filter(row => row[0]?.trim() && row[1]?.trim() && valueOf(row[5]) !== null)
+  const records = rows.slice(1).filter(row => row[0]?.trim() && row[1]?.trim() && valueOf(row[5]) !== null)
     .map(row => ({
       province: row[0].trim(), municipality: row[1].trim(), district: row[2]?.trim() || 'Unspecified',
       male: valueOf(row[3]) || 0, female: valueOf(row[4]) || 0, total: valueOf(row[5]) || 0,
-      averageAge: valueOf(row[6]) || 0, seniors: valueOf(row[7]) || 0, farmers: valueOf(row[14]) || 0,
+      averageAge: valueOf(row[6]) || 0, seniors: valueOf(row[7]) || 0, farmers: valueOf(row[8]) || 0,
     }));
   if (!records.length) throw new Error('The registry tab has no municipality rows.');
   return records;
@@ -97,11 +93,11 @@ export function cleanName(name: string): string {
   return name.replace(/\s*\([^)]*\)\s*$/, '').replace(/\s+/g, ' ').trim();
 }
 
-export async function fetchTab(tab: 'crops' | 'area' | 'livestock' | 'poultry' | 'farmers'): Promise<string> {
-  const response = await fetch(`/api/sheet?tab=${tab}`);
+export async function fetchTab(tab: Sector | 'area'): Promise<string> {
+  const response = await fetch(`/data/${tab}.csv`);
   if (!response.ok) {
     const detail = await response.json().catch(() => null) as { error?: string } | null;
-    throw new Error(detail?.error || `Data request failed (${response.status}).`);
+    throw new Error(detail?.error || `Data snapshot failed to load (${response.status}).`);
   }
   return response.text();
 }

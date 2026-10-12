@@ -1,4 +1,4 @@
-# Agristat data snapshot
+# Western Visayas agriculture data snapshot
 
 This folder contains a **local SQLite database** built from the 13 supplied PSA OpenSTAT CSV exports and the RSBSA workbook dated 2026-09-18. The database is ignored by Git. The tracked importer and quality report make the transformation reviewable without publishing the RSBSA workbook or its detailed aggregates to the public repository.
 
@@ -29,7 +29,7 @@ The importer requires the 13 named CSVs. It replaces the database only after the
 
 OpenSTAT exports are grouped by measure:
 
-- **Palay and corn:** production volume and harvested area by crop type, region/province, quarter/semester/year. Separate monthly rice/corn stock inventory has **no geography in the export**, so its geography is `unspecified`.
+- **Palay and corn:** production volume and harvested area by crop type, region/province, quarter/semester/year. The corrected volume export covers 2020–2026. Separate monthly rice/corn stock inventory is **national Philippines data**, so it is kept in the database but excluded from Western Visayas dashboard charts.
 - **Livestock and poultry:** regional time series plus province-level livestock and chicken-by-type data. The livestock region and province exports contain overlapping regional cells; choose one source before aggregating.
 - **Other crops:** major-crop regional volume; mango/banana volume, planted/harvested area, and bearing-tree counts; vegetable/root-crop volume and area. Major-crop and fruit-crop exports repeat the same regional banana/mango volume values.
 - **RSBSA:** ten overlapping profile categories and area indicators. `registrants` is the broad total; categories such as farmers, rice farmers, and agri-youth are **not additive**.
@@ -40,9 +40,10 @@ OpenSTAT exports are grouped by measure:
 2. Select one period type. Annual and semester totals repeat quarters for production volume. Monthly stock is an inventory level, so it must not be summed as production.
 3. Area planted/harvested and bearing-tree series are stock-like measures: their annual source values are **not** the sum of quarterly values. Use the annual value directly.
 4. Keep `NULL` distinct from zero. Both `..` and `...` appear as missing markers; `0.00` is retained as an actual source value. Do not infer a complete 2026 year from the partial 2026 cells.
-5. Units are recorded only where the export title establishes them (palay/corn volume in metric tons, harvested area in hectares, bearing trees/hills/vines as counts). Other OpenSTAT unit labels are `source_unit_unverified` pending source metadata confirmation.
-6. RSBSA's ranking tab and detailed table disagree on Region VI registrants. The detailed regional row matches the sum of five provinces and 101 municipalities. Keep the ranking separate until the source owner reconciles it; the local audit report has the exact figures.
-7. The RSBSA workbook has 35 male + female versus total mismatches across geography/category rows, plus 92 fractional count cells (mostly agri-youth sex splits). Preserve the source values and avoid using affected splits as exact person counts until confirmed. See the local `agristat.report.json` for examples.
+5. Production volumes and stocks use metric tons; harvested or planted areas use hectares; bearing trees/hills/vines use counts. These units were checked against PSA OpenSTAT source metadata.
+6. Western Visayas historical regional totals cross boundary changes associated with Negros Island Region. The app marks the break in trends. Province comparisons are shown only for years with province rows; regional and province values are never added together.
+7. RSBSA's ranking tab and detailed table disagree on Region VI registrants by 6,991. The detailed regional row matches the sum of five provinces and 101 municipalities. Keep the ranking separate until the source owner reconciles it; the local audit report has the exact figures.
+8. The RSBSA workbook has 35 male + female versus total mismatches across geography/category rows, plus 92 fractional count cells (mostly agri-youth sex splits). Preserve the source values and avoid using affected splits as exact person counts until confirmed. See the local `agristat.report.json` for examples.
 
 Example: annual palay volume for provinces, using the specified metric-ton unit and one source file:
 
@@ -60,6 +61,6 @@ ORDER BY o.year, o.geography;
 
 ## App integration and future refresh
 
-The live React app still reads the public Google Sheet. This database is a prepared local source and has **not** been deployed or exposed through an API. Before switching the app, choose the figures and geography levels for each chart and reconcile the RSBSA issues above. Do not publish the RSBSA snapshot without reviewing the intended public fields.
+The React app uses selected CSV snapshots exported from this database with `python3 scripts/export_dashboard.py`. These include production by reported geography and selected RSBSA municipality aggregates. The full RSBSA workbook and full SQLite database stay local and are ignored by Git. A [Google Sheet review copy](https://docs.google.com/spreadsheets/d/1SMajF57W0EeeokejjY47bq46bPCkimePqgp16AaROf8/edit) contains the imported observations, sources, selected RSBSA aggregates, and coverage notes; it is private unless the owner changes sharing.
 
 **Future work:** investigate the PSA OpenSTAT API, confirm its terms, authentication, dataset identifiers, dimensions, units, and update cadence, then replace the CSV import step with a scheduled fetch that writes the same schema. Keep the CSV importer as a reproducible fallback and compare API values against this snapshot before cutting over.

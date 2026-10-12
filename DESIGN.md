@@ -1,5 +1,5 @@
 ---
-name: AGRISTAT
+name: Western Visayas Agriculture Data Portal
 description: An editorial data desk for Philippine agriculture.
 colors:
   forest: "#133a2b"
@@ -45,11 +45,11 @@ components:
 
 ## Overview
 
-AGRISTAT reads like a public agricultural data report. The deep green rail anchors the DA identity; warm paper, dark ink, and a restrained harvest accent keep statistical content readable. A plain-language finding leads each section, followed by controls, measures, trends, geographic rankings, and source detail.
+The portal reads like a public agricultural data report. The deep green rail anchors the DA identity; warm paper, dark ink, and a restrained harvest accent keep statistical content readable. A plain-language finding leads each section, followed by controls, measures, trends, geographic rankings where available, and source detail.
 
 ## Colors
 
-Use forest for navigation, leaf for production charts, and harvest for yield or secondary comparison. Paper and thin line separators organize the page without floating cards. Pair color with a direction word or number.
+Use forest for navigation. Give each subject a recognizable accent: harvest amber for rice and corn, rose for fruit, leaf green for vegetables, earth brown for other crops, terracotta for livestock, ochre for poultry, and blue for RSBSA. Paper and thin line separators organize the page without floating cards. Pair color with a direction word or number.
 
 ## Typography
 

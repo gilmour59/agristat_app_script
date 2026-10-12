@@ -3,3 +3,25 @@
 @media(max-width:760px){.app-shell{display:block}.sidebar{position:static;height:auto;padding:16px 16px 12px}.brand{padding:0}.brand-icon{width:35px;height:35px}.brand strong{font-size:17px}.brand small{font-size:8px}.sidebar-rule,.nav-caption,.sidebar-bottom{display:none}.sidebar nav{display:flex;overflow:auto;gap:6px;margin-top:15px;padding-bottom:2px}.nav-item{min-width:max-content;padding:9px 12px;gap:8px;background:#1e4a34}.nav-item small,.nav-arrow{display:none!important}.nav-item strong{font-size:12px}.nav-item svg{width:16px}.topline{padding:12px 18px}.topline>div>span:last-child,.topline-divider{display:none}.content{padding:28px 18px 15px}.page-heading{margin-bottom:24px}.story-lead{grid-template-columns:1fr;min-height:0;padding:26px 22px}.story-mark{display:none}.filter-strip{flex-wrap:wrap;gap:12px;padding:20px 0}.filter-strip label{flex:1 1 130px;min-width:0}.filter-foot{margin:2px 0 0;max-width:none;width:100%}.metric-row{padding:23px 0;gap:18px 0}.metric-row>div{padding:0 12px}.metric-row>div:nth-child(odd){border-left:0;padding-left:0}.metric-row strong{font-size:25px}.metric-row strong.text-metric{font-size:17px}.data-section{padding:29px 0}.ranked-bars{grid-template-columns:1fr;gap:15px}.section-heading{align-items:start}.section-heading h3{font-size:22px}.section-heading p:not(.eyebrow){font-size:12px}.unit-tag{font-size:10px;padding:6px 9px}.trend-chart{padding:8px 3px}.trend-chart svg{min-height:190px}.segmented button{padding:8px 9px;font-size:11px}.table-section .section-heading{flex-wrap:wrap}.text-button{margin-top:4px}footer{display:block}footer span{display:block;margin-bottom:8px}}
 @media(max-width:420px){.topline a{font-size:10px}.filter-strip label{flex-basis:100%}.story-lead h2{font-size:24px}.story-sub{font-size:13px}.composition-legend{gap:13px;font-size:12px}.section-heading .unit-tag{display:none}}
 @media(prefers-reduced-motion:reduce){.loading-bar{animation:none}*{scroll-behavior:auto!important}}
+/* Commodity families use distinct accents while retaining one readable report layout. */
+.app-shell{--accent:#a96a15;--accent-soft:#fff0d4;--accent-deep:#653d07}
+.theme-fruit{--accent:#ae4961;--accent-soft:#fbe9ee;--accent-deep:#70273b}
+.theme-vegetables{--accent:#33815a;--accent-soft:#e5f4e9;--accent-deep:#205a3d}
+.theme-major{--accent:#816443;--accent-soft:#f2ebe1;--accent-deep:#593e24}
+.theme-livestock{--accent:#b85d43;--accent-soft:#fbebe5;--accent-deep:#7b3828}
+.theme-poultry{--accent:#b57e22;--accent-soft:#f9f0d9;--accent-deep:#745010}
+.theme-farmers{--accent:#5371a6;--accent-soft:#e9effa;--accent-deep:#304e81}
+.brand strong{font-size:15px;letter-spacing:.025em;line-height:1.15}
+.brand small{font-size:10px;letter-spacing:.13em}
+.nav-item>svg{flex:none;color:var(--accent)}
+.nav-item:not(.selected)>svg{color:#deca98}
+.nav-item.selected{background:var(--accent-soft);color:var(--accent-deep);box-shadow:inset 4px 0 var(--accent)}
+.page-heading h1{color:var(--accent-deep)}
+.story-lead{background:var(--accent-soft);border-color:var(--accent)}
+.story-mark{color:var(--accent-deep)}
+.metric-row{border-top-color:var(--accent)}
+.metric-row strong{color:var(--accent-deep)}
+.unit-tag{background:var(--accent-soft);color:var(--accent-deep)}
+.ranked-bars .bar-track>div{background:var(--accent)}
+.coverage-note{border-left:4px solid var(--accent);background:var(--accent-soft);padding:24px}
+.coverage-note p{margin-bottom:0}

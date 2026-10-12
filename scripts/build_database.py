@@ -19,17 +19,17 @@ from openpyxl import load_workbook
 OPENSTAT = {
     "rice_corn_volume.csv": ("production_volume", "metric_tons"),
     "rice_corn_area_harvested.csv": ("area_harvested", "hectares"),
-    "rice_corn_stock.csv": ("stock_inventory", "source_unit_unverified"),
-    "livestock_volume.csv": ("production_volume", "source_unit_unverified"),
-    "livestock_volume2.csv": ("production_volume", "source_unit_unverified"),
-    "poultry_volume.csv": ("production_volume", "source_unit_unverified"),
-    "chicken_volume.csv": ("production_volume", "source_unit_unverified"),
-    "major_crops_volume.csv": ("production_volume", "source_unit_unverified"),
-    "mango_banana_volume.csv": ("production_volume", "source_unit_unverified"),
-    "mango_banana_area_planted.csv": ("area_planted_or_harvested", "source_unit_unverified"),
+    "rice_corn_stock.csv": ("stock_inventory", "metric_tons"),
+    "livestock_volume.csv": ("production_volume", "metric_tons"),
+    "livestock_volume2.csv": ("production_volume", "metric_tons"),
+    "poultry_volume.csv": ("production_volume", "metric_tons"),
+    "chicken_volume.csv": ("production_volume", "metric_tons"),
+    "major_crops_volume.csv": ("production_volume", "metric_tons"),
+    "mango_banana_volume.csv": ("production_volume", "metric_tons"),
+    "mango_banana_area_planted.csv": ("area_planted_or_harvested", "hectares"),
     "mango_banana_no_trees.csv": ("bearing_trees_hills_vines", "count"),
-    "vegetables_root_crops_volume.csv": ("production_volume", "source_unit_unverified"),
-    "vegetables_root_crops_area.csv": ("area_planted_or_harvested", "source_unit_unverified"),
+    "vegetables_root_crops_volume.csv": ("production_volume", "metric_tons"),
+    "vegetables_root_crops_area.csv": ("area_planted_or_harvested", "hectares"),
 }
 
 PROFILE_GROUPS = (
@@ -78,7 +78,8 @@ def period(header):
 def geography(raw):
     dots = len(raw) - len(raw.lstrip("."))
     if dots == 2:
-        return "region", raw[2:].strip().title()
+        name = raw[2:].strip()
+        return "region", "Western Visayas" if "western visayas" in name.lower() else name.title()
     if dots == 4:
         return "province", raw[4:].strip().title()
     raise ValueError(f"Unexpected OpenSTAT geography: {raw!r}")
@@ -94,7 +95,7 @@ CREATE TABLE openstat_observation (
   id INTEGER PRIMARY KEY, source_id INTEGER NOT NULL REFERENCES source_file(id),
   source_row INTEGER NOT NULL,
   measure TEXT NOT NULL, unit TEXT NOT NULL, commodity TEXT NOT NULL,
-  geography_level TEXT NOT NULL CHECK(geography_level IN ('region','province','unspecified')),
+  geography_level TEXT NOT NULL CHECK(geography_level IN ('region','province','national')),
   geography TEXT NOT NULL, year INTEGER NOT NULL,
   period_type TEXT NOT NULL CHECK(period_type IN ('month','quarter','semester','annual')),
   period_number INTEGER, value REAL, raw_value TEXT NOT NULL,
@@ -155,7 +156,7 @@ def import_openstat(db, folder, report):
                 raise ValueError(f"{filename}:{source_row}: {len(row)} cells; expected {len(headers)}")
             commodity = row[0].strip()
             if is_stock:
-                geo_level, geo_name, year = "unspecified", "Not specified in export", int(row[1])
+                geo_level, geo_name, year = "national", "Philippines", int(row[1])
             else:
                 geo_level, geo_name = geography(row[1])
             for col, raw in enumerate(row[2:], 2):
@@ -203,6 +204,8 @@ def import_rsbsa(db, path, report):
     levels = Counter()
     count_mismatches = []
     fractional_counts = []
+    current_district = None
+    current_province = None
     for source_row, row in enumerate(sheet.iter_rows(min_row=4, values_only=True), 4):
         if not any(value is not None for value in row[1:7]):
             continue
@@ -210,6 +213,12 @@ def import_rsbsa(db, path, report):
         if classification is None:
             continue
         level, province, district, municipality, label = classification
+        if level == "province":
+            current_province, current_district = province, None
+        elif level == "district":
+            current_province, current_district = province, district
+        elif level == "municipality":
+            district = current_district if province == current_province else None
         geo_id = db.execute(
             "INSERT INTO rsbsa_geography(source_id,source_row,level,province,district,municipality,source_label) VALUES (?,?,?,?,?,?,?)",
             (source_id, source_row, level, province, district, municipality, label),
