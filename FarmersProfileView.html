@@ -1,0 +1,333 @@
+<!-- PAGE: FARMERS PROFILE DASHBOARD & INFOGRAPHICS -->
+<div id="farmersProfilePage" class="space-y-5 hidden">
+
+  <!-- TOP SUMMARY CARDS FILTER TOOLBAR -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
+      <div class="flex items-center gap-2">
+        <div class="p-2 bg-emerald-100 rounded-xl text-da-green">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-sm font-extrabold text-slate-800 tracking-tight">Farmers Profile Analytics</h2>
+            <span class="bg-emerald-50 text-da-green border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-md">
+              Data as of Sept 18, 2026
+            </span>
+          </div>
+          <p class="text-[10.5px] text-slate-500">Source: RSBSA DA Western Visayas Summary Controls</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold text-da-green bg-emerald-50 hover:bg-da-green hover:text-white transition-all flex items-center gap-1.5 border border-emerald-200">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i> Print View
+        </button>
+        <button onclick="exportFarmersCSV()" class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold text-slate-700 bg-slate-100 hover:bg-slate-800 hover:text-white transition-all flex items-center gap-1.5 border border-slate-200">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i> Export CSV
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN DEDICATED FILTERS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Province (Col A)</label>
+        <select id="fpCardProvinceFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Provinces</option>
+          <option value="Aklan" selected>Aklan</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">District</label>
+        <select id="fpCardDistrictFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Districts</option>
+          <option value="District 1" selected>District 1</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Commodity / Sector</label>
+        <select id="fpCardCommodityFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Commodities</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Land Tenure</label>
+        <select id="fpCardTenureFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Tenure Types</option>
+          <option value="Owner">Owner / Landowner</option>
+          <option value="Tenant">Tenant / Lessee</option>
+          <option value="Worker">Farm Worker</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Gender Group</label>
+        <select id="fpCardGenderFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Genders</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY KPI CARDS -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-da-green flex items-center justify-between">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Registered Farmers</p>
+        <h3 id="fpKpiTotal" class="text-2xl font-extrabold text-da-green mt-0.5 tracking-tight">0</h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">RSBSA DA Western Visayas</p>
+      </div>
+      <div class="bg-emerald-100 p-3 rounded-2xl text-da-green"><i data-lucide="user-check" class="w-6 h-6"></i></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-emerald-600 flex items-center justify-between">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Average Age</p>
+        <h3 id="fpKpiAvgAge" class="text-2xl font-extrabold text-emerald-700 mt-0.5 tracking-tight">0 <span class="text-xs font-bold text-slate-500">Years</span></h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Demographics Benchmark</p>
+      </div>
+      <div class="bg-emerald-100 p-3 rounded-2xl text-emerald-700"><i data-lucide="calendar" class="w-6 h-6"></i></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-amber-500 flex items-center justify-between">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Avg. Farm Holding</p>
+        <h3 id="fpKpiAvgSize" class="text-2xl font-extrabold text-amber-700 mt-0.5 tracking-tight">0.00 <span class="text-xs font-bold text-da-gold">Ha</span></h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Per Registered Farmer</p>
+      </div>
+      <div class="bg-amber-100 p-3 rounded-2xl text-amber-700"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-indigo-600 flex items-center justify-between">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Female Participation Ratio</p>
+        <h3 id="fpKpiFemaleRatio" class="text-2xl font-extrabold text-indigo-700 mt-0.5 tracking-tight">0.0%</h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Gender Inclusivity Ratio</p>
+      </div>
+      <div class="bg-indigo-100 p-3 rounded-2xl text-indigo-700"><i data-lucide="heart-handshake" class="w-6 h-6"></i></div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE ANALYSIS ENGINE PANEL -->
+  <div class="bg-gradient-to-r from-slate-900 via-da-dark to-emerald-950 text-white p-5 rounded-2xl shadow-md space-y-4 border border-emerald-800/40">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-3 gap-2">
+      <div class="flex items-center gap-2.5">
+        <div class="bg-da-gold/20 p-2 rounded-xl border border-da-gold/30 text-da-gold">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-extrabold tracking-tight text-white flex items-center gap-2">
+            Interactive Policy & Demographic Intelligence
+          </h3>
+          <p class="text-[10.5px] text-emerald-200">Real-time automated strategic analysis | RSBSA DA Western Visayas (Data as of Sept 18, 2026)</p>
+        </div>
+      </div>
+      <div class="text-[10px] bg-white/10 px-3 py-1 rounded-full text-emerald-300 font-mono">
+        Active Focus: <span id="analysisScopeText">Aklan | District 1</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="bg-white/5 p-3.5 rounded-xl border border-white/10 space-y-2 lg:col-span-2">
+        <h4 class="text-xs font-bold text-da-gold flex items-center gap-1.5">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Automated Executive Commentary
+        </h4>
+        <div id="interactiveCommentaryText" class="text-xs text-slate-200 leading-relaxed space-y-2">
+          Loading interactive analysis commentary...
+        </div>
+      </div>
+
+      <div class="bg-white/5 p-3.5 rounded-xl border border-white/10 space-y-3">
+        <h4 class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+          <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Policy Intervention Simulator
+        </h4>
+        
+        <div class="space-y-2 text-[11px]">
+          <div>
+            <div class="flex justify-between text-[10.5px] mb-1">
+              <span class="text-slate-300">Youth Farming Subsidy Incentive:</span>
+              <span id="simYouthVal" class="font-bold text-da-gold">+10%</span>
+            </div>
+            <input type="range" id="simYouthSlider" min="0" max="30" value="10" oninput="updateSimulation()" class="w-full accent-da-gold h-1 bg-white/20 rounded-lg cursor-pointer">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-[10.5px] mb-1">
+              <span class="text-slate-300">Female Registry Inclusivity Target:</span>
+              <span id="simFemaleVal" class="font-bold text-emerald-400">40%</span>
+            </div>
+            <input type="range" id="simFemaleSlider" min="20" max="50" value="40" oninput="updateSimulation()" class="w-full accent-emerald-400 h-1 bg-white/20 rounded-lg cursor-pointer">
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/60 p-2.5 rounded-lg border border-emerald-500/20 text-[10.5px] space-y-1">
+          <div class="flex justify-between text-slate-300">
+            <span>Projected Youth Farmers:</span>
+            <strong id="simProjectedYouth" class="text-white">0</strong>
+          </div>
+          <div class="flex justify-between text-slate-300">
+            <span>Projected Female Participation:</span>
+            <strong id="simProjectedFemale" class="text-white">0%</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAPH GRID 1: MUNICIPALITY & PROVINCE PIE CHART -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+    <!-- CHART 1: TOP MUNICIPALITIES -->
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2 gap-2">
+        <h3 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+          <i data-lucide="building-2" class="w-4 h-4 text-da-green"></i> Top Municipalities by Registered Farmers
+        </h3>
+
+        <div class="flex items-center gap-2">
+          <select id="fpMuniProvFilter" onchange="renderMuniChart()" class="bg-slate-50 text-[10px] font-bold text-da-green border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+            <option value="ALL">All Provinces</option>
+          </select>
+          <select id="fpMuniDistFilter" onchange="renderMuniChart()" class="bg-slate-50 text-[10px] font-bold text-slate-700 border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+            <option value="ALL">All Districts</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="relative h-64 w-full">
+        <canvas id="fpMuniChart"></canvas>
+      </div>
+    </div>
+
+    <!-- CHART 2: PROVINCE SHARE DISTRIBUTION (LEGEND ON LEFT) -->
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2 gap-2">
+        <h3 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+          <i data-lucide="pie-chart" class="w-4 h-4 text-da-gold"></i> Province Share Distribution
+        </h3>
+
+        <div class="flex items-center gap-2">
+          <select id="fpPieProvFilter" onchange="renderProvincePieChart()" class="bg-slate-50 text-[10px] font-bold text-da-green border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+            <option value="ALL">All Provinces</option>
+          </select>
+          <select id="fpPieDistFilter" onchange="renderProvincePieChart()" class="bg-slate-50 text-[10px] font-bold text-slate-700 border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+            <option value="ALL">All Districts</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="relative h-64 w-full flex justify-center items-center">
+        <canvas id="fpProvincePieChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GRAPH GRID 2: DISTRICT HORIZONTAL BAR & AGE BREAKDOWN -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+    <!-- CHART 3: DISTRICT HORIZONTAL BAR CHART -->
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2 gap-2">
+        <h3 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+          <i data-lucide="bar-chart-horizontal" class="w-4 h-4 text-amber-600"></i> District Farmer Distribution
+        </h3>
+
+        <select id="fpDistrictProvFilter" onchange="renderDistrictChart()" class="bg-slate-50 text-[10px] font-bold text-da-green border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+          <option value="ALL">All Provinces</option>
+        </select>
+      </div>
+
+      <div class="relative h-64 w-full">
+        <canvas id="fpDistrictChart"></canvas>
+      </div>
+    </div>
+
+    <!-- CHART 4: AGE GROUP BREAKDOWN -->
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2 gap-2">
+        <h3 class="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+          <i data-lucide="users" class="w-4 h-4 text-indigo-600"></i> Demographics Age Group Breakdown
+        </h3>
+
+        <select id="fpAgeProvFilter" onchange="renderAgeDistributionVisuals()" class="bg-slate-50 text-[10px] font-bold text-da-green border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+          <option value="ALL">All Provinces</option>
+        </select>
+      </div>
+
+      <div class="space-y-4 pt-3">
+        <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+          <span>Youth Farmers (&lt; 30 Yrs)</span>
+          <span id="agePctYouth" class="text-emerald-600">0%</span>
+        </div>
+        <div class="w-full bg-slate-100 h-3.5 rounded-full overflow-hidden flex">
+          <div id="barYouth" class="bg-emerald-500 h-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+          <span>Prime Workforce (30 - 50 Yrs)</span>
+          <span id="agePctPrime" class="text-da-green">0%</span>
+        </div>
+        <div class="w-full bg-slate-100 h-3.5 rounded-full overflow-hidden flex">
+          <div id="barPrime" class="bg-da-green h-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+          <span>Senior / Experienced (&gt; 50 Yrs)</span>
+          <span id="agePctSenior" class="text-amber-600">0%</span>
+        </div>
+        <div class="w-full bg-slate-100 h-3.5 rounded-full overflow-hidden flex">
+          <div id="barSenior" class="bg-amber-500 h-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REGISTRY DATA MATRIX TABLE -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2 gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="table" class="w-4 h-4 text-da-green"></i>
+          <h3 class="text-xs font-bold text-slate-800">Farmers Profile Registry Breakdown by Province</h3>
+        </div>
+        <p class="text-[10px] text-slate-400 mt-0.5">Source: RSBSA DA Western Visayas | As of September 18, 2026</p>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <label for="fpTableProvFilter" class="text-[10px] font-bold text-slate-500">Province:</label>
+        <select id="fpTableProvFilter" onchange="renderFarmersTable()" class="bg-slate-50 text-[10px] font-bold text-da-green border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+          <option value="ALL">All Provinces</option>
+        </select>
+
+        <label for="fpTableDistrictFilter" class="text-[10px] font-bold text-slate-500">District:</label>
+        <select id="fpTableDistrictFilter" onchange="renderFarmersTable()" class="bg-slate-50 text-[10px] font-bold text-slate-700 border border-slate-200 px-2 py-1 rounded-lg outline-none cursor-pointer">
+          <option value="ALL">All Districts</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto rounded-xl border border-slate-100">
+      <table class="w-full text-left border-collapse text-[11px]">
+        <thead>
+          <tr class="bg-da-green text-white font-bold select-none cursor-pointer">
+            <th onclick="sortFarmersTable('province')" class="p-2.5 hover:bg-emerald-800 transition-colors">Province Location &#x21D5;</th>
+            <th onclick="sortFarmersTable('district')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">District &#x21D5;</th>
+            <th onclick="sortFarmersTable('totalFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Total Registered &#x21D5;</th>
+            <th onclick="sortFarmersTable('maleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Male Count &#x21D5;</th>
+            <th onclick="sortFarmersTable('femaleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Female Count &#x21D5;</th>
+            <th onclick="sortFarmersTable('avgAge')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Avg. Age &#x21D5;</th>
+            <th onclick="sortFarmersTable('avgFarmSize')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Avg. Farm Size (Ha) &#x21D5;</th>
+            <th onclick="sortFarmersTable('landownerPct')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Landowner Ratio &#x21D5;</th>
+          </tr>
+        </thead>
+        <tbody id="fpTableBody" class="divide-y divide-slate-100 text-slate-700 bg-white">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <title>Department of Agriculture - Commodity Analytics & Yield Dashboard</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            da: {
+              green: '#005a36',
+              lightgreen: '#1b8a5a',
+              gold: '#e2a021',
+              goldHover: '#c88c1b',
+              cream: '#f8faf8',
+              dark: '#082216'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { 
+      background: linear-gradient(135deg, #f1f5f3 0%, #f8faf8 100%);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+    }
+    select[multiple] { height: 72px; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      #navPalayCorn, #navLivestock, #navPoultry, #navFarmersProfile, button, select, .no-print { display: none !important; }
+      .shadow-sm, .shadow-md { box-shadow: none !important; }
+      .border { border-color: #e2e8f0 !important; }
+    }
+  </style>
+</head>
+<body class="p-3 md:p-5 text-slate-800 min-h-screen">
+
+  <div class="max-w-[1380px] mx-auto space-y-5">
+    
+    <!-- Top Header Banner -->
+    <div class="relative overflow-hidden bg-gradient-to-r from-da-dark via-da-green to-emerald-800 text-white px-5 py-4 rounded-2xl shadow-md border-b-2 border-da-gold">
+      <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <div class="flex items-center gap-3.5">
+          <div class="bg-white/10 p-2.5 rounded-xl border border-white/20 shadow-inner">
+            <i data-lucide="sprout" class="w-6 h-6 text-da-gold"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-da-gold/20 text-da-gold border border-da-gold/30">Official Portal</span>
+              <span class="text-[11px] text-emerald-200">Republic of the Philippines</span>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight mt-0.5">Department of Agriculture</h1>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg text-xs border border-white/15">
+          <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+          <span class="text-[11px] font-medium text-emerald-100">Agricultural Intelligence Portal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOP NAVIGATION MENU BAR -->
+    <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-2 flex-wrap no-print">
+      <button id="navPalayCorn" onclick="switchPage('palayCorn')" 
+        class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-da-green text-white shadow-sm">
+        <i data-lucide="sprout" class="w-4 h-4"></i>
+        <span>Palay & Corn (Home)</span>
+      </button>
+
+      <button id="navLivestock" onclick="switchPage('livestock')" 
+        class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-600 bg-slate-100 hover:bg-slate-200">
+        <i data-lucide="beef" class="w-4 h-4 text-da-gold"></i>
+        <span>Livestock: Volume of Production</span>
+      </button>
+
+      <button id="navPoultry" onclick="switchPage('poultry')" 
+        class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-600 bg-slate-100 hover:bg-slate-200">
+        <i data-lucide="egg" class="w-4 h-4 text-da-gold"></i>
+        <span>Poultry: Volume of Production</span>
+      </button>
+
+      <button id="navFarmersProfile" onclick="switchPage('farmersProfile')" 
+        class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-600 bg-slate-100 hover:bg-slate-200">
+        <i data-lucide="users" class="w-4 h-4 text-da-gold"></i>
+        <span>Farmers Profile</span>
+      </button>
+    </div>
+
+    <!-- INCLUDE SEPARATE VIEW PARTIALS -->
+    <?!= include('PalayCornView'); ?>
+    <?!= include('LivestockView'); ?>
+    <?!= include('PoultryView'); ?>
+    <?!= include('FarmersProfileView'); ?>
+
+    <!-- Footnote Section -->
+    <div class="bg-white p-3.5 rounded-xl shadow-sm border border-slate-200 text-[11px] text-slate-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="flex items-center gap-1">
+          <i data-lucide="clock" class="w-3 h-3 text-da-gold"></i>
+          <strong>Latest update:</strong> 20261009 22:28
+        </span>
+        <span class="hidden md:inline text-slate-300">|</span>
+        <span class="flex items-center gap-1">
+          <i data-lucide="building-2" class="w-3 h-3 text-da-green"></i>
+          <strong>Source:</strong> Philippine Statistics Authority / RSBSA Registry
+        </span>
+        <span class="hidden md:inline text-slate-300">|</span>
+        <span class="flex items-center gap-1">
+          <i data-lucide="scale" class="w-3 h-3 text-emerald-600"></i>
+          <strong>Units:</strong> Metric tons, Hectares, Headcount, Farmer Count
+        </span>
+      </div>
+      <div class="text-slate-400 text-[10px]">
+        Official Department of Agriculture Intelligence Portal
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Shared State & Chart Instances
+    let activePage = 'palayCorn';
+    let palayData = { metadata: [], timeColumns: [], rows: [] };
+    let livestockData = { metadata: [], timeColumns: [], rows: [] };
+    let poultryData = { metadata: [], timeColumns: [], rows: [] };
+    let farmersData = { metadata: [], timeColumns: [], rows: [] };
+    let appData = { metadata: [], timeColumns: [], rows: [] };
+
+    let regionProvinceMap = {};
+    let livestockRegionMap = {};
+    let poultryRegionMap = {};
+
+    let lsSortCol = 'annual';
+    let lsSortDir = 'desc';
+
+    let ptSortCol = 'annual';
+    let ptSortDir = 'desc';
+
+    let chartInstance = null;
+    let provProdChartInstance = null;
+    let provAreaChartInstance = null;
+    let provYieldChartInstance = null;
+
+    let regProdChartInstance = null;
+    let regAreaChartInstance = null;
+    let regYieldChartInstance = null;
+
+    let isoProdChartInstance = null;
+    let isoAreaChartInstance = null;
+    let isoYieldChartInstance = null;
+
+    let lsNationalChartInstance = null;
+    let lsRegionalChartInstance = null;
+    let lsProvincialChartInstance = null;
+
+    let ptVolChartInstance = null;
+    let ptShareChartInstance = null;
+    let ptProvincialChartInstance = null;
+
+    const growthBadgePlugin = {
+      id: 'growthBadgePlugin',
+      afterDatasetsDraw(chart) {
+        if (chart.canvas.id !== 'productionChart' && chart.canvas.id !== 'lsNationalChart' && chart.canvas.id !== 'poultryVolumeChart') return;
+
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0);
+        if (!meta || meta.hidden) return;
+
+        const data = chart.data.datasets[0].data;
+
+        meta.data.forEach((bar, index) => {
+          if (index === 0) return;
+          const prevValue = data[index - 1];
+          const currValue = data[index];
+          if (prevValue <= 0 || currValue === undefined) return;
+
+          const pctChange = ((currValue - prevValue) / prevValue) * 100;
+          const isPositive = pctChange >= 0;
+          const text = `${isPositive ? '+' : ''}${pctChange.toFixed(1)}%`;
+
+          const x = bar.x;
+          const y = bar.y - 12;
+
+          ctx.save();
+          ctx.font = 'bold 9px Inter, sans-serif';
+          const textWidth = ctx.measureText(text).width;
+          const paddingX = 4;
+          const boxWidth = textWidth + paddingX * 2;
+          const boxHeight = 13;
+
+          ctx.fillStyle = isPositive ? '#16a34a' : '#dc2626';
+          ctx.beginPath();
+          ctx.roundRect(x - boxWidth / 2, y - boxHeight / 2, boxWidth, boxHeight, 3);
+          ctx.fill();
+
+          ctx.fillStyle = '#ffffff';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(text, x, y + 0.5);
+          ctx.restore();
+        });
+      }
+    };
+
+    Chart.register(growthBadgePlugin);
+
+    window.onload = function() {
+      lucide.createIcons();
+      fetchPalayData();
+
+      setInterval(() => {
+        if (activePage === 'palayCorn') fetchPalayData(true);
+        else if (activePage === 'livestock') fetchLivestockData(true);
+        else if (activePage === 'poultry') fetchPoultryData(true);
+        else if (activePage === 'farmersProfile') fetchFarmersProfileData(true);
+      }, 60000);
+    };
+
+    function fetchPalayData(isSilent = false) {
+      google.script.run
+        .withSuccessHandler(function(data) {
+          palayData = data;
+          if (activePage === 'palayCorn' && typeof renderPalayDashboard === 'function') {
+            renderPalayDashboard(data);
+          }
+        })
+        .getDashboardData('Palay&Corn', 'Palay&CornAreaHarvested');
+    }
+
+    function fetchLivestockData(isSilent = false) {
+      google.script.run
+        .withSuccessHandler(function(data) {
+          livestockData = data;
+          buildLivestockRegionMapping();
+          populateLivestockFilters();
+          if (activePage === 'livestock') {
+            updateLivestockPage();
+          }
+        })
+        .getDashboardData('Livestock: Volume of Production', null);
+    }
+
+    function fetchPoultryData(isSilent = false) {
+      google.script.run
+        .withSuccessHandler(function(data) {
+          poultryData = data;
+          buildPoultryRegionMapping();
+          populatePoultryFilters();
+          if (activePage === 'poultry') {
+            updatePoultryPage();
+          }
+        })
+        .getDashboardData('Poultry: Volume of Production', null);
+    }
+
+    function fetchFarmersProfileData(isSilent = false) {
+      google.script.run
+        .withSuccessHandler(function(data) {
+          farmersData = data;
+          if (typeof initFarmersProfileDashboard === 'function') {
+            initFarmersProfileDashboard(data);
+          }
+        })
+        .getDashboardData('FarmersProfile', null);
+    }
+
+    function switchPage(pageName) {
+      activePage = pageName;
+      const palayPage = document.getElementById('palayCornPage');
+      const livestockPage = document.getElementById('livestockPage');
+      const poultryPage = document.getElementById('poultryPage');
+      const farmersPage = document.getElementById('farmersProfilePage');
+
+      const btnPalay = document.getElementById('navPalayCorn');
+      const btnLivestock = document.getElementById('navLivestock');
+      const btnPoultry = document.getElementById('navPoultry');
+      const btnFarmers = document.getElementById('navFarmersProfile');
+
+      if (palayPage) palayPage.classList.add('hidden');
+      if (livestockPage) livestockPage.classList.add('hidden');
+      if (poultryPage) poultryPage.classList.add('hidden');
+      if (farmersPage) farmersPage.classList.add('hidden');
+
+      const inactiveBtnStyle = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 text-slate-600 bg-slate-100 hover:bg-slate-200";
+      const activeBtnStyle = "px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 bg-da-green text-white shadow-sm";
+
+      btnPalay.className = inactiveBtnStyle;
+      btnLivestock.className = inactiveBtnStyle;
+      btnPoultry.className = inactiveBtnStyle;
+      btnFarmers.className = inactiveBtnStyle;
+
+      if (pageName === 'palayCorn') {
+        if (palayPage) palayPage.classList.remove('hidden');
+        btnPalay.className = activeBtnStyle;
+        if (palayData.rows.length === 0) fetchPalayData();
+        else if (typeof renderPalayDashboard === 'function') renderPalayDashboard(palayData);
+      } else if (pageName === 'livestock') {
+        if (livestockPage) livestockPage.classList.remove('hidden');
+        btnLivestock.className = activeBtnStyle;
+        if (livestockData.rows.length === 0) fetchLivestockData();
+        else updateLivestockPage();
+      } else if (pageName === 'poultry') {
+        if (poultryPage) poultryPage.classList.remove('hidden');
+        btnPoultry.className = activeBtnStyle;
+        if (poultryData.rows.length === 0) fetchPoultryData();
+        else updatePoultryPage();
+      } else if (pageName === 'farmersProfile') {
+        if (farmersPage) farmersPage.classList.remove('hidden');
+        btnFarmers.className = activeBtnStyle;
+        if (farmersData.rows.length === 0) fetchFarmersProfileData();
+        else if (typeof filterFarmersData === 'function') filterFarmersData();
+      }
+
+      lucide.createIcons();
+    }
+
+    function cleanRegionName(name) {
+      if (!name) return '';
+      let cleaned = name.replace(/^REGION\s+[IVXLCDM]+\s*\((.*?)\)/i, '$1');
+      cleaned = cleaned.replace(/^CORDILLERA ADMINISTRATIVE REGION\s*\((.*?)\)/i, 'Cordillera ($1)');
+      cleaned = cleaned.replace(/^SOCCSKSARGEN\s*\((.*?)\)/i, 'SOCCSKSARGEN');
+      cleaned = cleaned.replace(/^AUTONOMOUS REGION IN MUSLIM MINDANAO\s*\((.*?)\)/i, 'BARMM');
+      cleaned = cleaned.replace(/^BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO\s*\((.*?)\)/i, 'BARMM');
+      return cleaned.trim();
+    }
+
+    function selectDefaultValue(elementId, valueSubstring) {
+      const select = document.getElementById(elementId);
+      if (!select) return;
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.toLowerCase().includes(valueSubstring.toLowerCase()) || 
+            select.options[i].textContent.toLowerCase().includes(valueSubstring.toLowerCase())) {
+          select.selectedIndex = i;
+          return;
+        }
+      }
+    }
+
+    function addOptions(elementId, values, clearFirst = true) {
+      const select = document.getElementById(elementId);
+      if (!select) return;
+      if (clearFirst) select.innerHTML = `<option value="ALL">All Options</option>`;
+      
+      values.sort().forEach(val => {
+        const opt = document.createElement('option');
+        opt.value = val;
+        opt.textContent = elementId.includes('Region') ? cleanRegionName(val) : val;
+        select.appendChild(opt);
+      });
+    }
+  </script>
+
+  <!-- INCLUDE SCRIPT PARTIALS -->
+  <?!= include('PalayScript'); ?>
+  <?!= include('LivestockScript'); ?>
+  <?!= include('PoultryScript'); ?>
+  <?!= include('FarmersProfileScript'); ?>
+</body>
+</html>

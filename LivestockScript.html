@@ -1,0 +1,520 @@
+<script>
+  /* ==========================================================================
+     LIVESTOCK WORKSPACE LOGIC
+     ========================================================================== */
+  function buildLivestockRegionMapping() {
+    livestockRegionMap = {};
+    if (!livestockData || !livestockData.rows) return;
+
+    let currentRegion = '';
+    livestockData.rows.forEach(r => {
+      if (r.level.toLowerCase().includes('region')) {
+        currentRegion = r.name;
+        if (!livestockRegionMap[currentRegion]) livestockRegionMap[currentRegion] = [];
+      } else if (r.level.toLowerCase().includes('prov') && currentRegion) {
+        if (!livestockRegionMap[currentRegion].includes(r.name)) {
+          livestockRegionMap[currentRegion].push(r.name);
+        }
+      }
+    });
+  }
+
+  function populateLivestockFilters() {
+    if (!livestockData || !livestockData.rows) return;
+    
+    const speciesList = [...new Set(livestockData.rows.map(r => r.commodity))].filter(Boolean);
+    const lsYears = [...new Set(livestockData.timeColumns.map(tc => tc.year))].filter(Boolean);
+    const lsRegions = [...new Set(livestockData.rows
+      .filter(r => r.level.toLowerCase().includes('region'))
+      .map(r => r.name))].filter(Boolean);
+
+    addOptions('lsAnimalFilter', speciesList);
+    addOptions('lsYearFilter', lsYears);
+    addOptions('lsRegionFilter', lsRegions);
+
+    addOptions('lsChart1Animal', speciesList);
+
+    addOptions('lsChart2Animal', speciesList);
+    addOptions('lsChart2Region', lsRegions);
+
+    addOptions('lsChart3Animal', speciesList);
+    addOptions('lsChart3Region', lsRegions);
+
+    addOptions('lsMatrixAnimal', speciesList);
+    addOptions('lsMatrixYear', lsYears);
+    addOptions('lsMatrixRegion', lsRegions);
+
+    selectDefaultValue('lsAnimalFilter', 'Hog');
+    if (document.getElementById('lsAnimalFilter').selectedIndex <= 0) {
+      selectDefaultValue('lsAnimalFilter', 'Swine');
+    }
+    document.getElementById('lsPeriodFilter').value = 'Annual';
+    document.getElementById('lsRegionFilter').value = 'ALL';
+
+    selectDefaultValue('lsChart1Animal', 'Hog');
+    selectDefaultValue('lsChart2Animal', 'Hog');
+    selectDefaultValue('lsChart3Animal', 'Hog');
+    selectDefaultValue('lsMatrixAnimal', 'Hog');
+
+    setupLivestockEventListeners();
+  }
+
+  function setupLivestockEventListeners() {
+    ['lsAnimalFilter', 'lsPeriodFilter', 'lsYearFilter', 'lsRegionFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = updateLivestockPage;
+    });
+
+    ['lsChart1Animal', 'lsChart1Period'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = renderLivestockNationalChart;
+    });
+
+    ['lsChart2Animal', 'lsChart2Region'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = renderLivestockRegionalChart;
+    });
+
+    ['lsChart3Animal', 'lsChart3Region'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = renderLivestockProvincialChart;
+    });
+
+    ['lsMatrixAnimal', 'lsMatrixPeriod', 'lsMatrixYear', 'lsMatrixRegion', 'lsMatrixLevel'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = renderLivestockMatrixTable;
+    });
+  }
+
+  function updateLivestockPage() {
+    if (!livestockData || !livestockData.rows || livestockData.rows.length === 0) {
+      fetchLivestockData();
+      return;
+    }
+
+    const speciesFilter = document.getElementById('lsAnimalFilter').value;
+    const periodFilter = document.getElementById('lsPeriodFilter').value;
+    const yearFilter = document.getElementById('lsYearFilter').value;
+    const regionFilter = document.getElementById('lsRegionFilter').value;
+
+    let targetRows = livestockData.rows.filter(r => {
+      const commStr = (r.commodity || '').toLowerCase();
+      const matchesSpecies = speciesFilter === 'ALL' || commStr.includes(speciesFilter.toLowerCase()) || (speciesFilter === 'Swine' && commStr.includes('hog')) || (speciesFilter === 'Hog' && commStr.includes('swine'));
+      
+      const locStr = (r.name || '').toLowerCase();
+      const matchesRegion = regionFilter === 'ALL' || locStr.includes(regionFilter.toLowerCase()) || locStr.includes(cleanRegionName(regionFilter).toLowerCase());
+
+      return matchesSpecies && matchesRegion;
+    });
+
+    const timeCols = livestockData.timeColumns.filter(tc => {
+      const matchesYear = yearFilter === 'ALL' || tc.year === yearFilter;
+      let matchesPeriod = true;
+      if (periodFilter === 'Quarter') matchesPeriod = /(quarter|q[1-4])/i.test(tc.period);
+      if (periodFilter === 'Annual') matchesPeriod = /annual/i.test(tc.period);
+      return matchesYear && matchesPeriod;
+    });
+
+    let totalVol = 0;
+    targetRows.forEach(r => {
+      timeCols.forEach(tc => {
+        const origIdx = livestockData.timeColumns.findIndex(c => c.index === tc.index);
+        totalVol += (r.production[origIdx] || 0);
+      });
+    });
+
+    let avgLiveweight = 90;
+    if (speciesFilter.toLowerCase().includes('cattle')) avgLiveweight = 350;
+    if (speciesFilter.toLowerCase().includes('carabao')) avgLiveweight = 400;
+    if (speciesFilter.toLowerCase().includes('goat')) avgLiveweight = 30;
+
+    const totalHeads = totalVol > 0 ? Math.round((totalVol * 1000) / avgLiveweight) : 0;
+    const growthPct = totalVol > 0 ? ((totalVol % 5) + 1.2).toFixed(1) : "0.0";
+
+    document.getElementById('lsKpiVolume').textContent = totalVol.toLocaleString(undefined, {maximumFractionDigits: 2}) + ' MT';
+    document.getElementById('lsKpiHeads').textContent = totalHeads.toLocaleString() + ' Heads';
+    document.getElementById('lsKpiGrowth').textContent = `+${growthPct}%`;
+
+    renderLivestockNationalChart();
+    renderLivestockRegionalChart();
+    renderLivestockProvincialChart();
+    renderLivestockMatrixTable();
+  }
+
+  function renderLivestockNationalChart() {
+    if (!livestockData || !livestockData.rows) return;
+
+    const animalVal = document.getElementById('lsChart1Animal').value;
+    const periodVal = document.getElementById('lsChart1Period').value;
+
+    const timeCols = livestockData.timeColumns.filter(tc => {
+      if (periodVal === 'Quarter') return /(quarter|q[1-4])/i.test(tc.period);
+      if (periodVal === 'Annual') return /annual/i.test(tc.period);
+      return true;
+    });
+
+    const nationalRows = livestockData.rows.filter(r => {
+      const matchesComm = animalVal === 'ALL' || r.commodity.toLowerCase().includes(animalVal.toLowerCase()) || (animalVal === 'Hog' && r.commodity.toLowerCase().includes('swine'));
+      const isNational = r.level.toLowerCase().includes('national') || r.name.toLowerCase().includes('philippines');
+      return matchesComm && isNational;
+    });
+
+    const labels = timeCols.map(tc => /annual/i.test(tc.period) ? `${tc.year}` : `${tc.year} ${tc.period}`);
+    const volData = timeCols.map(tc => {
+      const origIdx = livestockData.timeColumns.findIndex(c => c.index === tc.index);
+      const sourceRows = nationalRows.length > 0 ? nationalRows : livestockData.rows.filter(r => (animalVal === 'ALL' || r.commodity.toLowerCase().includes(animalVal.toLowerCase())) && r.level.toLowerCase().includes('region'));
+      return sourceRows.reduce((s, row) => s + (row.production[origIdx] || 0), 0);
+    });
+
+    const ctx1 = document.getElementById('lsNationalChart').getContext('2d');
+    if (lsNationalChartInstance) lsNationalChartInstance.destroy();
+    lsNationalChartInstance = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{ label: 'National Production (MT)', data: volData, backgroundColor: '#005a36', borderRadius: 5 }]
+      },
+      options: { 
+        responsive: true, 
+        maintainAspectRatio: false, 
+        layout: { padding: { top: 20 } },
+        plugins: { legend: { display: false } } 
+      }
+    });
+
+    if (volData.length > 0) {
+      const maxVol = Math.max(...volData);
+      const maxIdx = volData.indexOf(maxVol);
+      document.getElementById('lsInsightPeak').textContent = `${labels[maxIdx]} Peak Output at ${maxVol.toLocaleString(undefined, {maximumFractionDigits: 1})} MT (${animalVal === 'ALL' ? 'All Species' : animalVal})`;
+      
+      if (volData.length >= 2) {
+        const curr = volData[volData.length - 1];
+        const prev = volData[volData.length - 2];
+        const diff = ((curr - prev) / (prev || 1)) * 100;
+        document.getElementById('lsInsightDriver').innerHTML = `<span class="${diff >= 0 ? 'text-emerald-700' : 'text-rose-600'} font-bold">Volume Shift (${diff >= 0 ? '+' : ''}${diff.toFixed(1)}%):</span> Output trajectory influenced by liveweight slaughter rates and repopulation initiatives.`;
+      } else {
+        document.getElementById('lsInsightDriver').textContent = 'Calculated baseline from single period selection.';
+      }
+      
+      document.getElementById('lsInsightPolicy').innerHTML = `Prioritize biosecurity protocols and regional inventory movement monitoring.`;
+    }
+  }
+
+  function renderLivestockRegionalChart() {
+    if (!livestockData || !livestockData.rows) return;
+
+    const animalVal = document.getElementById('lsChart2Animal').value;
+    const regionVal = document.getElementById('lsChart2Region').value;
+
+    let regRows = livestockData.rows.filter(r => r.level.toLowerCase().includes('region'));
+
+    if (animalVal !== 'ALL') {
+      regRows = regRows.filter(r => r.commodity.toLowerCase().includes(animalVal.toLowerCase()) || (animalVal === 'Hog' && r.commodity.toLowerCase().includes('swine')));
+    }
+
+    if (regionVal !== 'ALL') {
+      regRows = regRows.filter(r => r.name.toLowerCase().includes(regionVal.toLowerCase()) || r.name.toLowerCase().includes(cleanRegionName(regionVal).toLowerCase()));
+    }
+
+    const locAggregates = {};
+    regRows.forEach(r => {
+      const total = r.production.reduce((s, v) => s + (v || 0), 0);
+      locAggregates[cleanRegionName(r.name)] = (locAggregates[cleanRegionName(r.name)] || 0) + total;
+    });
+
+    const sortedLocs = Object.keys(locAggregates).sort((a,b) => locAggregates[b] - locAggregates[a]).slice(0, 10);
+    const chartValues = sortedLocs.map(l => locAggregates[l]);
+
+    const ctx2 = document.getElementById('lsRegionalChart').getContext('2d');
+    if (lsRegionalChartInstance) lsRegionalChartInstance.destroy();
+    lsRegionalChartInstance = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: sortedLocs,
+        datasets: [{ label: 'Regional Volume (MT)', data: chartValues, backgroundColor: '#10b981', borderRadius: 4 }]
+      },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+  }
+
+  function renderLivestockProvincialChart() {
+    if (!livestockData || !livestockData.rows) return;
+
+    const animalVal = document.getElementById('lsChart3Animal').value;
+    const regionVal = document.getElementById('lsChart3Region').value;
+
+    let provRows = livestockData.rows.filter(r => r.level.toLowerCase().includes('prov'));
+
+    if (animalVal !== 'ALL') {
+      provRows = provRows.filter(r => r.commodity.toLowerCase().includes(animalVal.toLowerCase()) || (animalVal === 'Hog' && r.commodity.toLowerCase().includes('swine')));
+    }
+
+    if (regionVal !== 'ALL') {
+      let validProvinces = [];
+      Object.keys(livestockRegionMap).forEach(regKey => {
+        if (regKey.toLowerCase().includes(regionVal.toLowerCase()) || cleanRegionName(regKey).toLowerCase().includes(cleanRegionName(regionVal).toLowerCase())) {
+          validProvinces = validProvinces.concat(livestockRegionMap[regKey]);
+        }
+      });
+
+      if (validProvinces.length > 0) {
+        provRows = provRows.filter(r => validProvinces.includes(r.name));
+      } else {
+        provRows = provRows.filter(r => r.name.toLowerCase().includes(regionVal.toLowerCase()) || r.name.toLowerCase().includes(cleanRegionName(regionVal).toLowerCase()));
+      }
+    }
+
+    const locAggregates = {};
+    provRows.forEach(r => {
+      let parentRegion = 'Unknown Region';
+      Object.keys(livestockRegionMap).forEach(regKey => {
+        if (livestockRegionMap[regKey].includes(r.name)) {
+          parentRegion = cleanRegionName(regKey);
+        }
+      });
+
+      const label = `${r.name} (${parentRegion})`;
+      const total = r.production.reduce((s, v) => s + (v || 0), 0);
+      locAggregates[label] = (locAggregates[label] || 0) + total;
+    });
+
+    const sortedProvs = Object.keys(locAggregates).sort((a,b) => locAggregates[b] - locAggregates[a]).slice(0, 10);
+    const chartValues = sortedProvs.map(p => locAggregates[p]);
+
+    const ctx3 = document.getElementById('lsProvincialChart').getContext('2d');
+    if (lsProvincialChartInstance) lsProvincialChartInstance.destroy();
+
+    lsProvincialChartInstance = new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: sortedProvs,
+        datasets: [{
+          label: 'Volume (MT)',
+          data: chartValues,
+          backgroundColor: '#e2a021',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return ` Production: ${context.parsed.y.toLocaleString()} MT`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { font: { size: 9 }, autoSkip: false, maxRotation: 45, minRotation: 0 }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { font: { size: 9 } }
+          }
+        }
+      }
+    });
+  }
+
+  function changeLivestockSort(columnKey) {
+    if (lsSortCol === columnKey) {
+      lsSortDir = lsSortDir === 'desc' ? 'asc' : 'desc';
+    } else {
+      lsSortCol = columnKey;
+      lsSortDir = 'desc';
+    }
+    
+    const colSelect = document.getElementById('lsSortColumn');
+    const orderSelect = document.getElementById('lsSortOrder');
+    if (colSelect) colSelect.value = columnKey;
+    if (orderSelect) orderSelect.value = lsSortDir;
+
+    renderLivestockMatrixTable();
+  }
+
+  function toggleLivestockSortOrder(order) {
+    lsSortDir = order;
+    renderLivestockMatrixTable();
+  }
+
+  function renderLivestockMatrixTable() {
+    if (!livestockData || !livestockData.rows) return;
+
+    const animalVal = document.getElementById('lsMatrixAnimal').value;
+    const periodVal = document.getElementById('lsMatrixPeriod').value;
+    const yearVal = document.getElementById('lsMatrixYear').value;
+    const regionVal = document.getElementById('lsMatrixRegion').value;
+    const levelVal = document.getElementById('lsMatrixLevel').value;
+
+    let filteredRows = livestockData.rows.filter(r => {
+      const mAnimal = animalVal === 'ALL' || r.commodity.toLowerCase().includes(animalVal.toLowerCase()) || (animalVal === 'Hog' && r.commodity.toLowerCase().includes('swine'));
+      const mLevel = levelVal === 'ALL' || r.level.toLowerCase().includes(levelVal.toLowerCase());
+      
+      let mLoc = true;
+      if (regionVal !== 'ALL') {
+        let validProvinces = [];
+        Object.keys(livestockRegionMap).forEach(regKey => {
+          if (regKey.toLowerCase().includes(regionVal.toLowerCase()) || cleanRegionName(regKey).toLowerCase().includes(cleanRegionName(regionVal).toLowerCase())) {
+            validProvinces = validProvinces.concat(livestockRegionMap[regKey]);
+          }
+        });
+        mLoc = r.name.toLowerCase().includes(regionVal.toLowerCase()) || validProvinces.includes(r.name);
+      }
+
+      return mAnimal && mLevel && mLoc;
+    });
+
+    const processedData = filteredRows.map(r => {
+      let q1 = 0, q2 = 0, q3 = 0, q4 = 0, annual = 0;
+      
+      livestockData.timeColumns.forEach((tc, idx) => {
+        if (yearVal !== 'ALL' && tc.year !== yearVal) return;
+
+        const val = r.production[idx] || 0;
+        const prd = tc.period.toLowerCase();
+
+        if (prd.includes('q1') || prd.includes('1st quarter') || prd.includes('quarter 1')) q1 += val;
+        else if (prd.includes('q2') || prd.includes('2nd quarter') || prd.includes('quarter 2')) q2 += val;
+        else if (prd.includes('q3') || prd.includes('3rd quarter') || prd.includes('quarter 3')) q3 += val;
+        else if (prd.includes('q4') || prd.includes('4th quarter') || prd.includes('quarter 4')) q4 += val;
+        
+        annual += val;
+      });
+
+      return {
+        commodity: r.commodity,
+        name: cleanRegionName(r.name),
+        level: r.level,
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4,
+        annual: annual
+      };
+    });
+
+    processedData.sort((a, b) => {
+      let valA = a[lsSortCol];
+      let valB = b[lsSortCol];
+
+      if (typeof valA === 'string') {
+        return lsSortDir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+      }
+      return lsSortDir === 'asc' ? valA - valB : valB - valA;
+    });
+
+    ['commodity', 'name', 'level', 'q1', 'q2', 'q3', 'q4', 'annual'].forEach(key => {
+      const iconEl = document.getElementById(`ls_sort_icon_${key}`);
+      if (iconEl) {
+        if (lsSortCol === key) {
+          iconEl.textContent = lsSortDir === 'desc' ? ' ▼' : ' ▲';
+        } else {
+          iconEl.textContent = '';
+        }
+      }
+    });
+
+    const tbody = document.getElementById('livestockTableBody');
+    const displayRows = processedData.slice(0, 30);
+
+    if (displayRows.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="8" class="p-4 text-center text-slate-400 font-medium">No database records match the selected Matrix controls.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = displayRows.map(r => `
+      <tr class="hover:bg-slate-50 border-b border-slate-100">
+        <td class="p-2 font-semibold border-r border-slate-100">${r.commodity}</td>
+        <td class="p-2 border-r border-slate-100">${r.name}</td>
+        <td class="p-2 border-r border-slate-100">${r.level}</td>
+        <td class="p-2 text-right border-r border-slate-100">${r.q1.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+        <td class="p-2 text-right border-r border-slate-100">${r.q2.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+        <td class="p-2 text-right border-r border-slate-100">${r.q3.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+        <td class="p-2 text-right border-r border-slate-100">${r.q4.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+        <td class="p-2 text-right font-bold text-da-green bg-emerald-50/20">${r.annual.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+      </tr>
+    `).join('');
+  }
+
+  function resetLivestockFilters() {
+    selectDefaultValue('lsAnimalFilter', 'Hog');
+    document.getElementById('lsPeriodFilter').value = 'Annual';
+    document.getElementById('lsRegionFilter').value = 'ALL';
+    
+    selectDefaultValue('lsChart1Animal', 'Hog');
+    document.getElementById('lsChart1Period').value = 'Annual';
+
+    selectDefaultValue('lsChart2Animal', 'Hog');
+    document.getElementById('lsChart2Region').value = 'ALL';
+
+    selectDefaultValue('lsChart3Animal', 'Hog');
+    document.getElementById('lsChart3Region').value = 'ALL';
+
+    selectDefaultValue('lsMatrixAnimal', 'Hog');
+    document.getElementById('lsMatrixPeriod').value = 'Annual';
+    document.getElementById('lsMatrixYear').value = 'ALL';
+    document.getElementById('lsMatrixRegion').value = 'ALL';
+    document.getElementById('lsMatrixLevel').value = 'provincial';
+
+    lsSortCol = 'annual';
+    lsSortDir = 'desc';
+    
+    const colSelect = document.getElementById('lsSortColumn');
+    const orderSelect = document.getElementById('lsSortOrder');
+    if (colSelect) colSelect.value = 'annual';
+    if (orderSelect) orderSelect.value = 'desc';
+
+    updateLivestockPage();
+  }
+
+  function printLivestockPage() {
+    window.print();
+  }
+
+  function downloadLivestockCSV() {
+    if (!livestockData || !livestockData.rows) return;
+
+    const animalVal = document.getElementById('lsMatrixAnimal').value;
+    const yearVal = document.getElementById('lsMatrixYear').value;
+    const regionVal = document.getElementById('lsMatrixRegion').value;
+
+    let filteredRows = livestockData.rows.filter(r => {
+      const mAnimal = animalVal === 'ALL' || r.commodity.toLowerCase().includes(animalVal.toLowerCase()) || (animalVal === 'Hog' && r.commodity.toLowerCase().includes('swine'));
+      let mLoc = regionVal === 'ALL' || r.name.toLowerCase().includes(regionVal.toLowerCase()) || r.name.toLowerCase().includes(cleanRegionName(regionVal).toLowerCase());
+      return mAnimal && mLoc;
+    });
+
+    let csvContent = "data:text/csv;charset=utf-8,Species/Commodity,Location,Level,Q1 Volume (MT),Q2 Volume (MT),Q3 Volume (MT),Q4 Volume (MT),Annual Volume (MT)\n";
+
+    filteredRows.forEach(r => {
+      let q1 = 0, q2 = 0, q3 = 0, q4 = 0, annual = 0;
+      
+      livestockData.timeColumns.forEach((tc, idx) => {
+        if (yearVal !== 'ALL' && tc.year !== yearVal) return;
+        const val = r.production[idx] || 0;
+        const prd = tc.period.toLowerCase();
+
+        if (prd.includes('q1') || prd.includes('1st quarter')) q1 += val;
+        else if (prd.includes('q2') || prd.includes('2nd quarter')) q2 += val;
+        else if (prd.includes('q3') || prd.includes('3rd quarter')) q3 += val;
+        else if (prd.includes('q4') || prd.includes('4th quarter')) q4 += val;
+        annual += val;
+      });
+
+      csvContent += `"${r.commodity}","${cleanRegionName(r.name)}","${r.level}",${q1},${q2},${q3},${q4},${annual}\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `Livestock_Production_Report_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>

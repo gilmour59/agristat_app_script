@@ -1,0 +1,432 @@
+<!-- PAGE 1: PALAY & CORN ANALYTICS WORKSPACE -->
+<div id="palayCornPage" class="space-y-5">
+  
+  <!-- Palay & Corn Filter Toolbar -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+      <div class="flex items-center gap-2 text-da-green font-bold text-xs">
+        <i data-lucide="sprout" class="w-4 h-4 text-da-gold"></i>
+        <span>Palay & Corn: Executive Summary Controls</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="printPalayPage()" class="px-2.5 py-1 rounded-lg text-[11px] font-bold text-da-green bg-emerald-50 hover:bg-da-green hover:text-white transition-all flex items-center gap-1.5 border border-emerald-200">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i> Print View
+        </button>
+        <button onclick="downloadPalayCSV()" class="px-2.5 py-1 rounded-lg text-[11px] font-bold text-slate-700 bg-slate-100 hover:bg-slate-800 hover:text-white transition-all flex items-center gap-1.5 border border-slate-200">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i> Export CSV
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Commodity</label>
+        <select id="commodityFilter" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL">All Commodities</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Time Breakdown</label>
+        <select id="periodTypeFilter" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium focus:ring-1 focus:ring-da-green outline-none">
+          <option value="Quarter">Quarterly</option>
+          <option value="Semester">Semestral</option>
+          <option value="Annual" selected>Annual</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Year Multi-Select</label>
+        <select id="yearFilter" multiple class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 text-xs focus:ring-1 focus:ring-da-green outline-none">
+          <option value="ALL" selected>All Years</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- PALAY & CORN KPI CARDS -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between border-l-4 border-l-da-green">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Production</p>
+        <h3 id="kpiProduction" class="text-xl font-extrabold text-da-green mt-0.5 tracking-tight">0.00 MT</h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Filtered Aggregate</p>
+      </div>
+      <div class="bg-da-green/10 p-2.5 rounded-xl text-da-green"><i data-lucide="package" class="w-5 h-5"></i></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between border-l-4 border-l-emerald-600">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Area Harvested</p>
+        <h3 id="kpiArea" class="text-xl font-extrabold text-emerald-700 mt-0.5 tracking-tight">0.00 Ha</h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Filtered Aggregate</p>
+      </div>
+      <div class="bg-emerald-100 p-2.5 rounded-xl text-emerald-700"><i data-lucide="map" class="w-5 h-5"></i></div>
+    </div>
+
+    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between border-l-4 border-l-amber-600">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Overall Yield</p>
+        <h3 id="kpiYield" class="text-xl font-extrabold text-amber-700 mt-0.5 tracking-tight">0.00 <span class="text-xs font-bold text-da-gold">MT/Ha</span></h3>
+        <p class="text-[10px] text-slate-500 mt-0.5">Weighted Average Efficiency</p>
+      </div>
+      <div class="bg-amber-100 p-2.5 rounded-xl text-amber-700"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
+    </div>
+  </div>
+
+  <!-- CHART 1: NATIONAL TREND ANALYSIS -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
+      <div class="flex items-center gap-2">
+        <i data-lucide="line-chart" class="w-4 h-4 text-da-green"></i>
+        <h3 class="text-xs font-bold text-slate-800">Chart 1: National Production & Yield Dynamics</h3>
+      </div>
+      
+      <div class="flex items-center gap-2 flex-wrap">
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="countryCommodityFilter" class="text-[9px] font-bold text-slate-500 uppercase">Commodity:</label>
+          <select id="countryCommodityFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Commodities</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="countryPeriodFilter" class="text-[9px] font-bold text-slate-500 uppercase">Period:</label>
+          <select id="countryPeriodFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="Quarter">Quarterly</option>
+            <option value="Semester">Semestral</option>
+            <option value="Annual" selected>Annual</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
+      <div class="lg:col-span-2 relative h-64 w-full">
+        <canvas id="productionChart"></canvas>
+      </div>
+
+      <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex flex-col justify-between space-y-2">
+        <div>
+          <span class="text-[9px] font-bold text-da-green uppercase tracking-wider bg-emerald-100 px-2 py-0.5 rounded-md">
+            Strategic Diagnostics
+          </span>
+          <h4 class="text-xs font-bold text-slate-800 mt-2">National Yield Analytics</h4>
+          <p id="insightPeak" class="text-[11px] text-slate-600 mt-1">Analyzing peak efficiency period...</p>
+        </div>
+
+        <div class="space-y-1.5 border-t border-slate-200 pt-2">
+          <div class="text-[11px]">
+            <span class="font-bold text-slate-700">Yield Driver:</span>
+            <p id="insightYieldDriver" class="text-slate-600 text-[10.5px]">Calculating yield ratios...</p>
+          </div>
+          <div class="text-[11px]">
+            <span class="font-bold text-slate-700">Recommended Action:</span>
+            <p id="insightPolicy" class="text-slate-600 text-[10.5px]">Policy recommendations based on multi-year yield data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGIONAL TOP PERFORMERS CHART -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+      <div class="flex items-center gap-2">
+        <i data-lucide="bar-chart-2" class="w-4 h-4 text-emerald-600"></i>
+        <h3 class="text-xs font-bold text-slate-800">Chart 2: Top Regional Performers (Production, Area & Yield)</h3>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="package" class="w-3.5 h-3.5 text-da-green"></i> Production (MT)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="regProductionChart"></canvas></div>
+      </div>
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="map" class="w-3.5 h-3.5 text-emerald-600"></i> Area Harvested (Ha)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="regAreaChart"></canvas></div>
+      </div>
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="trending-up" class="w-3.5 h-3.5 text-da-gold"></i> Yield (MT/Ha)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="regYieldChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHART 3: TOP PROVINCIAL BREAKDOWN (IMPROVED VERTICAL COLUMN LAYOUT) -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
+      <div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="building-2" class="w-4 h-4 text-da-green"></i>
+          <h3 class="text-xs font-bold text-slate-800">Chart 3: Top Provincial Breakdown</h3>
+        </div>
+        <p class="text-[10.5px] text-slate-500 mt-0.5">Vertical comparison of top 10 provinces ranked by Production, Harvest Area, and Productivity Rate.</p>
+      </div>
+
+      <!-- Chart 3 Filters -->
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="provCommodityFilter" class="text-[9px] font-bold text-slate-500 uppercase">Comm:</label>
+          <select id="provCommodityFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Commodities</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="provPeriodFilter" class="text-[9px] font-bold text-slate-500 uppercase">Period:</label>
+          <select id="provPeriodFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="Quarter">Quarterly</option>
+            <option value="Semester">Semestral</option>
+            <option value="Annual" selected>Annual</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="provYearFilter" class="text-[9px] font-bold text-slate-500 uppercase">Year:</label>
+          <select id="provYearFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Years</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="provRegionFilter" class="text-[9px] font-bold text-slate-500 uppercase">Region:</label>
+          <select id="provRegionFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer max-w-[100px] truncate">
+            <option value="ALL">All Regions</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="provProvinceFilter" class="text-[9px] font-bold text-slate-500 uppercase">Prov:</label>
+          <select id="provProvinceFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer max-w-[100px] truncate">
+            <option value="ALL">All Provs</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Structured Grid with Top Border Indicator Accents -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      
+      <!-- Top Production Card -->
+      <div class="bg-slate-50/70 p-3 rounded-xl border border-slate-200 border-t-4 border-t-da-green space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+          <h4 class="text-[11px] font-bold text-slate-800 flex items-center gap-1.5">
+            <i data-lucide="package" class="w-3.5 h-3.5 text-da-green"></i> Top Production
+          </h4>
+          <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 bg-emerald-100 text-da-green rounded">Metric Tons</span>
+        </div>
+        <div class="relative h-64 w-full">
+          <canvas id="provProductionChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Top Area Harvested Card -->
+      <div class="bg-slate-50/70 p-3 rounded-xl border border-slate-200 border-t-4 border-t-emerald-600 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+          <h4 class="text-[11px] font-bold text-slate-800 flex items-center gap-1.5">
+            <i data-lucide="map" class="w-3.5 h-3.5 text-emerald-600"></i> Top Area Harvested
+          </h4>
+          <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded">Hectares</span>
+        </div>
+        <div class="relative h-64 w-full">
+          <canvas id="provAreaChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Top Yield Efficiency Card -->
+      <div class="bg-slate-50/70 p-3 rounded-xl border border-slate-200 border-t-4 border-t-amber-500 space-y-2">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-1.5">
+          <h4 class="text-[11px] font-bold text-slate-800 flex items-center gap-1.5">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5 text-amber-600"></i> Highest Yield Efficiency
+          </h4>
+          <span class="text-[9px] font-extrabold uppercase px-1.5 py-0.5 bg-amber-100 text-amber-800 rounded">MT / Ha</span>
+        </div>
+        <div class="relative h-64 w-full">
+          <canvas id="provYieldChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ISOLATED ANALYTICS WORKSPACE -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
+      <div class="flex items-center gap-2">
+        <i data-lucide="filter" class="w-4 h-4 text-da-green"></i>
+        <h3 class="text-xs font-bold text-slate-800">Chart 4: Isolated Analytics Workspace</h3>
+      </div>
+
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="isoCommodityFilter" class="text-[9px] font-bold text-slate-500 uppercase">Comm:</label>
+          <select id="isoCommodityFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Commodities</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="isoPeriodFilter" class="text-[9px] font-bold text-slate-500 uppercase">Period:</label>
+          <select id="isoPeriodFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="Quarter">Quarterly</option>
+            <option value="Semester">Semestral</option>
+            <option value="Annual" selected>Annual</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="isoYearFilter" class="text-[9px] font-bold text-slate-500 uppercase">Year:</label>
+          <select id="isoYearFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Years</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="isoRegionFilter" class="text-[9px] font-bold text-slate-500 uppercase">Region:</label>
+          <select id="isoRegionFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer max-w-[100px] truncate">
+            <option value="ALL">All Regions</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="isoLevelFilter" class="text-[9px] font-bold text-slate-500 uppercase">Level:</label>
+          <select id="isoLevelFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Levels</option>
+            <option value="regional" selected>Regional</option>
+            <option value="provincial">Provincial</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
+        <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Isolated Production</p>
+        <p id="isoKpiProd" class="text-sm font-extrabold text-da-green">0.00 MT</p>
+      </div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
+        <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Isolated Area</p>
+        <p id="isoKpiArea" class="text-sm font-extrabold text-emerald-700">0.00 Ha</p>
+      </div>
+      <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
+        <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Isolated Yield</p>
+        <p id="isoKpiYield" class="text-sm font-extrabold text-amber-700">0.00 <span class="text-xs font-bold text-da-gold">MT/Ha</span></p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="package" class="w-3.5 h-3.5 text-da-green"></i> Production (MT)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="isoProdChart"></canvas></div>
+      </div>
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="map" class="w-3.5 h-3.5 text-emerald-600"></i> Area Harvested (Ha)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="isoAreaChart"></canvas></div>
+      </div>
+      <div class="space-y-1">
+        <h4 class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
+          <i data-lucide="trending-up" class="w-3.5 h-3.5 text-da-gold"></i> Yield (MT/Ha)
+        </h4>
+        <div class="relative h-56 w-full"><canvas id="isoYieldChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PALAY & CORN MATRIX DATA TABLE WITH SORTING & EXPORT -->
+  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+    <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
+      <div class="flex items-center gap-2">
+        <i data-lucide="table" class="w-4 h-4 text-amber-600"></i>
+        <h2 class="text-xs font-bold text-slate-800">Production, Area Harvested & Yield Matrix</h2>
+      </div>
+
+      <!-- Matrix Toolbar & Sorting Filters -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="matrixCommodityFilter" class="text-[9px] font-bold text-slate-500 uppercase">Comm:</label>
+          <select id="matrixCommodityFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Commodities</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="matrixPeriodFilter" class="text-[9px] font-bold text-slate-500 uppercase">Period:</label>
+          <select id="matrixPeriodFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="Quarter">Quarterly</option>
+            <option value="Semester">Semestral</option>
+            <option value="Annual" selected>Annual</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="matrixYearFilter" class="text-[9px] font-bold text-slate-500 uppercase">Year:</label>
+          <select id="matrixYearFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Years</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="matrixRegionFilter" class="text-[9px] font-bold text-slate-500 uppercase">Region:</label>
+          <select id="matrixRegionFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer max-w-[100px] truncate">
+            <option value="ALL">All Regions</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="matrixLevelFilter" class="text-[9px] font-bold text-slate-500 uppercase">Level:</label>
+          <select id="matrixLevelFilter" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="ALL">All Levels</option>
+            <option value="regional">Regional</option>
+            <option value="provincial" selected>Provincial</option>
+          </select>
+        </div>
+
+        <!-- Matrix Dedicated Sorting Dropdowns -->
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <i data-lucide="arrow-up-down" class="w-3 h-3 text-slate-400"></i>
+          <label for="plSortColumn" class="text-[9px] font-bold text-slate-500 uppercase">Sort By:</label>
+          <select id="plSortColumn" onchange="changePalaySort(this.value)" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="production" selected>Production (MT)</option>
+            <option value="area">Area Harvested (Ha)</option>
+            <option value="yield">Yield (MT/Ha)</option>
+            <option value="commodity">Commodity Name</option>
+            <option value="name">Location Name</option>
+            <option value="level">Level</option>
+          </select>
+        </div>
+
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200">
+          <label for="plSortOrder" class="text-[9px] font-bold text-slate-500 uppercase">Order:</label>
+          <select id="plSortOrder" onchange="togglePalaySortOrder(this.value)" class="bg-transparent text-[10px] font-bold text-da-green outline-none cursor-pointer">
+            <option value="desc" selected>Highest to Lowest (↓)</option>
+            <option value="asc">Lowest to Highest (↑)</option>
+          </select>
+        </div>
+
+        <!-- Print & Export CSV Actions -->
+        <button onclick="printPalayPage()" class="px-2 py-1 rounded-lg text-[10px] font-bold text-da-green bg-emerald-50 hover:bg-da-green hover:text-white transition-all flex items-center gap-1 border border-emerald-200">
+          <i data-lucide="printer" class="w-3 h-3"></i> Print
+        </button>
+        <button onclick="downloadPalayCSV()" class="px-2 py-1 rounded-lg text-[10px] font-bold text-slate-700 bg-slate-100 hover:bg-slate-800 hover:text-white transition-all flex items-center gap-1 border border-slate-200">
+          <i data-lucide="download" class="w-3 h-3"></i> Export CSV
+        </button>
+      </div>
+    </div>
+
+    <!-- Table Container with Dynamic Sort Headers -->
+    <div class="overflow-x-auto rounded-xl border border-slate-100">
+      <table id="palayMatrixTable" class="w-full text-left border-collapse text-[11px]">
+        <thead>
+          <tr id="tableHeaderYear" class="bg-da-green text-white font-bold text-center">
+            <!-- Dynamic Year Span Headers Inserted Here -->
+          </tr>
+          <tr id="tableHeaderPeriod" class="bg-emerald-900 text-white font-bold select-none cursor-pointer">
+            <!-- Dynamic Period & Interactive Click-to-Sort Column Headers Inserted Here -->
+          </tr>
+        </thead>
+        <tbody id="tableBody" class="divide-y divide-slate-100 text-slate-700 bg-white">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

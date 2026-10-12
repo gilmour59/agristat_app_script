@@ -1,0 +1,775 @@
+<script>
+  /* ==========================================================================
+     PALAY & CORN WORKSPACE LOGIC
+     ========================================================================== */
+
+  let plSortCol = 'production';
+  let plSortDir = 'desc';
+
+  function renderPalayDashboard(data) {
+    appData = data;
+    buildRegionProvinceMap();
+    populateStaticFilters();
+    
+    selectDefaultValue('commodityFilter', 'Palay');
+    selectDefaultValue('countryCommodityFilter', 'Palay');
+    selectDefaultValue('provCommodityFilter', 'Palay');
+    selectDefaultValue('isoCommodityFilter', 'Palay');
+    selectDefaultValue('matrixCommodityFilter', 'Palay');
+
+    selectDefaultValue('periodTypeFilter', 'Annual');
+    selectDefaultValue('countryPeriodFilter', 'Annual');
+    selectDefaultValue('provPeriodFilter', 'Annual');
+    selectDefaultValue('isoPeriodFilter', 'Annual');
+    selectDefaultValue('matrixPeriodFilter', 'Annual');
+
+    setupEventListeners();
+    updateCountryChart();
+    updateProvincialCharts();
+    updateIsolatedWorkspace();
+    updateMatrixTable();
+    updateDashboard();
+  }
+
+  function buildRegionProvinceMap() {
+    regionProvinceMap = {};
+    let currentRegion = '';
+
+    appData.rows.forEach(r => {
+      if (r.level.toLowerCase().includes('regional') || r.level.toLowerCase().includes('region')) {
+        currentRegion = r.name;
+        if (!regionProvinceMap[currentRegion]) regionProvinceMap[currentRegion] = [];
+      } else if ((r.level.toLowerCase().includes('provincial') || r.level.toLowerCase().includes('prov')) && currentRegion) {
+        if (!regionProvinceMap[currentRegion].includes(r.name)) {
+          regionProvinceMap[currentRegion].push(r.name);
+        }
+      }
+    });
+  }
+
+  function populateStaticFilters() {
+    const commodities = [...new Set(appData.rows.map(r => r.commodity))].filter(Boolean);
+    const years = [...new Set(appData.timeColumns.map(tc => tc.year))].filter(Boolean);
+    const regions = Object.keys(regionProvinceMap);
+
+    addOptions('commodityFilter', commodities);
+    addOptions('countryCommodityFilter', commodities);
+    addOptions('provCommodityFilter', commodities);
+    addOptions('isoCommodityFilter', commodities);
+    addOptions('matrixCommodityFilter', commodities);
+
+    addOptions('yearFilter', years, false);
+    addOptions('provYearFilter', years);
+    addOptions('isoYearFilter', years);
+    addOptions('matrixYearFilter', years);
+
+    addOptions('provRegionFilter', regions);
+    addOptions('isoRegionFilter', regions);
+    addOptions('matrixRegionFilter', regions);
+    
+    updateProvincialProvinceDropdown();
+  }
+
+  function updateProvincialProvinceDropdown() {
+    const selectedRegion = document.getElementById('provRegionFilter').value;
+    const provinceSelect = document.getElementById('provProvinceFilter');
+    if (!provinceSelect) return;
+    provinceSelect.innerHTML = '<option value="ALL">All Provs</option>';
+
+    let provinces = [];
+    if (selectedRegion !== 'ALL' && regionProvinceMap[selectedRegion]) {
+      provinces = regionProvinceMap[selectedRegion];
+    } else {
+      provinces = [...new Set(appData.rows.filter(r => r.level.toLowerCase().includes('prov')).map(r => r.name))];
+    }
+
+    provinces.filter(Boolean).sort().forEach(val => {
+      const opt = document.createElement('option');
+      opt.value = val;
+      opt.textContent = val;
+      provinceSelect.appendChild(opt);
+    });
+  }
+
+  function getSelectedYears() {
+    const yearSelect = document.getElementById('yearFilter');
+    if (!yearSelect) return ['ALL'];
+    const selected = Array.from(yearSelect.selectedOptions).map(opt => opt.value);
+    return selected.includes('ALL') ? ['ALL'] : selected;
+  }
+
+  function setupEventListeners() {
+    ['commodityFilter', 'periodTypeFilter', 'yearFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = updateDashboard;
+    });
+
+    const ccFilter = document.getElementById('countryCommodityFilter');
+    const cpFilter = document.getElementById('countryPeriodFilter');
+    if (ccFilter) ccFilter.onchange = updateCountryChart;
+    if (cpFilter) cpFilter.onchange = updateCountryChart;
+
+    const prFilter = document.getElementById('provRegionFilter');
+    if (prFilter) {
+      prFilter.onchange = () => {
+        updateProvincialProvinceDropdown();
+        updateProvincialCharts();
+      };
+    }
+
+    ['provCommodityFilter', 'provPeriodFilter', 'provYearFilter', 'provProvinceFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = updateProvincialCharts;
+    });
+
+    ['isoCommodityFilter', 'isoPeriodFilter', 'isoYearFilter', 'isoRegionFilter', 'isoLevelFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = updateIsolatedWorkspace;
+    });
+
+    ['matrixCommodityFilter', 'matrixPeriodFilter', 'matrixYearFilter', 'matrixRegionFilter', 'matrixLevelFilter'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.onchange = updateMatrixTable;
+    });
+  }
+
+  function updateIsolatedWorkspace() {
+    const commVal = document.getElementById('isoCommodityFilter').value;
+    const periodTypeVal = document.getElementById('isoPeriodFilter').value;
+    const yearVal = document.getElementById('isoYearFilter').value;
+    const regionVal = document.getElementById('isoRegionFilter').value;
+    const levelVal = document.getElementById('isoLevelFilter').value;
+
+    let targetRows = appData.rows.filter(r => {
+      const mComm = commVal === 'ALL' || r.commodity === commVal;
+      const mLevel = levelVal === 'ALL' || r.level.toLowerCase().includes(levelVal.toLowerCase());
+      return mComm && mLevel;
+    });
+
+    if (regionVal !== 'ALL') {
+      const validProvinces = regionProvinceMap[regionVal] || [];
+      targetRows = targetRows.filter(r => r.name === regionVal || validProvinces.includes(r.name));
+    }
+
+    const targetTimeCols = appData.timeColumns.filter(tc => {
+      const mYear = yearVal === 'ALL' || tc.year === yearVal;
+      let mPeriod = true;
+      if (periodTypeVal === 'Quarter') mPeriod = /(quarter|q[1-4])/i.test(tc.period);
+      if (periodTypeVal === 'Semester') mPeriod = tc.period.toLowerCase().startsWith('semester');
+      if (periodTypeVal === 'Annual') mPeriod = tc.period.toLowerCase().startsWith('annual');
+      return mYear && mPeriod;
+    });
+
+    const rowAggregates = targetRows.map(r => {
+      let sumP = 0, sumA = 0;
+      targetTimeCols.forEach(tc => {
+        const origIdx = appData.timeColumns.findIndex(c => c.index === tc.index);
+        sumP += (r.production[origIdx] || 0);
+        sumA += (r.area[origIdx] || 0);
+      });
+      const yVal = sumA > 0 ? (sumP / sumA) : 0;
+      return { name: cleanRegionName(r.name), production: sumP, area: sumA, yield: yVal };
+    });
+
+    let totalP = rowAggregates.reduce((s, r) => s + r.production, 0);
+    let totalA = rowAggregates.reduce((s, r) => s + r.area, 0);
+    let avgY = totalA > 0 ? (totalP / totalA) : 0;
+
+    document.getElementById('isoKpiProd').textContent = totalP.toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' MT';
+    document.getElementById('isoKpiArea').textContent = totalA.toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' Ha';
+    document.getElementById('isoKpiYield').innerHTML = avgY.toFixed(2) + ' <span class="text-xs font-bold text-da-gold">MT/Ha</span>';
+
+    const topProd = [...rowAggregates].sort((a, b) => b.production - a.production).slice(0, 10);
+    const topArea = [...rowAggregates].filter(r => r.area > 0).sort((a, b) => b.area - a.area).slice(0, 10);
+    const topYield = [...rowAggregates].filter(r => r.area > 0).sort((a, b) => b.yield - a.yield).slice(0, 10);
+
+    const ctx1 = document.getElementById('isoProdChart').getContext('2d');
+    if (isoProdChartInstance) isoProdChartInstance.destroy();
+    isoProdChartInstance = new Chart(ctx1, {
+      type: 'bar',
+      data: { labels: topProd.map(r => r.name), datasets: [{ label: 'Production (MT)', data: topProd.map(r => r.production), backgroundColor: '#005a36', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+
+    const ctx2 = document.getElementById('isoAreaChart').getContext('2d');
+    if (isoAreaChartInstance) isoAreaChartInstance.destroy();
+    isoAreaChartInstance = new Chart(ctx2, {
+      type: 'bar',
+      data: { labels: topArea.map(r => r.name), datasets: [{ label: 'Area Harvested (Ha)', data: topArea.map(r => r.area), backgroundColor: '#16a34a', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+
+    const ctx3 = document.getElementById('isoYieldChart').getContext('2d');
+    if (isoYieldChartInstance) isoYieldChartInstance.destroy();
+    isoYieldChartInstance = new Chart(ctx3, {
+      type: 'bar',
+      data: { labels: topYield.map(r => r.name), datasets: [{ label: 'Yield (MT/Ha)', data: topYield.map(r => r.yield), backgroundColor: '#e2a021', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+  }
+
+  function updateCountryChart() {
+    const commVal = document.getElementById('countryCommodityFilter').value;
+    const periodTypeVal = document.getElementById('countryPeriodFilter').value;
+
+    const nationalRows = appData.rows.filter(row => {
+      const mComm = commVal === 'ALL' || row.commodity === commVal;
+      const mCountry = row.level.toLowerCase().includes('national') || row.level.toLowerCase().includes('country') || row.name.toLowerCase().includes('philippines');
+      return mComm && mCountry;
+    });
+
+    const targetTimeCols = appData.timeColumns.filter((tc) => {
+      if (periodTypeVal === 'Quarter') return /(quarter|q[1-4])/i.test(tc.period);
+      if (periodTypeVal === 'Semester') return tc.period.toLowerCase().startsWith('semester');
+      if (periodTypeVal === 'Annual') return tc.period.toLowerCase().startsWith('annual');
+      return true;
+    });
+
+    const prodByCol = [], areaByCol = [], yieldByCol = [];
+
+    targetTimeCols.forEach(tc => {
+      const origIndex = appData.timeColumns.findIndex(c => c.index === tc.index);
+      const targetRows = nationalRows.length > 0 ? nationalRows : appData.rows.filter(r => (commVal === 'ALL' || r.commodity === commVal) && r.level.toLowerCase().includes('region'));
+      
+      const sumP = targetRows.reduce((s, row) => s + (row.production[origIndex] || 0), 0);
+      const sumA = targetRows.reduce((s, row) => s + (row.area[origIndex] || 0), 0);
+      const yVal = sumA > 0 ? (sumP / sumA) : 0;
+
+      prodByCol.push(sumP);
+      areaByCol.push(sumA);
+      yieldByCol.push(yVal);
+    });
+
+    renderTrendChart(targetTimeCols, prodByCol, yieldByCol);
+    renderProfessionalAnalysis(targetTimeCols, prodByCol, areaByCol, yieldByCol);
+  }
+
+  /* ==========================================================================
+     PROVINCIAL CHARTS (CHART 3 - ENHANCED VERTICAL COLUMN LAYOUT)
+     ========================================================================== */
+  function updateProvincialCharts() {
+    const commVal = document.getElementById('provCommodityFilter').value;
+    const periodTypeVal = document.getElementById('provPeriodFilter').value;
+    const yearVal = document.getElementById('provYearFilter').value;
+    const regionVal = document.getElementById('provRegionFilter').value;
+    const provinceVal = document.getElementById('provProvinceFilter').value;
+
+    let relevantRows = appData.rows.filter(r => (commVal === 'ALL' || r.commodity === commVal) && r.level.toLowerCase().includes('provinc'));
+
+    if (provinceVal !== 'ALL') {
+      relevantRows = relevantRows.filter(r => r.name === provinceVal);
+    } else if (regionVal !== 'ALL' && regionProvinceMap[regionVal]) {
+      const activeProvinces = regionProvinceMap[regionVal];
+      relevantRows = relevantRows.filter(r => activeProvinces.includes(r.name));
+    }
+
+    const targetTimeCols = appData.timeColumns.filter(tc => {
+      const mYear = yearVal === 'ALL' || tc.year === yearVal;
+      let mPeriod = true;
+      if (periodTypeVal === 'Quarter') mPeriod = /(quarter|q[1-4])/i.test(tc.period);
+      if (periodTypeVal === 'Semester') mPeriod = tc.period.toLowerCase().startsWith('semester');
+      if (periodTypeVal === 'Annual') mPeriod = tc.period.toLowerCase().startsWith('annual');
+      return mYear && mPeriod;
+    });
+
+    // Helper: Find parent region for display
+    const getParentRegionName = (provName) => {
+      for (const reg in regionProvinceMap) {
+        if (regionProvinceMap[reg].includes(provName)) {
+          return cleanRegionName(reg);
+        }
+      }
+      return '';
+    };
+
+    const rowAggregates = relevantRows.map(r => {
+      let sumP = 0, sumA = 0;
+      targetTimeCols.forEach(tc => {
+        const origIdx = appData.timeColumns.findIndex(c => c.index === tc.index);
+        sumP += (r.production[origIdx] || 0);
+        sumA += (r.area[origIdx] || 0);
+      });
+      const yVal = sumA > 0 ? (sumP / sumA) : 0;
+      const parentReg = getParentRegionName(r.name);
+      const formattedLabel = parentReg ? `${r.name} (${parentReg})` : r.name;
+
+      return { name: r.name, fullLabel: formattedLabel, level: r.level, production: sumP, area: sumA, yield: yVal };
+    });
+
+    const topProd = [...rowAggregates].sort((a, b) => b.production - a.production).slice(0, 10);
+    const topArea = [...rowAggregates].filter(p => p.area > 0).sort((a, b) => b.area - a.area).slice(0, 10);
+    const topYield = [...rowAggregates].filter(p => p.area > 0).sort((a, b) => b.yield - a.yield).slice(0, 10);
+
+    const commonBarOptions = {
+      indexAxis: 'x', // Vertical Columns Layout
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            font: { size: 9 },
+            autoSkip: false,
+            maxRotation: 45,
+            minRotation: 30
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: '#f1f5f9' },
+          ticks: { font: { size: 9 } }
+        }
+      }
+    };
+
+    // 1. Provincial Production (Vertical)
+    const ctxP1 = document.getElementById('provProductionChart').getContext('2d');
+    if (provProdChartInstance) provProdChartInstance.destroy();
+    provProdChartInstance = new Chart(ctxP1, {
+      type: 'bar',
+      data: {
+        labels: topProd.map(r => r.fullLabel),
+        datasets: [{
+          label: 'Production (MT)',
+          data: topProd.map(r => r.production),
+          backgroundColor: '#005a36',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        ...commonBarOptions,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` Production: ${ctx.parsed.y.toLocaleString(undefined, {maximumFractionDigits: 1})} MT`
+            }
+          }
+        }
+      }
+    });
+
+    // 2. Provincial Area Harvested (Vertical)
+    const ctxP2 = document.getElementById('provAreaChart').getContext('2d');
+    if (provAreaChartInstance) provAreaChartInstance.destroy();
+    provAreaChartInstance = new Chart(ctxP2, {
+      type: 'bar',
+      data: {
+        labels: topArea.map(r => r.fullLabel),
+        datasets: [{
+          label: 'Area Harvested (Ha)',
+          data: topArea.map(r => r.area),
+          backgroundColor: '#16a34a',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        ...commonBarOptions,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` Area: ${ctx.parsed.y.toLocaleString(undefined, {maximumFractionDigits: 1})} Ha`
+            }
+          }
+        }
+      }
+    });
+
+    // 3. Provincial Yield (Vertical)
+    const ctxP3 = document.getElementById('provYieldChart').getContext('2d');
+    if (provYieldChartInstance) provYieldChartInstance.destroy();
+    provYieldChartInstance = new Chart(ctxP3, {
+      type: 'bar',
+      data: {
+        labels: topYield.map(r => r.fullLabel),
+        datasets: [{
+          label: 'Yield (MT/Ha)',
+          data: topYield.map(r => r.yield),
+          backgroundColor: '#e2a021',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        ...commonBarOptions,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` Yield: ${ctx.parsed.y.toFixed(2)} MT/Ha`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function updateDashboard() {
+    const commVal = document.getElementById('commodityFilter').value;
+    const periodTypeVal = document.getElementById('periodTypeFilter').value;
+    const selectedYears = getSelectedYears();
+
+    const allCommodityRows = appData.rows.filter(row => commVal === 'ALL' || row.commodity === commVal);
+
+    const filteredTimeCols = appData.timeColumns.filter((tc) => {
+      const mYear = selectedYears.includes('ALL') || selectedYears.includes(tc.year);
+      let mPeriod = true;
+
+      if (periodTypeVal === 'Quarter') mPeriod = /(quarter|q[1-4])/i.test(tc.period);
+      else if (periodTypeVal === 'Semester') mPeriod = tc.period.toLowerCase().startsWith('semester');
+      else if (periodTypeVal === 'Annual') mPeriod = tc.period.toLowerCase().startsWith('annual');
+
+      return mYear && mPeriod;
+    });
+
+    let totalProd = 0, totalArea = 0;
+
+    filteredTimeCols.forEach(tc => {
+      const origIndex = appData.timeColumns.findIndex(c => c.index === tc.index);
+      const targetRows = allCommodityRows.filter(r => r.level.toLowerCase().includes('region'));
+      
+      const sumP = targetRows.reduce((s, row) => s + (row.production[origIndex] || 0), 0);
+      const sumA = targetRows.reduce((s, row) => s + (row.area[origIndex] || 0), 0);
+
+      totalProd += sumP;
+      totalArea += sumA;
+    });
+
+    const overallYield = totalArea > 0 ? (totalProd / totalArea) : 0;
+
+    document.getElementById('kpiProduction').textContent = totalProd.toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' MT';
+    document.getElementById('kpiArea').textContent = totalArea.toLocaleString(undefined, { maximumFractionDigits: 2 }) + ' Ha';
+    document.getElementById('kpiYield').innerHTML = overallYield.toFixed(2) + ' <span class="text-xs font-bold text-da-gold">MT/Ha</span>';
+
+    renderRegionalTopPerformers(allCommodityRows, filteredTimeCols);
+  }
+
+  function renderTrendChart(timeCols, prodTotals, yieldTotals) {
+    const ctx = document.getElementById('productionChart').getContext('2d');
+    if (chartInstance) chartInstance.destroy();
+
+    const labels = timeCols.map(tc => tc.period.toLowerCase().startsWith('annual') ? `${tc.year}` : `${tc.year} ${tc.period}`);
+
+    chartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          { type: 'bar', label: 'Production (MT)', data: prodTotals, backgroundColor: '#005a36', borderRadius: 5, yAxisID: 'y' },
+          { type: 'line', label: 'Yield (MT/Ha)', data: yieldTotals, borderColor: '#e2a021', backgroundColor: '#e2a021', borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#ffffff', pointBorderColor: '#e2a021', pointBorderWidth: 2, yAxisID: 'y1' }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: { padding: { top: 22 } },
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+          y: { type: 'linear', position: 'left', beginAtZero: true, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, callback: v => v >= 1e6 ? (v/1e6).toFixed(1) + 'M' : (v/1e3).toFixed(0) + 'K' } },
+          y1: { type: 'linear', position: 'right', beginAtZero: true, grid: { drawOnChartArea: false }, ticks: { font: { size: 10 }, callback: v => v.toFixed(1) + ' MT/Ha' } }
+        }
+      }
+    });
+  }
+
+  function renderProfessionalAnalysis(timeCols, prodTotals, areaTotals, yieldTotals) {
+    if (yieldTotals.length === 0) {
+      document.getElementById('insightPeak').textContent = 'N/A';
+      document.getElementById('insightYieldDriver').textContent = 'N/A';
+      document.getElementById('insightPolicy').textContent = 'N/A';
+      return;
+    }
+
+    const maxYield = Math.max(...yieldTotals);
+    const maxIdx = yieldTotals.indexOf(maxYield);
+    const peakPeriod = timeCols[maxIdx] ? `${timeCols[maxIdx].year} ${timeCols[maxIdx].period}` : 'N/A';
+    document.getElementById('insightPeak').textContent = `${peakPeriod} at ${maxYield.toFixed(2)} MT/Ha (${prodTotals[maxIdx].toLocaleString(undefined, {maximumFractionDigits: 0})} MT / ${areaTotals[maxIdx].toLocaleString(undefined, {maximumFractionDigits: 0})} Ha)`;
+
+    if (yieldTotals.length >= 2) {
+      const currY = yieldTotals[yieldTotals.length - 1];
+      const prevY = yieldTotals[yieldTotals.length - 2];
+      const currA = areaTotals[areaTotals.length - 1];
+      const prevA = areaTotals[areaTotals.length - 2];
+
+      const yDiff = ((currY - prevY) / (prevY || 1)) * 100;
+      const aDiff = ((currA - prevA) / (prevA || 1)) * 100;
+
+      if (yDiff > 0 && aDiff <= 0) {
+        document.getElementById('insightYieldDriver').innerHTML = `<span class="text-emerald-700 font-bold">Yield Intensification:</span> Yield grew by +${yDiff.toFixed(1)}% despite harvest area contracting (${aDiff.toFixed(1)}%), highlighting higher seed efficiency.`;
+      } else if (yDiff > 0 && aDiff > 0) {
+        document.getElementById('insightYieldDriver').innerHTML = `<span class="text-emerald-700 font-bold">Dual Area & Yield Expansion:</span> Output expanded through area addition (+${aDiff.toFixed(1)}%) and yield gains (+${yDiff.toFixed(1)}%).`;
+      } else {
+        document.getElementById('insightYieldDriver').innerHTML = `<span class="text-rose-600 font-bold">Yield Ratio Pressure:</span> Productivity experienced a ${yDiff.toFixed(1)}% shift from weather or input cost variations.`;
+      }
+    } else {
+      document.getElementById('insightYieldDriver').textContent = 'Multi-period data calculated for current selection.';
+    }
+
+    const avgY = yieldTotals.reduce((a, b) => a + b, 0) / yieldTotals.length;
+    if (avgY > 4.0) {
+      document.getElementById('insightPolicy').innerHTML = `Efficiency benchmark optimal (${avgY.toFixed(2)} MT/Ha). Recommend focusing policy on post-harvest equipment and market linkages.`;
+    } else {
+      document.getElementById('insightPolicy').innerHTML = `Current yield level (${avgY.toFixed(2)} MT/Ha) shows growth potential. Prioritize high-yield hybrid seed distribution and irrigation access.`;
+    }
+  }
+
+  function renderRegionalTopPerformers(rows, timeCols) {
+    const relevantRows = rows.filter(r => r.level.toLowerCase().includes('region'));
+
+    const rowAggregates = relevantRows.map(r => {
+      let sumP = 0, sumA = 0;
+      timeCols.forEach(tc => {
+        const origIdx = appData.timeColumns.findIndex(c => c.index === tc.index);
+        sumP += (r.production[origIdx] || 0);
+        sumA += (r.area[origIdx] || 0);
+      });
+      const yVal = sumA > 0 ? (sumP / sumA) : 0;
+      return { name: cleanRegionName(r.name), level: r.level, production: sumP, area: sumA, yield: yVal };
+    });
+
+    const topProd = [...rowAggregates].sort((a, b) => b.production - a.production).slice(0, 10);
+    const topArea = [...rowAggregates].filter(r => r.area > 0).sort((a, b) => b.area - a.area).slice(0, 10);
+    const topYield = [...rowAggregates].filter(r => r.area > 0).sort((a, b) => b.yield - a.yield).slice(0, 10);
+
+    const ctxR1 = document.getElementById('regProductionChart').getContext('2d');
+    if (regProdChartInstance) regProdChartInstance.destroy();
+    regProdChartInstance = new Chart(ctxR1, {
+      type: 'bar',
+      data: { labels: topProd.map(r => r.name), datasets: [{ label: 'Production (MT)', data: topProd.map(r => r.production), backgroundColor: '#005a36', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+
+    const ctxR2 = document.getElementById('regAreaChart').getContext('2d');
+    if (regAreaChartInstance) regAreaChartInstance.destroy();
+    regAreaChartInstance = new Chart(ctxR2, {
+      type: 'bar',
+      data: { labels: topArea.map(r => r.name), datasets: [{ label: 'Area Harvested (Ha)', data: topArea.map(r => r.area), backgroundColor: '#16a34a', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+
+    const ctxR3 = document.getElementById('regYieldChart').getContext('2d');
+    if (regYieldChartInstance) regYieldChartInstance.destroy();
+    regYieldChartInstance = new Chart(ctxR3, {
+      type: 'bar',
+      data: { labels: topYield.map(r => r.name), datasets: [{ label: 'Yield (MT/Ha)', data: topYield.map(r => r.yield), backgroundColor: '#e2a021', borderRadius: 4 }] },
+      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    });
+  }
+
+  /* ==========================================================================
+     PALAY & CORN MATRIX SORTING & DATA RENDERING ENGINE
+     ========================================================================== */
+  function changePalaySort(columnKey) {
+    if (plSortCol === columnKey) {
+      plSortDir = plSortDir === 'desc' ? 'asc' : 'desc';
+    } else {
+      plSortCol = columnKey;
+      plSortDir = 'desc';
+    }
+    
+    const colSelect = document.getElementById('plSortColumn');
+    const orderSelect = document.getElementById('plSortOrder');
+    if (colSelect) colSelect.value = columnKey;
+    if (orderSelect) orderSelect.value = plSortDir;
+
+    updateMatrixTable();
+  }
+
+  function togglePalaySortOrder(order) {
+    plSortDir = order;
+    updateMatrixTable();
+  }
+
+  function getSortIndicator(key) {
+    if (plSortCol === key) {
+      return plSortDir === 'desc' ? ' ▼' : ' ▲';
+    }
+    return '';
+  }
+
+  function updateMatrixTable() {
+    if (!appData || !appData.rows) return;
+
+    const commVal = document.getElementById('matrixCommodityFilter').value;
+    const periodTypeVal = document.getElementById('matrixPeriodFilter').value;
+    const yearVal = document.getElementById('matrixYearFilter').value;
+    const regionVal = document.getElementById('matrixRegionFilter').value;
+    const levelVal = document.getElementById('matrixLevelFilter').value;
+
+    let targetRows = appData.rows.filter(r => {
+      const mComm = commVal === 'ALL' || r.commodity === commVal;
+      const mLevel = levelVal === 'ALL' || r.level.toLowerCase().includes(levelVal.toLowerCase());
+      return mComm && mLevel;
+    });
+
+    if (regionVal !== 'ALL') {
+      const validProvinces = regionProvinceMap[regionVal] || [];
+      targetRows = targetRows.filter(r => r.name === regionVal || validProvinces.includes(r.name));
+    }
+
+    const targetTimeCols = appData.timeColumns.filter(tc => {
+      const mYear = yearVal === 'ALL' || tc.year === yearVal;
+      let mPeriod = true;
+      if (periodTypeVal === 'Quarter') mPeriod = /(quarter|q[1-4])/i.test(tc.period);
+      if (periodTypeVal === 'Semester') mPeriod = tc.period.toLowerCase().startsWith('semester');
+      if (periodTypeVal === 'Annual') mPeriod = tc.period.toLowerCase().startsWith('annual');
+      return mYear && mPeriod;
+    });
+
+    const processedRows = targetRows.map(row => {
+      let totalP = 0, totalA = 0;
+      targetTimeCols.forEach(tc => {
+        const origIndex = appData.timeColumns.findIndex(c => c.index === tc.index);
+        totalP += (row.production[origIndex] || 0);
+        totalA += (row.area[origIndex] || 0);
+      });
+      const calcYield = totalA > 0 ? (totalP / totalA) : 0;
+
+      return {
+        rawRow: row,
+        commodity: row.commodity,
+        name: cleanRegionName(row.name),
+        level: row.level,
+        production: totalP,
+        area: totalA,
+        yield: calcYield
+      };
+    });
+
+    processedRows.sort((a, b) => {
+      let valA = a[plSortCol];
+      let valB = b[plSortCol];
+
+      if (typeof valA === 'string') {
+        return plSortDir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+      }
+      return plSortDir === 'asc' ? valA - valB : valB - valA;
+    });
+
+    renderTable(processedRows, targetTimeCols);
+  }
+
+  function renderTable(processedRows, timeCols) {
+    const trYear = document.getElementById('tableHeaderYear');
+    const trPeriod = document.getElementById('tableHeaderPeriod');
+    const body = document.getElementById('tableBody');
+
+    let yearHtml = `<th class="p-2.5 border-r border-da-green bg-da-green text-white" colspan="3">Metadata Controls</th>`;
+    
+    let periodHtml = `
+      <th onclick="changePalaySort('commodity')" class="p-2 border-r border-emerald-800 bg-emerald-900 hover:bg-emerald-800 transition-colors">
+        <div class="flex items-center gap-1">
+          <i data-lucide="sprout" class="w-3.5 h-3.5 text-da-gold"></i>
+          <span>${appData.metadata[0] || 'Commodity'}</span>
+          <span>${getSortIndicator('commodity')}</span>
+        </div>
+      </th>
+      <th onclick="changePalaySort('name')" class="p-2 border-r border-emerald-800 bg-emerald-900 hover:bg-emerald-800 transition-colors">
+        <div class="flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-200"></i>
+          <span>${appData.metadata[1] || 'Location'}</span>
+          <span>${getSortIndicator('name')}</span>
+        </div>
+      </th>
+      <th onclick="changePalaySort('level')" class="p-2 border-r border-emerald-800 bg-emerald-900 hover:bg-emerald-800 transition-colors">
+        <div class="flex items-center gap-1">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-200"></i>
+          <span>${appData.metadata[2] || 'Level'}</span>
+          <span>${getSortIndicator('level')}</span>
+        </div>
+      </th>
+    `;
+
+    timeCols.forEach(tc => {
+      yearHtml += `<th class="p-2 text-center border-r border-da-green bg-da-green text-white" colspan="3">${tc.year}</th>`;
+      periodHtml += `
+        <th onclick="changePalaySort('production')" class="p-1.5 text-center border-r border-emerald-800 bg-emerald-900 text-emerald-100 hover:bg-emerald-800 transition-colors">
+          ${tc.period} Prod (MT) <span>${getSortIndicator('production')}</span>
+        </th>
+        <th onclick="changePalaySort('area')" class="p-1.5 text-center border-r border-emerald-800 bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors">
+          ${tc.period} Area (Ha) <span>${getSortIndicator('area')}</span>
+        </th>
+        <th onclick="changePalaySort('yield')" class="p-1.5 text-center border-r border-emerald-800 bg-emerald-700 font-bold text-da-gold hover:bg-emerald-600 transition-colors">
+          ${tc.period} Yield <span>${getSortIndicator('yield')}</span>
+        </th>
+      `;
+    });
+
+    trYear.innerHTML = yearHtml;
+    trPeriod.innerHTML = periodHtml;
+
+    if (!processedRows || processedRows.length === 0) {
+      body.innerHTML = `<tr><td colspan="${3 + (timeCols.length * 3)}" class="p-4 text-center text-slate-400 font-medium">No matching data records found for selected Matrix controls.</td></tr>`;
+      return;
+    }
+
+    body.innerHTML = processedRows.slice(0, 30).map(item => {
+      const row = item.rawRow;
+      let rowHtml = `
+        <td class="p-2 font-semibold border-r border-slate-100">${row.commodity}</td>
+        <td class="p-2 border-r border-slate-100">${cleanRegionName(row.name)}</td>
+        <td class="p-2 border-r border-slate-100">${row.level}</td>
+      `;
+
+      timeCols.forEach(tc => {
+        const origIndex = appData.timeColumns.findIndex(c => c.index === tc.index);
+        const pVal = row.production[origIndex] || 0;
+        const aVal = row.area[origIndex] || 0;
+        const yVal = row.yield[origIndex] || 0;
+
+        rowHtml += `
+          <td class="p-2 text-right border-r border-slate-100">${pVal.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+          <td class="p-2 text-right border-r border-slate-100 text-slate-600">${aVal.toLocaleString(undefined, {maximumFractionDigits: 1})}</td>
+          <td class="p-2 text-right border-r border-slate-100 font-bold text-da-green bg-emerald-50/20">${yVal > 0 ? yVal.toFixed(2) : '0.00'}</td>
+        `;
+      });
+
+      return `<tr class="hover:bg-slate-50 transition-colors">${rowHtml}</tr>`;
+    }).join('');
+
+    lucide.createIcons();
+  }
+
+  function printPalayPage() {
+    window.print();
+  }
+
+  function downloadPalayCSV() {
+    if (!appData || !appData.rows) return;
+
+    const commVal = document.getElementById('matrixCommodityFilter').value;
+    const yearVal = document.getElementById('matrixYearFilter').value;
+    const regionVal = document.getElementById('matrixRegionFilter').value;
+
+    let filteredRows = appData.rows.filter(r => {
+      const mComm = commVal === 'ALL' || r.commodity === commVal;
+      let mLoc = regionVal === 'ALL' || r.name.toLowerCase().includes(regionVal.toLowerCase()) || r.name.toLowerCase().includes(cleanRegionName(regionVal).toLowerCase());
+      return mComm && mLoc;
+    });
+
+    let csvContent = "data:text/csv;charset=utf-8,Commodity,Location,Level,Production (MT),Area Harvested (Ha),Yield (MT/Ha)\n";
+
+    filteredRows.forEach(r => {
+      let totalP = 0, totalA = 0;
+      appData.timeColumns.forEach((tc, idx) => {
+        if (yearVal !== 'ALL' && tc.year !== yearVal) return;
+        totalP += (r.production[idx] || 0);
+        totalA += (r.area[idx] || 0);
+      });
+      const cYield = totalA > 0 ? (totalP / totalA) : 0;
+      csvContent += `"${r.commodity}","${cleanRegionName(r.name)}","${r.level}",${totalP},${totalA},${cYield.toFixed(2)}\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `Palay_Corn_Production_Report_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
