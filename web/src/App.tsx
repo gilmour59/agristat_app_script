@@ -83,17 +83,18 @@ function downloadCsv(filename: string, rows: (string | number)[][]) {
 function CommodityPage({ sector, data }: { sector: Exclude<Sector, 'farmers'>; data: Extract<Loaded, { kind: 'commodity' }> }) {
   const { sheet, area } = data;
   const commodities = useMemo(() => [...new Set(sheet.rows.map(row => row.commodity))].sort(), [sheet]);
-  const years = useMemo(() => sortYears(sheet.columns), [sheet]);
   const section = nav.find(item => item.key === sector)!;
   const [commodity, setCommodity] = useState(section.defaultCommodity || commodities[0]);
   const [year, setYear] = useState('ALL');
   const [period, setPeriod] = useState<Period>('Annual');
   const availablePeriods = useMemo(() => [...new Set(sheet.columns.map(column => normalizePeriod(column.period)).filter((value): value is Period => Boolean(value)))], [sheet]);
   const activePeriod = availablePeriods.includes(period) ? period : availablePeriods[0] || 'Annual';
+  const national = nationalRows(sheet.rows, commodity);
+  const years = sortYears(sheet.columns).filter(itemYear => sheet.columns.some((column, index) => column.year === itemYear && normalizePeriod(column.period) === activePeriod && national.some(row => row.values[index] !== null)));
+  useEffect(() => { setYear('ALL'); }, [commodity, activePeriod]);
   const selectedColumns = sheet.columns.map((column, index) => ({ ...column, arrayIndex: index }))
     .filter(column => normalizePeriod(column.period) === activePeriod && (year === 'ALL' || column.year === year));
   const indexes = selectedColumns.map(column => column.arrayIndex);
-  const national = nationalRows(sheet.rows, commodity);
   const trend: Point[] = years.map(itemYear => ({ label: itemYear,
     value: national.reduce((sum, row) => sum + totalFor(row, sheet.columns.map((column, index) => ({ column, index }))
       .filter(item => item.column.year === itemYear && normalizePeriod(item.column.period) === activePeriod).map(item => item.index)), 0),
