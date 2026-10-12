@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T00:00:00Z",
+  "title": "Design System: AGRISTAT",
+  "extensions": {
+    "colorMeta": {
+      "forest": { "role": "primary", "displayName": "DA Forest" },
+      "leaf": { "role": "data", "displayName": "Production Green" },
+      "paper": { "role": "neutral", "displayName": "Report Paper" },
+      "harvest": { "role": "accent", "displayName": "Harvest Ochre" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Literata", "purpose": "Findings and section headings" },
+      "body": { "displayName": "DM Sans", "purpose": "Controls, data, and explanatory text" }
+    },
+    "shadows": [],
+    "motion": [{ "name": "loading-pulse", "value": "1.4s ease-in-out", "purpose": "Source loading indicator only" }],
+    "breakpoints": [{ "name": "tablet", "value": "1100px" }, { "name": "mobile", "value": "760px" }]
+  },
+  "components": [
+    { "name": "Navigation item", "kind": "nav", "refersTo": "active-navigation", "description": "Selected sector in the DA rail.", "html": "<button class=\"nav-item selected\">Palay & corn</button>", "css": ".nav-item.selected{background:#f5f3eb;color:#133a2b;border-radius:7px;padding:13px 12px}" },
+    { "name": "Source panel", "kind": "card", "refersTo": "data-surface", "description": "Neutral surface for a chart or table.", "html": "<section class=\"data-section\"><h3>How production has changed</h3></section>", "css": ".data-section{padding:38px 0 36px;border-bottom:1px solid #d6ded3;color:#20382c}" }
+  ],
+  "narrative": {
+    "northStar": "A public agricultural data report",
+    "overview": "Plain-language findings lead to accessible charts, rankings, and source detail. DA green anchors the identity while warm paper keeps statistics readable.",
+    "keyCharacteristics": ["Editorial headings", "Direct rankings", "Visible source context", "Restrained depth"],
+    "rules": [{ "name": "Truth before decoration", "body": "Never substitute generated data for a missing source field.", "section": "components" }],
+    "dos": ["Show units and scope near figures", "Use one scale per chart"],
+    "donts": ["Use dual axes", "Hide place labels behind a pie legend"]
+  }
+}
