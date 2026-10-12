@@ -2,5 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "rewrites": [{ "source": "/preview", "destination": "/" }]
+  "redirects": [{ "source": "/preview", "destination": "/", "permanent": true }]
 }

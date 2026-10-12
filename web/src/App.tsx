@@ -199,7 +199,7 @@ function CommodityPage({ sector, data }: { sector: Sector; data: Loaded }) {
       <label>Commodity<select value={commodity} onChange={event => setCommodity(event.target.value)}>{commodities.map(item => <option key={item}>{item}</option>)}</select></label>
       <label>Period<select value={activePeriod} onChange={event => setPeriod(event.target.value as Period)}>{availablePeriods.map(item => <option key={item}>{item}</option>)}</select></label>
       <label>Year<select value={year} onChange={event => setYear(event.target.value)}><option value="ALL">Latest available</option>{years.map(item => <option key={item}>{item}</option>)}</select></label>
-      <span className="filter-foot">PSA OpenSTAT snapshot · {section.scope}. One commodity at a time.</span>
+      <span className="filter-foot">Choose a commodity, period, and year.</span>
     </section>
     <section className="metric-row" aria-label="Key measures">
       <div><span className="metric-label">Production</span><strong>{current === null ? '—' : compact(current)}</strong><small>{productionUnit} · {activeYear || 'selected year'}</small></div>
@@ -224,7 +224,6 @@ function CommodityPage({ sector, data }: { sector: Sector; data: Loaded }) {
 }
 
 export default function App() {
-  const preview = window.location.pathname === '/preview';
   const [sector, setSector] = useState<Sector>('crops');
   const [loaded, setLoaded] = useState<Partial<Record<Sector, Loaded>>>({});
   const [error, setError] = useState('');
@@ -243,7 +242,7 @@ export default function App() {
   }, [sector, reload]);
   const current = loaded[sector];
   const section = nav.find(item => item.key === sector)!;
-  return <div className={`app-shell theme-${sector}${preview ? ' preview-shell' : ''}`}>
+  return <div className={`app-shell theme-${sector} preview-shell`}>
     <aside className="sidebar">
       <div className="brand"><img className="brand-logo" src="/assets/dawv-logo.png" alt="Department of Agriculture Western Visayas logo" /><div><strong>DAWV AGRI PORTAL</strong><small>WESTERN VISAYAS</small></div></div>
       <div className="sidebar-rule" /><p className="nav-caption">EXPLORE THE DATA</p>
@@ -255,8 +254,8 @@ export default function App() {
       <div className="sidebar-bottom"><p className="sidebar-stamp">NSM <span>2026</span></p><p>Western Visayas agriculture, presented for National Statistics Month.</p></div>
     </aside>
     <main className="main">
-      <header className="topline"><div><span className="topline-mark"><MapPin size={15} /> WESTERN VISAYAS</span><span className="topline-divider" /> <span>DEPARTMENT OF AGRICULTURE</span></div><div><span>PSA OpenSTAT snapshot</span><a className="design-link" href={preview ? '/' : '/preview'}>{preview ? 'Current design' : 'Preview new design'} ↗</a></div></header>
-      <div className="content"><div className="page-heading"><div>{preview && <span className="preview-eyebrow">ALTERNATE DESIGN · PSA DATA</span>}<h1>{section.label}</h1><p>{section.scope} · Source figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
+      <header className="topline"><div><span className="topline-mark"><MapPin size={15} /> WESTERN VISAYAS</span><span className="topline-divider" /> <span>DEPARTMENT OF AGRICULTURE</span></div></header>
+      <div className="content"><div className="page-heading"><div><h1>{section.label}</h1><p>{section.scope} · Figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
         {loading && !current ? <div className="loading-state" role="status"><span className="loading-bar" /><h2>Reading the data snapshot…</h2><p>Preparing the figures and comparisons.</p></div> : error ? <div className="error-state" role="alert"><h2>We couldn’t load this section.</h2><p>{error}</p><p>The published data file may be unavailable.</p><button onClick={() => setReload(value => value + 1)}>Try again</button></div> : current ? <CommodityPage key={sector} sector={sector} data={current} /> : null}
         <footer><span>DAWV AGRI PORTAL / DA · NSM 2026</span><span>Source: supplied PSA OpenSTAT exports. Snapshot built 12 Oct 2026.</span></footer>
       </div>
