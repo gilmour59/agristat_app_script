@@ -38,3 +38,15 @@ export function MangoIcon({ size = 24, ...props }: Props) {
     <path d="M23 12c2-5 5-8 10-9m-10 9c-6-4-10-5-15-4 2 5 7 7 15 4Z" />
   </svg>;
 }
+
+export function MalePersonIcon({ size = 24, ...props }: Props) {
+  return <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+    <circle cx="24" cy="14" r="7"/><path d="M13 43v-7c0-7 5-11 11-11s11 4 11 11v7M17 8c5 3 10 3 14 0"/>
+  </svg>;
+}
+
+export function FemalePersonIcon({ size = 24, ...props }: Props) {
+  return <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+    <path d="M14 27c-3-6-2-15 1-19 4-6 14-7 19-1 4 5 5 14 1 20"/><circle cx="24" cy="16" r="7"/><path d="M12 43v-5c0-8 5-13 12-13s12 5 12 13v5"/>
+  </svg>;
+}
