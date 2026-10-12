@@ -1,3 +1,19 @@
 {
-  "buildPath": "code"
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "DashboardStyles.html",
+          "Index.html"
+        ],
+        "createdAt": "2026-10-12T02:16:36.529Z",
+        "reason": "Agent: these are legacy Apps Script files; DESIGN.md defines the active React app in web/, so its typography rules do not apply to the retired interface"
+      }
+    ]
+  }
 }
