@@ -59,7 +59,7 @@
 
 /* The commemorative artwork keeps its transparent silhouette rather than a logo tile. */
 .preview-shell .brand-logo{background:transparent;padding:0;border-radius:0;filter:drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)}
-.nsm-banner{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 250px;align-items:center;gap:20px;min-width:0;padding:12px 22px;background:linear-gradient(105deg,#e8f2fc 0%,#f1f7fb 72%,#e7f0fc 100%);border-top:3px solid #2070b7}
+.nsm-banner{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 250px;align-items:center;gap:20px;min-width:0;padding:12px 22px;background:linear-gradient(105deg,#e8f2fc 0%,#f1f7fb 72%,#e7f0fc 100%)}
 .nsm-banner-copy{min-width:0}
 .nsm-kicker{display:block;color:#135493;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 .nsm-banner p{margin:7px 0 0;color:#183a62;font-size:clamp(14px,1.35vw,18px);line-height:1.35;font-weight:500;max-width:850px}
