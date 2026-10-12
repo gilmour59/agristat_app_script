@@ -1,0 +1,841 @@
+section,measure,commodity,geography_level,geography,year,period,value,unit,status,snapshot_file
+livestock,production,Carabao,province,Aklan,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2023,Annual,992.08,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2023,Quarter 1,316.96,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2023,Quarter 2,251.1,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2023,Quarter 3,173.42,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2023,Quarter 4,250.6,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2024,Annual,976.29,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2024,Quarter 1,310.65,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2024,Quarter 2,222.87,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2024,Quarter 3,181.25,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2024,Quarter 4,261.52,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2025,Annual,1052.41,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2025,Quarter 1,304.15,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2025,Quarter 2,233.985,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2025,Quarter 3,274.63,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2025,Quarter 4,239.645,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2026,Quarter 1,298.25,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2026,Quarter 2,284.76,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Aklan,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Aklan,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2023,Annual,1292.53,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2023,Quarter 1,332.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2023,Quarter 2,345.74,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2023,Quarter 3,310.24,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2023,Quarter 4,304.15,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2024,Annual,1392.4461,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2024,Quarter 1,333.9,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2024,Quarter 2,434.4711,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2024,Quarter 3,312.5,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2024,Quarter 4,311.575,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2025,Annual,1393.8,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2025,Quarter 1,336.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2025,Quarter 2,418.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2025,Quarter 3,329.1,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2025,Quarter 4,310.5,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2026,Quarter 1,286.25,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2026,Quarter 2,439.8,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Antique,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Antique,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2023,Annual,1604.5885,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2023,Quarter 1,395.361,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2023,Quarter 2,380.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2023,Quarter 3,450.7125,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2023,Quarter 4,378.115,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2024,Annual,1377.978,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2024,Quarter 1,370.125,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2024,Quarter 2,373.328,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2024,Quarter 3,271.92,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2024,Quarter 4,362.605,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2025,Annual,1467.275,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2025,Quarter 1,352.925,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2025,Quarter 2,468.28,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2025,Quarter 3,284.05,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2025,Quarter 4,362.02,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2026,Quarter 1,353.97,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2026,Quarter 2,367.62,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Capiz,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Capiz,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2023,Annual,199.906,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2023,Quarter 1,27.81,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2023,Quarter 2,30.51,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2023,Quarter 3,65.026,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2023,Quarter 4,76.56,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2024,Annual,199.18,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2024,Quarter 1,25.3,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2024,Quarter 2,54.88,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2024,Quarter 3,24.08,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2024,Quarter 4,94.92,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2025,Annual,172.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2025,Quarter 1,63.84,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2025,Quarter 2,45.64,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2025,Quarter 3,29.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2025,Quarter 4,33.32,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2026,Quarter 1,70.993,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2026,Quarter 2,45.08,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Guimaras,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Guimaras,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2023,Annual,4148.59,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2023,Quarter 1,924.56,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2023,Quarter 2,932.79,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2023,Quarter 3,1225.75,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2023,Quarter 4,1065.49,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2024,Annual,4045.868,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2024,Quarter 1,854.225,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2024,Quarter 2,938.86,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2024,Quarter 3,1126.428,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2024,Quarter 4,1126.355,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2025,Annual,3407.405,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2025,Quarter 1,916.735,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2025,Quarter 2,681.03,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2025,Quarter 3,856.75,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2025,Quarter 4,952.89,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2026,Quarter 1,728.18,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2026,Quarter 2,689.77,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,province,Iloilo,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,province,Iloilo,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2020,Annual,16899.01866,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2020,Quarter 1,5582.63,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2020,Quarter 2,2910.55,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2020,Quarter 3,4688.88,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2020,Quarter 4,3716.95866,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2021,Annual,17223.45687,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2021,Quarter 1,4069.6136,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2021,Quarter 2,4435.76702,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2021,Quarter 3,4272.19125,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2021,Quarter 4,4445.885,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2022,Annual,16520.42651,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2022,Quarter 1,3879.71151,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2022,Quarter 2,4273.824,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2022,Quarter 3,4143.241,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2022,Quarter 4,4223.65,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2023,Annual,17159.2045,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2023,Quarter 1,3890.691,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2023,Quarter 2,4395.49,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2023,Quarter 3,4543.8285,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2023,Quarter 4,4329.195,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2024,Annual,17507.3471,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2024,Quarter 1,4231.72,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2024,Quarter 2,4524.7141,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2024,Quarter 3,4280.578,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2024,Quarter 4,4470.335,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2025,Annual,7493.09,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2025,Quarter 1,1973.65,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2025,Quarter 2,1847.135,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2025,Quarter 3,1773.93,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2025,Quarter 4,1898.375,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2026,Quarter 1,1737.643,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2026,Quarter 2,1827.03,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Carabao,region,Western Visayas,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2023,Annual,3233.44506,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2023,Quarter 1,806.29996,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2023,Quarter 2,817.25,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2023,Quarter 3,770.035,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2023,Quarter 4,839.8601,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2024,Annual,2701.6625,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2024,Quarter 1,764.29,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2024,Quarter 2,766.77,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2024,Quarter 3,656.475,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2024,Quarter 4,514.1275,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2025,Annual,1927.27945,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2025,Quarter 1,419.44,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2025,Quarter 2,493.88,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2025,Quarter 3,550.8066,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2025,Quarter 4,463.15285,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2026,Quarter 1,389.412,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2026,Quarter 2,451.458,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Aklan,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Aklan,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2023,Annual,3904.8715,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2023,Quarter 1,1016.6,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2023,Quarter 2,1044.695,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2023,Quarter 3,898.9665,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2023,Quarter 4,944.61,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2024,Annual,3678.22739,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2024,Quarter 1,904.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2024,Quarter 2,1052.32239,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2024,Quarter 3,774.15,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2024,Quarter 4,947.755,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2025,Annual,3965.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2025,Quarter 1,906.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2025,Quarter 2,1065.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2025,Quarter 3,1007.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2025,Quarter 4,986.8,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2026,Quarter 1,924.12,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2026,Quarter 2,929.66,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Antique,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Antique,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2023,Annual,1784.268,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2023,Quarter 1,443.503,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2023,Quarter 2,418.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2023,Quarter 3,449.445,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2023,Quarter 4,472.92,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2024,Annual,1685.85,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2024,Quarter 1,509.25,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2024,Quarter 2,392.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2024,Quarter 3,379.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2024,Quarter 4,405.4,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2025,Annual,1512.45,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2025,Quarter 1,402.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2025,Quarter 2,363.47,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2025,Quarter 3,390.35,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2025,Quarter 4,356.63,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2026,Quarter 1,322.24,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2026,Quarter 2,340.955,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Capiz,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Capiz,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2023,Annual,894.202833,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2023,Quarter 1,242.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2023,Quarter 2,167.937333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2023,Quarter 3,224.5205,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2023,Quarter 4,259.545,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2024,Annual,608.6825,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2024,Quarter 1,145.725,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2024,Quarter 2,196.4775,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2024,Quarter 3,121.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2024,Quarter 4,145.28,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2025,Annual,654.655667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2025,Quarter 1,158.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2025,Quarter 2,200.035667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2025,Quarter 3,165.87,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2025,Quarter 4,130.55,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2026,Quarter 1,137.05,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2026,Quarter 2,197.638,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Guimaras,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Guimaras,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2023,Annual,4380.117,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2023,Quarter 1,1096.766,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2023,Quarter 2,1098.736,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2023,Quarter 3,1001.84,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2023,Quarter 4,1182.775,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2024,Annual,4892.985,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2024,Quarter 1,1324.885,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2024,Quarter 2,1157.625,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2024,Quarter 3,1235.775,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2024,Quarter 4,1174.7,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2025,Annual,3795.65001,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2025,Quarter 1,1340.6,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2025,Quarter 2,960.51001,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2025,Quarter 3,736.44,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2025,Quarter 4,758.1,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2026,Quarter 1,735.91,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2026,Quarter 2,862.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,province,Iloilo,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,province,Iloilo,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2020,Annual,18553.700078,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2020,Quarter 1,5633.9,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2020,Quarter 2,2778.44,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2020,Quarter 3,4848.000078,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2020,Quarter 4,5293.36,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2021,Annual,18679.769,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2021,Quarter 1,4813.631,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2021,Quarter 2,4235.9,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2021,Quarter 3,4353.635,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2021,Quarter 4,5276.603,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2022,Annual,18989.6,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2022,Quarter 1,4615.180333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2022,Quarter 2,4706.54,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2022,Quarter 3,4550.751,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2022,Quarter 4,5117.128667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2023,Annual,19007.434383,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2023,Quarter 1,4699.76896,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2023,Quarter 2,4728.558273,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2023,Quarter 3,4408.19705,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2023,Quarter 4,5170.9101,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2024,Annual,18594.4981,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2024,Quarter 1,4827.27,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2024,Quarter 2,4869.7816,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2024,Quarter 3,4205.62,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2024,Quarter 4,4691.8265,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2025,Annual,11855.435127,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2025,Quarter 1,3226.44,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2025,Quarter 2,3083.095677,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2025,Quarter 3,2850.6666,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2025,Quarter 4,2695.23285,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2026,Quarter 1,2508.732,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2026,Quarter 2,2781.711,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Cattle,region,Western Visayas,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2023,Annual,167.606,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2023,Quarter 1,47.34,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2023,Quarter 2,39.3,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2023,Quarter 3,48.02,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2023,Quarter 4,32.946,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2024,Annual,128.272,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2024,Quarter 1,51.516,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2024,Quarter 2,12.582,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2024,Quarter 3,31.68,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2024,Quarter 4,32.494,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2025,Annual,123.415,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2025,Quarter 1,43.8,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2025,Quarter 2,15.47,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2025,Quarter 3,32.865,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2025,Quarter 4,31.28,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2026,Quarter 1,41.8,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2026,Quarter 2,7.98,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Aklan,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Aklan,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2023,Annual,374.92431,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2023,Quarter 1,115.44,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2023,Quarter 2,93.34,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2023,Quarter 3,53.979,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2023,Quarter 4,112.16531,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2024,Annual,365.74,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2024,Quarter 1,116.2,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2024,Quarter 2,79.82,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2024,Quarter 3,57.24,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2024,Quarter 4,112.48,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2025,Annual,385.28002,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2025,Quarter 1,124.32002,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2025,Quarter 2,83.88,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2025,Quarter 3,64.42,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2025,Quarter 4,112.66,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2026,Quarter 1,140.42,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2026,Quarter 2,140.45,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Antique,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Antique,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2023,Annual,478.08685,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2023,Quarter 1,127.161,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2023,Quarter 2,126.021,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2023,Quarter 3,112.90485,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2023,Quarter 4,112.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2024,Annual,468.948333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2024,Quarter 1,145.908,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2024,Quarter 2,124.08,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2024,Quarter 3,113.260333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2024,Quarter 4,85.7,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2025,Annual,477.13,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2025,Quarter 1,125.6,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2025,Quarter 2,126.39,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2025,Quarter 3,122.84,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2025,Quarter 4,102.3,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2026,Quarter 1,134.1,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2026,Quarter 2,114.72,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Capiz,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Capiz,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2023,Annual,158.798667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2023,Quarter 1,38.16,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2023,Quarter 2,35.55,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2023,Quarter 3,44.201667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2023,Quarter 4,40.887,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2024,Annual,145.025333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2024,Quarter 1,37.59,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2024,Quarter 2,42.380333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2024,Quarter 3,28.965,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2024,Quarter 4,36.09,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2025,Annual,143.505818,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2025,Quarter 1,33.225,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2025,Quarter 2,52.632273,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2025,Quarter 3,28.176545,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2025,Quarter 4,29.472,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2026,Quarter 1,37.6245,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2026,Quarter 2,49.550029,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Guimaras,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Guimaras,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2023,Annual,3206.82796,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2023,Quarter 1,777.20903,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2023,Quarter 2,777.04799,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2023,Quarter 3,818.05599,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2023,Quarter 4,834.51495,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2024,Annual,1886.68805,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2024,Quarter 1,440.115,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2024,Quarter 2,494.61205,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2024,Quarter 3,538.656,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2024,Quarter 4,413.305,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2025,Annual,1814.5978,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2025,Quarter 1,472.74461,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2025,Quarter 2,440.96919,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2025,Quarter 3,410.094,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2025,Quarter 4,490.79,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2026,Quarter 1,296.011,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2026,Quarter 2,329.951,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,province,Iloilo,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,province,Iloilo,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,region,Western Visayas,2020,Annual,6789.759723,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2020,Quarter 1,1840.941231,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2020,Quarter 2,1569.112769,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2020,Quarter 3,1644.0,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2020,Quarter 4,1735.705723,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2021,Annual,6642.98624,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2021,Quarter 1,1918.994,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2021,Quarter 2,1470.7,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2021,Quarter 3,1494.36524,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2021,Quarter 4,1758.927,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2022,Annual,6427.6078,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2022,Quarter 1,1615.42592,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2022,Quarter 2,1517.01787,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2022,Quarter 3,1500.24301,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2022,Quarter 4,1794.921,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2023,Annual,7105.154207,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2023,Quarter 1,1844.58965,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2023,Quarter 2,1681.35299,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2023,Quarter 3,1656.107507,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2023,Quarter 4,1923.10406,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2024,Annual,5676.136857,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2024,Quarter 1,1483.42214,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2024,Quarter 2,1385.410383,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2024,Quarter 3,1310.122333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2024,Quarter 4,1497.182,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2025,Annual,2943.928638,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2025,Quarter 1,799.68963,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2025,Quarter 2,719.341463,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2025,Quarter 3,658.395545,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2025,Quarter 4,766.502,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,region,Western Visayas,2026,Quarter 1,649.9555,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2026,Quarter 2,642.651029,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Goat,region,Western Visayas,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Goat,region,Western Visayas,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2023,Annual,14416.07652,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2023,Quarter 1,4935.498,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2023,Quarter 2,4775.904,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2023,Quarter 3,2761.68157,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2023,Quarter 4,1942.99295,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2024,Annual,9716.09008,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2024,Quarter 1,2296.97,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2024,Quarter 2,1989.47176,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2024,Quarter 3,2961.03846,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2024,Quarter 4,2468.60986,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2025,Annual,8886.579618,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2025,Quarter 1,2527.08982,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2025,Quarter 2,2020.060558,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2025,Quarter 3,2053.19098,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2025,Quarter 4,2286.23826,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2026,Quarter 1,2827.44536,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2026,Quarter 2,3691.25504,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Aklan,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Aklan,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2023,Annual,13714.55008,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2023,Quarter 1,3560.957,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2023,Quarter 2,3344.027,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2023,Quarter 3,3135.1632,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2023,Quarter 4,3674.40288,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2024,Annual,14123.98462,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2024,Quarter 1,3569.17,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2024,Quarter 2,3362.41162,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2024,Quarter 3,3423.025,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2024,Quarter 4,3769.378,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2025,Annual,14625.49484,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2025,Quarter 1,3674.61444,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2025,Quarter 2,3370.2334,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2025,Quarter 3,3707.712,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2025,Quarter 4,3872.935,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2026,Quarter 1,3704.5408,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2026,Quarter 2,3736.249,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Antique,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Antique,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2023,Annual,16134.90497,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2023,Quarter 1,5598.64504,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2023,Quarter 2,5252.064,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2023,Quarter 3,3739.63843,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2023,Quarter 4,1544.5575,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2024,Annual,5515.33195,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2024,Quarter 1,1644.66295,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2024,Quarter 2,1296.275,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2024,Quarter 3,1112.865,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2024,Quarter 4,1461.529,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2025,Annual,4920.35353,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2025,Quarter 1,1075.998,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2025,Quarter 2,1365.55501,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2025,Quarter 3,1202.93052,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2025,Quarter 4,1275.87,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2026,Quarter 1,896.10664,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2026,Quarter 2,1145.105676,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Capiz,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Capiz,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2023,Annual,5716.341908,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2023,Quarter 1,1214.388,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2023,Quarter 2,1237.977,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2023,Quarter 3,1577.72053,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2023,Quarter 4,1686.256378,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2024,Annual,2778.598037,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2024,Quarter 1,504.904,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2024,Quarter 2,534.718857,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2024,Quarter 3,701.096333,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2024,Quarter 4,1037.878846,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2025,Annual,3742.598,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2025,Quarter 1,791.116,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2025,Quarter 2,826.753474,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2025,Quarter 3,786.94686,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2025,Quarter 4,1337.781667,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2026,Quarter 1,1224.891677,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2026,Quarter 2,1417.549883,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Guimaras,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Guimaras,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2020,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2020,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2020,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2020,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2020,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2021,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2021,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2021,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2021,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2021,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2022,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2022,Quarter 1,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2022,Quarter 2,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2022,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2022,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2023,Annual,50306.494,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2023,Quarter 1,22635.515,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2023,Quarter 2,12249.936,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2023,Quarter 3,8890.508,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2023,Quarter 4,6530.535,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2024,Annual,23831.619211,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2024,Quarter 1,5924.112,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2024,Quarter 2,7144.56908,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2024,Quarter 3,5359.112311,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2024,Quarter 4,5403.82582,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2025,Annual,25615.912756,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2025,Quarter 1,5700.23487,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2025,Quarter 2,4857.49218,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2025,Quarter 3,7770.6415,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2025,Quarter 4,7287.544206,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2026,Quarter 1,7924.30727,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2026,Quarter 2,7434.15359,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,province,Iloilo,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,province,Iloilo,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,region,Western Visayas,2020,Annual,195297.867709,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2020,Quarter 1,48130.249137,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2020,Quarter 2,47879.480883,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2020,Quarter 3,48224.308,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2020,Quarter 4,51063.829688,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2021,Annual,200283.356762,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2021,Quarter 1,48930.92,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2021,Quarter 2,47230.58,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2021,Quarter 3,50927.132408,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2021,Quarter 4,53194.724354,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2022,Annual,205039.526148,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2022,Quarter 1,49055.318921,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2022,Quarter 2,49059.002779,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2022,Quarter 3,52535.654067,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2022,Quarter 4,54389.550381,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2023,Annual,158470.470058,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2023,Quarter 1,52879.85804,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2023,Quarter 2,42025.718,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2023,Quarter 3,33109.82331,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2023,Quarter 4,30455.070708,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2024,Annual,100547.258538,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2024,Quarter 1,24688.99117,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2024,Quarter 2,24391.055037,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2024,Quarter 3,24742.724733,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2024,Quarter 4,26724.487598,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2025,Annual,57790.938745,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2025,Quarter 1,13769.05313,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2025,Quarter 2,12440.094622,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2025,Quarter 3,15521.42186,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2025,Quarter 4,16060.369133,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2026,Annual,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,region,Western Visayas,2026,Quarter 1,16577.291747,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2026,Quarter 2,17424.313188,"metric tons, liveweight",reported,livestock.csv
+livestock,production,Hog,region,Western Visayas,2026,Quarter 3,,"metric tons, liveweight",unavailable,livestock.csv
+livestock,production,Hog,region,Western Visayas,2026,Quarter 4,,"metric tons, liveweight",unavailable,livestock.csv

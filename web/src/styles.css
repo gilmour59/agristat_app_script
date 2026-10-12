@@ -70,3 +70,58 @@
 .nsm-banner-art .nsm-logos{width:165px;filter:drop-shadow(1px 0 0 #24466d) drop-shadow(-1px 0 0 #24466d) drop-shadow(0 1px 0 #24466d) drop-shadow(0 -1px 0 #24466d)}
 @media(max-width:760px){.nsm-banner{gap:12px;padding:13px 17px;grid-template-columns:minmax(0,1fr) 170px}.nsm-banner-art{gap:5px}.nsm-banner-art .nsm-statman{height:75px;max-width:53px}.nsm-banner-art .nsm-logos{width:112px}.nsm-banner p{font-size:13px}.nsm-kicker{font-size:9px;line-height:1.4}}
 @media(max-width:520px){.nsm-banner{grid-template-columns:1fr;gap:6px}.nsm-banner-art{justify-content:flex-start}.nsm-banner-art .nsm-statman{height:62px;max-width:44px}.nsm-banner-art .nsm-logos{width:125px}}
+
+/* Section-wide analysis and exports. */
+.analysis-toolbar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:#fff;padding:0 22px;border-bottom:1px solid #dbe5dc}
+.analysis-tabs{display:flex;gap:16px;flex-wrap:wrap}
+.analysis-tabs button{border:0;border-bottom:3px solid transparent;background:transparent;color:#647a68;font-size:13px;font-weight:750;padding:16px 3px 13px}
+.analysis-tabs button.active{border-bottom-color:var(--accent);color:var(--accent-deep)}
+.analysis-tabs button:hover{color:var(--accent-deep)}
+.full-export{display:inline-flex;align-items:center;gap:7px;color:#24543a;font-size:12px;font-weight:800;text-decoration:none;padding:10px 0}
+.full-export span{font-size:11px;color:#728574;font-weight:500}
+.full-export:hover{text-decoration:underline}
+.compare-view{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.compare-intro,.compare-controls{grid-column:1/-1;background:#fff;padding:20px 22px}
+.compare-intro h2{font-size:21px;color:#183d2a;margin:0 0 5px}
+.compare-intro p{font-size:13px;line-height:1.5;color:#617566;margin:0;max-width:900px}
+.compare-controls{display:flex;flex-wrap:wrap;gap:12px;padding-top:16px;padding-bottom:16px}
+.compare-controls label{display:grid;gap:5px;flex:1 1 155px;min-width:0;color:#56715f;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800}
+.compare-controls select{width:100%;min-height:41px;border:1px solid #cbd7cc;border-radius:4px;background:#fffefa;color:#21462e;padding:8px 10px;font-size:12px;font-weight:650;letter-spacing:0;text-transform:none}
+.compare-findings{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#dce5db}
+.compare-findings p{display:grid;gap:5px;margin:0;background:#edf4eb;padding:16px 22px}
+.compare-findings span{font-size:10px;font-weight:800;color:#5b775f;letter-spacing:.08em;text-transform:uppercase}
+.compare-findings strong{font-size:18px;color:#234b32;line-height:1.3}
+.compare-findings small{font-size:11px;color:#617866}
+.compare-partial{grid-column:1/-1;background:#fff4dc;color:#75501e;font-size:12px;line-height:1.5;padding:11px 16px;margin:0}
+.compare-view .compare-section{grid-column:auto;margin:0}
+.compare-note{font-size:12px;color:#725936;line-height:1.5;margin:0 0 15px}
+.compare-bars,.compare-changes{display:grid;gap:2px}
+.compare-bar,.compare-change{display:grid;grid-template-columns:minmax(100px,155px) minmax(45px,1fr) minmax(85px,135px);align-items:center;gap:10px;padding:11px 0;border-top:1px solid #e7ece5;font-size:12px}
+.compare-bar>span,.compare-change>span{font-weight:700;color:#355440;line-height:1.25}
+.compare-bar strong,.compare-change strong{text-align:right;font-variant-numeric:tabular-nums;color:#244d32}
+.compare-bar strong small{display:block;color:#778a7b;font-size:10px;font-weight:500}
+.compare-track{height:12px;background:#e8eee7}
+.compare-track i{display:block;height:100%;background:var(--accent)}
+.compare-change-track{height:14px;position:relative;background:linear-gradient(to right,#eef2ee 0 49.7%,#9db2a1 49.7% 50.3%,#eef2ee 50.3% 100%)}
+.compare-change-track i{position:absolute;top:2px;bottom:2px;background:#2e8154}
+.compare-change-track i.positive{left:50%}
+.compare-change-track i.negative{right:50%;background:#bd6655}
+.compare-change strong.negative{color:#a54d3d}
+.province-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start}
+.province-map{min-width:0;padding-right:20px;border-right:1px solid #e1e8e0}
+.province-map svg{display:block;width:100%;max-height:390px}
+.province-map path{stroke:#fff;stroke-width:1.4;cursor:pointer;transition:fill .15s ease,stroke-width .15s ease}
+.province-map path:hover,.province-map path.active{stroke:#19445b;stroke-width:2.2}
+.province-map path:focus-visible{outline:3px solid #c18d36;outline-offset:2px}
+.province-map-readout{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-top:1px solid #dfe8e0;padding:10px 0;color:#2b523a;font-size:13px}
+.province-map-readout span{font-weight:750;font-variant-numeric:tabular-nums}
+.province-map-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:10px;color:#668071}
+.province-map-legend i{display:inline-block;width:80px;height:9px;background:linear-gradient(to right,hsl(151 43% 87%),hsl(151 43% 36%))}
+.map-no-data{display:inline-flex;align-items:center;gap:4px;margin-left:7px}
+.map-no-data b{display:inline-block;width:9px;height:9px;background:#e5eae8;border:1px solid #cdd7d1}
+.province-map-source{font-size:10px;line-height:1.4;color:#809083;margin:11px 0 0}
+.province-map-source a{text-decoration:underline}
+.preview-shell .province-layout .ranked-bars{grid-template-columns:1fr;margin:4px 0 0;gap:10px}
+.preview-shell .province-layout .ranked-bars li{display:flex}
+@media(max-width:1100px){.compare-view{grid-template-columns:1fr}.compare-view .compare-section{grid-column:1/-1}.province-layout{grid-template-columns:1fr}.province-map{border-right:0;border-bottom:1px solid #e1e8e0;padding:0 0 17px}.province-map svg{max-height:360px}}
+@media(max-width:760px){.analysis-toolbar{padding:0 16px}.analysis-tabs{gap:10px}.analysis-tabs button{font-size:12px;padding:13px 2px 10px}.full-export{width:100%;padding:0 0 12px}.full-export span{display:none}.compare-intro,.compare-controls{padding:16px}.compare-findings{grid-template-columns:1fr}.compare-findings p{padding:14px 16px}.compare-bar,.compare-change{grid-template-columns:minmax(88px,120px) minmax(35px,1fr) minmax(70px,100px);gap:7px;font-size:11px}.compare-bar strong small{font-size:9px}.province-map-readout{font-size:12px}}

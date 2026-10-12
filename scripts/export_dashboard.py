@@ -10,6 +10,44 @@ from collections import defaultdict
 from pathlib import Path
 
 
+SECTION_DATASETS = {
+    "crops": (("crops", "production", "metric tons"), ("area", "area harvested", "hectares")),
+    "fruit": (("fruit", "production", "metric tons"), ("fruit_area", "area planted or harvested", "hectares"),
+              ("fruit_trees", "bearing trees, hills or vines", "count")),
+    "vegetables": (("vegetables", "production", "metric tons"),
+                   ("vegetables_area", "area planted or harvested", "hectares")),
+    "major": (("major", "production", "metric tons"),),
+    "livestock": (("livestock", "production", "metric tons, liveweight"),),
+    "poultry": (("poultry", "production", "metric tons"),),
+}
+
+
+def write_full_sections(output):
+    """Export the reviewed public snapshots in a long, auditable CSV format."""
+    for section, datasets in SECTION_DATASETS.items():
+        destination = output / f"{section}-full.csv"
+        with destination.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.writer(handle, lineterminator="\n")
+            writer.writerow(("section", "measure", "commodity", "geography_level", "geography",
+                             "year", "period", "value", "unit", "status", "snapshot_file"))
+            for filename, measure, default_unit in datasets:
+                with (output / f"{filename}.csv").open(newline="", encoding="utf-8") as source:
+                    rows = csv.reader(source)
+                    years, periods = next(rows), next(rows)
+                    for row in rows:
+                        if len(row) < 3:
+                            continue
+                        commodity, geography, level = row[:3]
+                        for index in range(3, len(years)):
+                            value = row[index].strip() if index < len(row) else ""
+                            unit = ("metric tons of eggs" if section == "poultry" and "eggs" in commodity.lower()
+                                    else "metric tons, liveweight" if section == "poultry" else default_unit)
+                            writer.writerow((section, measure, commodity, level, geography, years[index],
+                                             periods[index], value, unit,
+                                             "reported" if value else "unavailable", f"{filename}.csv"))
+        print(destination.name, "ready")
+
+
 def write_commodity(db, output, name, choose):
     selected = defaultdict(dict)
     years = set()
@@ -65,6 +103,8 @@ def main():
     write_commodity(db, args.output, "vegetables_area", lambda f, c, _l, _y: c if f == "vegetables_root_crops_area.csv" else None)
     write_commodity(db, args.output, "major", lambda f, c, _l, _y:
                     c if f == "major_crops_volume.csv" and not c.startswith(("Banana", "Mango")) else None)
+
+    write_full_sections(args.output)
 
     with (args.output / "rsbsa_profiles.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle, lineterminator="\n")
