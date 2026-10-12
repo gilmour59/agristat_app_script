@@ -16,7 +16,7 @@ Present Western Visayas agricultural statistics in a readable dashboard. Viewers
 
 ## Positioning
 
-The portal groups rice and corn, fruit, vegetables, other major crops, livestock, poultry, and selected RSBSA registry aggregates. It keeps the Department of Agriculture identity while using a generic portal name.
+The portal groups rice and corn, fruit, vegetables, other major crops, livestock, poultry, and RSBSA people and land aggregates. It keeps the Department of Agriculture identity while using a generic portal name.
 
 ## Operating Context
 
@@ -29,6 +29,7 @@ The React and TypeScript app in `web/` deploys on Vercel. It reads versioned CSV
 - Mark regional boundary changes in historical trends.
 - Keep national rice/corn stocks out of Western Visayas charts.
 - Preserve source values, including RSBSA inconsistencies, and never generate missing figures.
+- Keep sensitive RSBSA indicator counts at province level and above in the public export.
 - Use units, periods, and snapshot dates near charts and tables.
 
 ## Brand Commitments

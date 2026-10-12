@@ -106,7 +106,11 @@ CREATE TABLE rsbsa_geography (
   id INTEGER PRIMARY KEY, source_id INTEGER NOT NULL REFERENCES source_file(id),
   source_row INTEGER NOT NULL, level TEXT NOT NULL CHECK(level IN ('region','province','district','municipality')),
   province TEXT, district TEXT, municipality TEXT, source_label TEXT NOT NULL,
+  source_places_count INTEGER, source_district_count INTEGER,
   UNIQUE(source_id, source_row)
+);
+CREATE TABLE rsbsa_training (
+  geography_id INTEGER PRIMARY KEY REFERENCES rsbsa_geography(id), raw_value TEXT NOT NULL
 );
 CREATE TABLE rsbsa_profile (
   geography_id INTEGER NOT NULL REFERENCES rsbsa_geography(id), category TEXT NOT NULL,
@@ -220,9 +224,14 @@ def import_rsbsa(db, path, report):
         elif level == "municipality":
             district = current_district if province == current_province else None
         geo_id = db.execute(
-            "INSERT INTO rsbsa_geography(source_id,source_row,level,province,district,municipality,source_label) VALUES (?,?,?,?,?,?,?)",
-            (source_id, source_row, level, province, district, municipality, label),
+            "INSERT INTO rsbsa_geography(source_id,source_row,level,province,district,municipality,source_label,source_places_count,source_district_count) VALUES (?,?,?,?,?,?,?,?,?)",
+            (source_id, source_row, level, province, district, municipality, label,
+             integer(row[2]) if level != "municipality" else None,
+             integer(row[3]) if level == "province" and number(row[3]) is not None else None),
         ).lastrowid
+        if row[102] is not None:
+            raw_training = row[102].isoformat() if hasattr(row[102], "isoformat") else str(row[102])
+            db.execute("INSERT INTO rsbsa_training VALUES (?,?)", (geo_id, raw_training))
         levels[level] += 1
         for group_index, group in enumerate(PROFILE_GROUPS):
             start = 4 + group_index * 9
@@ -243,7 +252,7 @@ def import_rsbsa(db, path, report):
         for offset, measure in enumerate(AREA_FIELDS):
             value = number(row[94 + offset])
             if value is not None:
-                db.execute("INSERT INTO rsbsa_area VALUES (?,?,?,?)", (geo_id, measure, value, "percent" if measure.endswith("percent") else "hectares"))
+                db.execute("INSERT INTO rsbsa_area VALUES (?,?,?,?)", (geo_id, measure, value, "ratio" if measure.endswith("percent") else "hectares"))
     rank_count = 0
     if "Western Visayas Rank" in book.sheetnames:
         for source_row, row in enumerate(book["Western Visayas Rank"].iter_rows(min_row=4, values_only=True), 4):
@@ -269,6 +278,7 @@ def audits(db, report):
     overview["openstat_nonmissing"] = db.execute("SELECT COUNT(*) FROM openstat_observation WHERE value IS NOT NULL").fetchone()[0]
     overview["rsbsa_profile_rows"] = db.execute("SELECT COUNT(*) FROM rsbsa_profile").fetchone()[0]
     overview["rsbsa_area_rows"] = db.execute("SELECT COUNT(*) FROM rsbsa_area").fetchone()[0]
+    overview["rsbsa_training_rows"] = db.execute("SELECT COUNT(*) FROM rsbsa_training").fetchone()[0]
     detail = db.execute("""SELECT p.total FROM rsbsa_profile p JOIN rsbsa_geography g ON p.geography_id=g.id
                           WHERE g.level='region' AND p.category='registrants'""").fetchone()
     rank = db.execute("SELECT registrants FROM rsbsa_region_rank WHERE region='REGION VI'").fetchone()

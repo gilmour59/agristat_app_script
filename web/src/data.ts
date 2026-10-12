@@ -1,4 +1,5 @@
 export type Sector = 'crops' | 'fruit' | 'vegetables' | 'major' | 'livestock' | 'poultry' | 'farmers';
+export type DataFile = Sector | 'area' | 'fruit_area' | 'fruit_trees' | 'vegetables_area' | 'rsbsa_profiles' | 'rsbsa_areas';
 export type Period = 'Annual' | 'Quarter 1' | 'Quarter 2' | 'Quarter 3' | 'Quarter 4';
 
 export interface TimeColumn { index: number; year: string; period: string }
@@ -93,7 +94,7 @@ export function cleanName(name: string): string {
   return name.replace(/\s*\([^)]*\)\s*$/, '').replace(/\s+/g, ' ').trim();
 }
 
-export async function fetchTab(tab: Sector | 'area'): Promise<string> {
+export async function fetchTab(tab: DataFile): Promise<string> {
   const response = await fetch(`/data/${tab}.csv`);
   if (!response.ok) {
     const detail = await response.json().catch(() => null) as { error?: string } | null;

@@ -1,0 +1,921 @@
+level,province,district,municipality,measure,value,unit,source_row
+region,,,,corn_verification_percent,0.46812100092236003,ratio,4
+region,,,,declared_corn_area,71729.04000000001,hectares,4
+region,,,,declared_rice_area,290320.7313,hectares,4
+region,,,,physical_corn_area,43760.9164,hectares,4
+region,,,,physical_rice_area,257922.88,hectares,4
+region,,,,rice_verification_percent,0.5078752222369725,ratio,4
+region,,,,verified_corn_area,33577.87,hectares,4
+region,,,,verified_rice_area,130992.63999999998,hectares,4
+province,AKLAN,,,corn_verification_percent,0.09881454178299241,ratio,5
+province,AKLAN,,,declared_corn_area,1644.0900000000001,hectares,5
+province,AKLAN,,,declared_rice_area,22934.821600000003,hectares,5
+province,AKLAN,,,physical_corn_area,414.835,hectares,5
+province,AKLAN,,,physical_rice_area,16835.91,hectares,5
+province,AKLAN,,,rice_verification_percent,0.5120525115660514,ratio,5
+province,AKLAN,,,verified_corn_area,162.46,hectares,5
+province,AKLAN,,,verified_rice_area,8620.869999999999,hectares,5
+district,AKLAN,District 1,,corn_verification_percent,0.20187583052628327,ratio,6
+district,AKLAN,District 1,,declared_corn_area,647.18,hectares,6
+district,AKLAN,District 1,,declared_rice_area,12817.850900000001,hectares,6
+district,AKLAN,District 1,,physical_corn_area,246.0,hectares,6
+district,AKLAN,District 1,,physical_rice_area,9796.95,hectares,6
+district,AKLAN,District 1,,rice_verification_percent,0.4479026635840746,ratio,6
+district,AKLAN,District 1,,verified_corn_area,130.65,hectares,6
+district,AKLAN,District 1,,verified_rice_area,4388.08,hectares,6
+municipality,AKLAN,District 1,ALTAVAS,corn_verification_percent,0.07871954902355546,ratio,7
+municipality,AKLAN,District 1,ALTAVAS,declared_corn_area,198.68,hectares,7
+municipality,AKLAN,District 1,ALTAVAS,declared_rice_area,1809.8463,hectares,7
+municipality,AKLAN,District 1,ALTAVAS,physical_corn_area,50.0,hectares,7
+municipality,AKLAN,District 1,ALTAVAS,physical_rice_area,1369.0,hectares,7
+municipality,AKLAN,District 1,ALTAVAS,rice_verification_percent,0.39597516435354274,ratio,7
+municipality,AKLAN,District 1,ALTAVAS,verified_corn_area,15.64,hectares,7
+municipality,AKLAN,District 1,ALTAVAS,verified_rice_area,542.09,hectares,7
+municipality,AKLAN,District 1,BALETE,corn_verification_percent,0.0,ratio,8
+municipality,AKLAN,District 1,BALETE,declared_corn_area,2.37,hectares,8
+municipality,AKLAN,District 1,BALETE,declared_rice_area,1362.5884,hectares,8
+municipality,AKLAN,District 1,BALETE,physical_corn_area,5.0,hectares,8
+municipality,AKLAN,District 1,BALETE,physical_rice_area,1226.5,hectares,8
+municipality,AKLAN,District 1,BALETE,rice_verification_percent,0.2975458622095393,ratio,8
+municipality,AKLAN,District 1,BALETE,verified_rice_area,364.94,hectares,8
+municipality,AKLAN,District 1,BANGA,corn_verification_percent,0.20571648295308906,ratio,9
+municipality,AKLAN,District 1,BANGA,declared_corn_area,156.04,hectares,9
+municipality,AKLAN,District 1,BANGA,declared_rice_area,2334.9838,hectares,9
+municipality,AKLAN,District 1,BANGA,physical_corn_area,5.0,hectares,9
+municipality,AKLAN,District 1,BANGA,physical_rice_area,1261.0,hectares,9
+municipality,AKLAN,District 1,BANGA,rice_verification_percent,0.41151467089611415,ratio,9
+municipality,AKLAN,District 1,BANGA,verified_corn_area,32.100000000000016,hectares,9
+municipality,AKLAN,District 1,BANGA,verified_rice_area,518.92,hectares,9
+municipality,AKLAN,District 1,BATAN,corn_verification_percent,0.0,ratio,10
+municipality,AKLAN,District 1,BATAN,declared_corn_area,10.2,hectares,10
+municipality,AKLAN,District 1,BATAN,declared_rice_area,1008.333,hectares,10
+municipality,AKLAN,District 1,BATAN,physical_corn_area,0.0,hectares,10
+municipality,AKLAN,District 1,BATAN,physical_rice_area,860.5,hectares,10
+municipality,AKLAN,District 1,BATAN,rice_verification_percent,0.36679837303893087,ratio,10
+municipality,AKLAN,District 1,BATAN,verified_rice_area,315.63,hectares,10
+municipality,AKLAN,District 1,KALIBO,corn_verification_percent,0.171516603902773,ratio,11
+municipality,AKLAN,District 1,KALIBO,declared_corn_area,116.84,hectares,11
+municipality,AKLAN,District 1,KALIBO,declared_rice_area,1290.2962,hectares,11
+municipality,AKLAN,District 1,KALIBO,physical_corn_area,170.0,hectares,11
+municipality,AKLAN,District 1,KALIBO,physical_rice_area,1150.0,hectares,11
+municipality,AKLAN,District 1,KALIBO,rice_verification_percent,0.35603478260869564,ratio,11
+municipality,AKLAN,District 1,KALIBO,verified_corn_area,20.04,hectares,11
+municipality,AKLAN,District 1,KALIBO,verified_rice_area,409.44,hectares,11
+municipality,AKLAN,District 1,LIBACAO,corn_verification_percent,0.370403734337892,ratio,12
+municipality,AKLAN,District 1,LIBACAO,declared_corn_area,122.11,hectares,12
+municipality,AKLAN,District 1,LIBACAO,declared_rice_area,2572.788,hectares,12
+municipality,AKLAN,District 1,LIBACAO,physical_corn_area,0.0,hectares,12
+municipality,AKLAN,District 1,LIBACAO,physical_rice_area,1575.95,hectares,12
+municipality,AKLAN,District 1,LIBACAO,rice_verification_percent,0.7435197817189632,ratio,12
+municipality,AKLAN,District 1,LIBACAO,verified_corn_area,45.22999999999999,hectares,12
+municipality,AKLAN,District 1,LIBACAO,verified_rice_area,1171.75,hectares,12
+municipality,AKLAN,District 1,MADALAG,corn_verification_percent,0.3662350354263377,ratio,13
+municipality,AKLAN,District 1,MADALAG,declared_corn_area,40.93,hectares,13
+municipality,AKLAN,District 1,MADALAG,declared_rice_area,1026.2859,hectares,13
+municipality,AKLAN,District 1,MADALAG,physical_corn_area,16.0,hectares,13
+municipality,AKLAN,District 1,MADALAG,physical_rice_area,930.0,hectares,13
+municipality,AKLAN,District 1,MADALAG,rice_verification_percent,0.4559139784946237,ratio,13
+municipality,AKLAN,District 1,MADALAG,verified_corn_area,14.99,hectares,13
+municipality,AKLAN,District 1,MADALAG,verified_rice_area,424.0,hectares,13
+municipality,AKLAN,District 1,NEW WASHINGTON,corn_verification_percent,265.00000000000006,ratio,14
+municipality,AKLAN,District 1,NEW WASHINGTON,declared_corn_area,0.01,hectares,14
+municipality,AKLAN,District 1,NEW WASHINGTON,declared_rice_area,1412.7293,hectares,14
+municipality,AKLAN,District 1,NEW WASHINGTON,physical_corn_area,0.0,hectares,14
+municipality,AKLAN,District 1,NEW WASHINGTON,physical_rice_area,1424.0,hectares,14
+municipality,AKLAN,District 1,NEW WASHINGTON,rice_verification_percent,0.4503581460674157,ratio,14
+municipality,AKLAN,District 1,NEW WASHINGTON,verified_corn_area,2.6500000000000004,hectares,14
+municipality,AKLAN,District 1,NEW WASHINGTON,verified_rice_area,641.31,hectares,14
+district,AKLAN,District 2,,corn_verification_percent,0.03190859756648042,ratio,15
+district,AKLAN,District 2,,declared_corn_area,996.9100000000001,hectares,15
+district,AKLAN,District 2,,declared_rice_area,10116.9707,hectares,15
+district,AKLAN,District 2,,physical_corn_area,168.83499999999998,hectares,15
+district,AKLAN,District 2,,physical_rice_area,7038.959999999999,hectares,15
+district,AKLAN,District 2,,rice_verification_percent,0.6013374134815371,ratio,15
+district,AKLAN,District 2,,verified_corn_area,31.81,hectares,15
+district,AKLAN,District 2,,verified_rice_area,4232.79,hectares,15
+municipality,AKLAN,District 2,BURUANGA,corn_verification_percent,0.0,ratio,16
+municipality,AKLAN,District 2,BURUANGA,declared_corn_area,14.98,hectares,16
+municipality,AKLAN,District 2,BURUANGA,declared_rice_area,307.2534,hectares,16
+municipality,AKLAN,District 2,BURUANGA,physical_corn_area,2.1,hectares,16
+municipality,AKLAN,District 2,BURUANGA,physical_rice_area,281.06,hectares,16
+municipality,AKLAN,District 2,BURUANGA,rice_verification_percent,0.6714580516615669,ratio,16
+municipality,AKLAN,District 2,BURUANGA,verified_rice_area,188.72,hectares,16
+municipality,AKLAN,District 2,IBAJAY,corn_verification_percent,0.13552442058399894,ratio,17
+municipality,AKLAN,District 2,IBAJAY,declared_corn_area,152.74,hectares,17
+municipality,AKLAN,District 2,IBAJAY,declared_rice_area,2318.3438,hectares,17
+municipality,AKLAN,District 2,IBAJAY,physical_corn_area,35.125,hectares,17
+municipality,AKLAN,District 2,IBAJAY,physical_rice_area,1606.0,hectares,17
+municipality,AKLAN,District 2,IBAJAY,rice_verification_percent,0.8180946450809464,ratio,17
+municipality,AKLAN,District 2,IBAJAY,verified_corn_area,20.7,hectares,17
+municipality,AKLAN,District 2,IBAJAY,verified_rice_area,1313.86,hectares,17
+municipality,AKLAN,District 2,LEZO,corn_verification_percent,0.0,ratio,18
+municipality,AKLAN,District 2,LEZO,declared_corn_area,48.33,hectares,18
+municipality,AKLAN,District 2,LEZO,declared_rice_area,1139.7476,hectares,18
+municipality,AKLAN,District 2,LEZO,physical_corn_area,33.41,hectares,18
+municipality,AKLAN,District 2,LEZO,physical_rice_area,914.0,hectares,18
+municipality,AKLAN,District 2,LEZO,rice_verification_percent,0.6803172866520787,ratio,18
+municipality,AKLAN,District 2,LEZO,verified_rice_area,621.81,hectares,18
+municipality,AKLAN,District 2,MAKATO,corn_verification_percent,0.0,ratio,19
+municipality,AKLAN,District 2,MAKATO,declared_corn_area,60.64,hectares,19
+municipality,AKLAN,District 2,MAKATO,declared_rice_area,2061.2585,hectares,19
+municipality,AKLAN,District 2,MAKATO,physical_corn_area,6.0,hectares,19
+municipality,AKLAN,District 2,MAKATO,physical_rice_area,1200.0,hectares,19
+municipality,AKLAN,District 2,MAKATO,rice_verification_percent,0.737075,ratio,19
+municipality,AKLAN,District 2,MAKATO,verified_rice_area,884.49,hectares,19
+municipality,AKLAN,District 2,MALAY,corn_verification_percent,0.0,ratio,20
+municipality,AKLAN,District 2,MALAY,declared_corn_area,145.92,hectares,20
+municipality,AKLAN,District 2,MALAY,declared_rice_area,189.2031,hectares,20
+municipality,AKLAN,District 2,MALAY,physical_corn_area,0.0,hectares,20
+municipality,AKLAN,District 2,MALAY,physical_rice_area,187.0,hectares,20
+municipality,AKLAN,District 2,MALAY,rice_verification_percent,0.44566844919786097,ratio,20
+municipality,AKLAN,District 2,MALAY,verified_rice_area,83.34,hectares,20
+municipality,AKLAN,District 2,MALINAO,corn_verification_percent,0.0,ratio,21
+municipality,AKLAN,District 2,MALINAO,declared_corn_area,73.37,hectares,21
+municipality,AKLAN,District 2,MALINAO,declared_rice_area,1555.025,hectares,21
+municipality,AKLAN,District 2,MALINAO,physical_corn_area,3.0,hectares,21
+municipality,AKLAN,District 2,MALINAO,physical_rice_area,1264.0,hectares,21
+municipality,AKLAN,District 2,MALINAO,rice_verification_percent,0.26768987341772155,ratio,21
+municipality,AKLAN,District 2,MALINAO,verified_rice_area,338.36,hectares,21
+municipality,AKLAN,District 2,NABAS,corn_verification_percent,0.011891140895717554,ratio,22
+municipality,AKLAN,District 2,NABAS,declared_corn_area,244.72,hectares,22
+municipality,AKLAN,District 2,NABAS,declared_rice_area,618.3409,hectares,22
+municipality,AKLAN,District 2,NABAS,physical_corn_area,58.6,hectares,22
+municipality,AKLAN,District 2,NABAS,physical_rice_area,447.0,hectares,22
+municipality,AKLAN,District 2,NABAS,rice_verification_percent,0.6182326621923938,ratio,22
+municipality,AKLAN,District 2,NABAS,verified_corn_area,2.9099999999999997,hectares,22
+municipality,AKLAN,District 2,NABAS,verified_rice_area,276.35,hectares,22
+municipality,AKLAN,District 2,NUMANCIA,corn_verification_percent,0.020664110728442396,ratio,23
+municipality,AKLAN,District 2,NUMANCIA,declared_corn_area,153.89,hectares,23
+municipality,AKLAN,District 2,NUMANCIA,declared_rice_area,856.7449,hectares,23
+municipality,AKLAN,District 2,NUMANCIA,physical_corn_area,30.6,hectares,23
+municipality,AKLAN,District 2,NUMANCIA,physical_rice_area,503.9,hectares,23
+municipality,AKLAN,District 2,NUMANCIA,rice_verification_percent,0.582774359992062,ratio,23
+municipality,AKLAN,District 2,NUMANCIA,verified_corn_area,3.18,hectares,23
+municipality,AKLAN,District 2,NUMANCIA,verified_rice_area,293.66,hectares,23
+municipality,AKLAN,District 2,TANGALAN,corn_verification_percent,0.049061767005473024,ratio,24
+municipality,AKLAN,District 2,TANGALAN,declared_corn_area,102.32,hectares,24
+municipality,AKLAN,District 2,TANGALAN,declared_rice_area,1071.0535,hectares,24
+municipality,AKLAN,District 2,TANGALAN,physical_corn_area,0.0,hectares,24
+municipality,AKLAN,District 2,TANGALAN,physical_rice_area,636.0,hectares,24
+municipality,AKLAN,District 2,TANGALAN,rice_verification_percent,0.3650943396226415,ratio,24
+municipality,AKLAN,District 2,TANGALAN,verified_corn_area,5.02,hectares,24
+municipality,AKLAN,District 2,TANGALAN,verified_rice_area,232.2,hectares,24
+province,ANTIQUE,,,corn_verification_percent,0.30745088391382286,ratio,25
+province,ANTIQUE,,,declared_corn_area,8535.9,hectares,25
+province,ANTIQUE,,,declared_rice_area,49541.871,hectares,25
+province,ANTIQUE,,,physical_corn_area,2882.67,hectares,25
+province,ANTIQUE,,,physical_rice_area,42154.340000000004,hectares,25
+province,ANTIQUE,,,rice_verification_percent,0.4631501762333368,ratio,25
+province,ANTIQUE,,,verified_corn_area,2624.3700000000003,hectares,25
+province,ANTIQUE,,,verified_rice_area,19523.79,hectares,25
+municipality,ANTIQUE,,ANINI Y,corn_verification_percent,0.14757516367123974,ratio,26
+municipality,ANTIQUE,,ANINI Y,declared_corn_area,479.62,hectares,26
+municipality,ANTIQUE,,ANINI Y,declared_rice_area,1653.8552,hectares,26
+municipality,ANTIQUE,,ANINI Y,physical_corn_area,0.0,hectares,26
+municipality,ANTIQUE,,ANINI Y,physical_rice_area,1193.0,hectares,26
+municipality,ANTIQUE,,ANINI Y,rice_verification_percent,0.4136462699077955,ratio,26
+municipality,ANTIQUE,,ANINI Y,verified_corn_area,70.78,hectares,26
+municipality,ANTIQUE,,ANINI Y,verified_rice_area,493.48,hectares,26
+municipality,ANTIQUE,,BARBAZA,corn_verification_percent,0.2058142340168878,ratio,27
+municipality,ANTIQUE,,BARBAZA,declared_corn_area,414.5,hectares,27
+municipality,ANTIQUE,,BARBAZA,declared_rice_area,2501.0438,hectares,27
+municipality,ANTIQUE,,BARBAZA,physical_corn_area,106.0,hectares,27
+municipality,ANTIQUE,,BARBAZA,physical_rice_area,1797.87,hectares,27
+municipality,ANTIQUE,,BARBAZA,rice_verification_percent,0.5021720146617943,ratio,27
+municipality,ANTIQUE,,BARBAZA,verified_corn_area,85.31,hectares,27
+municipality,ANTIQUE,,BARBAZA,verified_rice_area,902.84,hectares,27
+municipality,ANTIQUE,,BELISON,corn_verification_percent,0.1997161656560444,ratio,28
+municipality,ANTIQUE,,BELISON,declared_corn_area,77.51,hectares,28
+municipality,ANTIQUE,,BELISON,declared_rice_area,1071.3825,hectares,28
+municipality,ANTIQUE,,BELISON,physical_corn_area,5.0,hectares,28
+municipality,ANTIQUE,,BELISON,physical_rice_area,797.09,hectares,28
+municipality,ANTIQUE,,BELISON,rice_verification_percent,0.3548030962626554,ratio,28
+municipality,ANTIQUE,,BELISON,verified_corn_area,15.48,hectares,28
+municipality,ANTIQUE,,BELISON,verified_rice_area,282.81,hectares,28
+municipality,ANTIQUE,,BUGASONG,corn_verification_percent,0.21329094560981127,ratio,29
+municipality,ANTIQUE,,BUGASONG,declared_corn_area,751.79,hectares,29
+municipality,ANTIQUE,,BUGASONG,declared_rice_area,3669.1558,hectares,29
+municipality,ANTIQUE,,BUGASONG,physical_corn_area,408.5,hectares,29
+municipality,ANTIQUE,,BUGASONG,physical_rice_area,3574.41,hectares,29
+municipality,ANTIQUE,,BUGASONG,rice_verification_percent,0.35499005430266817,ratio,29
+municipality,ANTIQUE,,BUGASONG,verified_corn_area,160.35,hectares,29
+municipality,ANTIQUE,,BUGASONG,verified_rice_area,1268.88,hectares,29
+municipality,ANTIQUE,,CALUYA,corn_verification_percent,0.331038000510074,ratio,30
+municipality,ANTIQUE,,CALUYA,declared_corn_area,78.42,hectares,30
+municipality,ANTIQUE,,CALUYA,declared_rice_area,348.4053,hectares,30
+municipality,ANTIQUE,,CALUYA,physical_corn_area,16.45,hectares,30
+municipality,ANTIQUE,,CALUYA,physical_rice_area,737.7,hectares,30
+municipality,ANTIQUE,,CALUYA,rice_verification_percent,0.20046089196150194,ratio,30
+municipality,ANTIQUE,,CALUYA,verified_corn_area,25.96,hectares,30
+municipality,ANTIQUE,,CALUYA,verified_rice_area,147.88,hectares,30
+municipality,ANTIQUE,,CULASI,corn_verification_percent,0.3896524751368868,ratio,31
+municipality,ANTIQUE,,CULASI,declared_corn_area,178.98,hectares,31
+municipality,ANTIQUE,,CULASI,declared_rice_area,3147.8021,hectares,31
+municipality,ANTIQUE,,CULASI,physical_corn_area,212.8,hectares,31
+municipality,ANTIQUE,,CULASI,physical_rice_area,2329.75,hectares,31
+municipality,ANTIQUE,,CULASI,rice_verification_percent,0.5545444790213543,ratio,31
+municipality,ANTIQUE,,CULASI,verified_corn_area,69.74,hectares,31
+municipality,ANTIQUE,,CULASI,verified_rice_area,1291.95,hectares,31
+municipality,ANTIQUE,,HAMTIC,corn_verification_percent,0.8213870592793492,ratio,32
+municipality,ANTIQUE,,HAMTIC,declared_corn_area,671.06,hectares,32
+municipality,ANTIQUE,,HAMTIC,declared_rice_area,4080.3144,hectares,32
+municipality,ANTIQUE,,HAMTIC,physical_corn_area,136.2,hectares,32
+municipality,ANTIQUE,,HAMTIC,physical_rice_area,3156.7,hectares,32
+municipality,ANTIQUE,,HAMTIC,rice_verification_percent,0.5891880761554789,ratio,32
+municipality,ANTIQUE,,HAMTIC,verified_corn_area,551.2,hectares,32
+municipality,ANTIQUE,,HAMTIC,verified_rice_area,1859.89,hectares,32
+municipality,ANTIQUE,,LAUA AN,corn_verification_percent,0.4231452199353977,ratio,33
+municipality,ANTIQUE,,LAUA AN,declared_corn_area,591.31,hectares,33
+municipality,ANTIQUE,,LAUA AN,declared_rice_area,2644.5492,hectares,33
+municipality,ANTIQUE,,LAUA AN,physical_corn_area,155.0,hectares,33
+municipality,ANTIQUE,,LAUA AN,physical_rice_area,1731.25,hectares,33
+municipality,ANTIQUE,,LAUA AN,rice_verification_percent,0.597267870036101,ratio,33
+municipality,ANTIQUE,,LAUA AN,verified_corn_area,250.21,hectares,33
+municipality,ANTIQUE,,LAUA AN,verified_rice_area,1034.02,hectares,33
+municipality,ANTIQUE,,LIBERTAD,corn_verification_percent,0.0,ratio,34
+municipality,ANTIQUE,,LIBERTAD,declared_corn_area,22.97,hectares,34
+municipality,ANTIQUE,,LIBERTAD,declared_rice_area,275.8386,hectares,34
+municipality,ANTIQUE,,LIBERTAD,physical_corn_area,0.0,hectares,34
+municipality,ANTIQUE,,LIBERTAD,physical_rice_area,612.0,hectares,34
+municipality,ANTIQUE,,LIBERTAD,rice_verification_percent,0.03151960784313725,ratio,34
+municipality,ANTIQUE,,LIBERTAD,verified_rice_area,19.29,hectares,34
+municipality,ANTIQUE,,PANDAN,corn_verification_percent,0.20639147802929428,ratio,35
+municipality,ANTIQUE,,PANDAN,declared_corn_area,15.02,hectares,35
+municipality,ANTIQUE,,PANDAN,declared_rice_area,1655.8599,hectares,35
+municipality,ANTIQUE,,PANDAN,physical_corn_area,0.0,hectares,35
+municipality,ANTIQUE,,PANDAN,physical_rice_area,1696.36,hectares,35
+municipality,ANTIQUE,,PANDAN,rice_verification_percent,0.3113902709330567,ratio,35
+municipality,ANTIQUE,,PANDAN,verified_corn_area,3.1,hectares,35
+municipality,ANTIQUE,,PANDAN,verified_rice_area,528.23,hectares,35
+municipality,ANTIQUE,,PATNONGON,corn_verification_percent,0.08920940170940171,ratio,36
+municipality,ANTIQUE,,PATNONGON,declared_corn_area,1478.88,hectares,36
+municipality,ANTIQUE,,PATNONGON,declared_rice_area,4340.6495,hectares,36
+municipality,ANTIQUE,,PATNONGON,physical_corn_area,453.25,hectares,36
+municipality,ANTIQUE,,PATNONGON,physical_rice_area,4736.93,hectares,36
+municipality,ANTIQUE,,PATNONGON,rice_verification_percent,0.3181237637034957,ratio,36
+municipality,ANTIQUE,,PATNONGON,verified_corn_area,131.93,hectares,36
+municipality,ANTIQUE,,PATNONGON,verified_rice_area,1506.93,hectares,36
+municipality,ANTIQUE,,SAN JOSE,corn_verification_percent,0.10271794130403354,ratio,37
+municipality,ANTIQUE,,SAN JOSE,declared_corn_area,138.34,hectares,37
+municipality,ANTIQUE,,SAN JOSE,declared_rice_area,2824.0655,hectares,37
+municipality,ANTIQUE,,SAN JOSE,physical_corn_area,33.0,hectares,37
+municipality,ANTIQUE,,SAN JOSE,physical_rice_area,1985.38,hectares,37
+municipality,ANTIQUE,,SAN JOSE,rice_verification_percent,0.4192900099729019,ratio,37
+municipality,ANTIQUE,,SAN JOSE,verified_corn_area,14.21,hectares,37
+municipality,ANTIQUE,,SAN JOSE,verified_rice_area,832.45,hectares,37
+municipality,ANTIQUE,,SAN REMIGIO,corn_verification_percent,0.3107467548252224,ratio,38
+municipality,ANTIQUE,,SAN REMIGIO,declared_corn_area,822.76,hectares,38
+municipality,ANTIQUE,,SAN REMIGIO,declared_rice_area,3816.439,hectares,38
+municipality,ANTIQUE,,SAN REMIGIO,physical_corn_area,17.0,hectares,38
+municipality,ANTIQUE,,SAN REMIGIO,physical_rice_area,2484.98,hectares,38
+municipality,ANTIQUE,,SAN REMIGIO,rice_verification_percent,0.8718822686701704,ratio,38
+municipality,ANTIQUE,,SAN REMIGIO,verified_corn_area,255.67,hectares,38
+municipality,ANTIQUE,,SAN REMIGIO,verified_rice_area,2166.61,hectares,38
+municipality,ANTIQUE,,SEBASTE,corn_verification_percent,0.29348377281947263,ratio,39
+municipality,ANTIQUE,,SEBASTE,declared_corn_area,78.88,hectares,39
+municipality,ANTIQUE,,SEBASTE,declared_rice_area,1397.0526,hectares,39
+municipality,ANTIQUE,,SEBASTE,physical_corn_area,0.0,hectares,39
+municipality,ANTIQUE,,SEBASTE,physical_rice_area,1097.71,hectares,39
+municipality,ANTIQUE,,SEBASTE,rice_verification_percent,0.4765739585136329,ratio,39
+municipality,ANTIQUE,,SEBASTE,verified_corn_area,23.15,hectares,39
+municipality,ANTIQUE,,SEBASTE,verified_rice_area,523.14,hectares,39
+municipality,ANTIQUE,,SIBALOM,corn_verification_percent,0.4394124448352793,ratio,40
+municipality,ANTIQUE,,SIBALOM,declared_corn_area,1228.14,hectares,40
+municipality,ANTIQUE,,SIBALOM,declared_rice_area,7373.6341,hectares,40
+municipality,ANTIQUE,,SIBALOM,physical_corn_area,1139.47,hectares,40
+municipality,ANTIQUE,,SIBALOM,physical_rice_area,6675.39,hectares,40
+municipality,ANTIQUE,,SIBALOM,rice_verification_percent,0.5659699283487557,ratio,40
+municipality,ANTIQUE,,SIBALOM,verified_corn_area,539.66,hectares,40
+municipality,ANTIQUE,,SIBALOM,verified_rice_area,3778.07,hectares,40
+municipality,ANTIQUE,,TIBIAO,corn_verification_percent,1.0685835095137421,ratio,41
+municipality,ANTIQUE,,TIBIAO,declared_corn_area,118.25,hectares,41
+municipality,ANTIQUE,,TIBIAO,declared_rice_area,1878.1398,hectares,41
+municipality,ANTIQUE,,TIBIAO,physical_corn_area,0.0,hectares,41
+municipality,ANTIQUE,,TIBIAO,physical_rice_area,1607.94,hectares,41
+municipality,ANTIQUE,,TIBIAO,rice_verification_percent,0.3403733970173016,ratio,41
+municipality,ANTIQUE,,TIBIAO,verified_corn_area,126.36,hectares,41
+municipality,ANTIQUE,,TIBIAO,verified_rice_area,547.3,hectares,41
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,corn_verification_percent,0.2532843319687384,ratio,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,declared_corn_area,1074.8,hectares,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,declared_rice_area,4444.3172,hectares,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,physical_corn_area,200.0,hectares,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,physical_rice_area,2967.88,hectares,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,rice_verification_percent,0.5218135504130895,ratio,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,verified_corn_area,272.23,hectares,42
+municipality,ANTIQUE,,TOBIAS FORNIER DAO,verified_rice_area,1548.68,hectares,42
+municipality,ANTIQUE,,VALDERRAMA,corn_verification_percent,0.09225537865064988,ratio,43
+municipality,ANTIQUE,,VALDERRAMA,declared_corn_area,314.67,hectares,43
+municipality,ANTIQUE,,VALDERRAMA,declared_rice_area,2419.3665,hectares,43
+municipality,ANTIQUE,,VALDERRAMA,physical_corn_area,0.0,hectares,43
+municipality,ANTIQUE,,VALDERRAMA,physical_rice_area,2972.0,hectares,43
+municipality,ANTIQUE,,VALDERRAMA,rice_verification_percent,0.2662651413189771,ratio,43
+municipality,ANTIQUE,,VALDERRAMA,verified_corn_area,29.03,hectares,43
+municipality,ANTIQUE,,VALDERRAMA,verified_rice_area,791.34,hectares,43
+province,CAPIZ,,,corn_verification_percent,0.7405370449208536,ratio,44
+province,CAPIZ,,,declared_corn_area,22220.86,hectares,44
+province,CAPIZ,,,declared_rice_area,62739.3819,hectares,44
+province,CAPIZ,,,physical_corn_area,16930.190000000002,hectares,44
+province,CAPIZ,,,physical_rice_area,50546.020000000004,hectares,44
+province,CAPIZ,,,rice_verification_percent,0.5939359815075449,ratio,44
+province,CAPIZ,,,verified_corn_area,16455.37,hectares,44
+province,CAPIZ,,,verified_rice_area,30021.1,hectares,44
+district,CAPIZ,District 1,,corn_verification_percent,0.7415558726366397,ratio,45
+district,CAPIZ,District 1,,declared_corn_area,10848.960000000001,hectares,45
+district,CAPIZ,District 1,,declared_rice_area,20582.83,hectares,45
+district,CAPIZ,District 1,,physical_corn_area,7106.610000000001,hectares,45
+district,CAPIZ,District 1,,physical_rice_area,16480.3,hectares,45
+district,CAPIZ,District 1,,rice_verification_percent,0.5803189262331389,ratio,45
+district,CAPIZ,District 1,,verified_corn_area,8045.11,hectares,45
+district,CAPIZ,District 1,,verified_rice_area,9563.829999999998,hectares,45
+municipality,CAPIZ,District 1,MA AYON,corn_verification_percent,0.7857846864351891,ratio,46
+municipality,CAPIZ,District 1,MA AYON,declared_corn_area,6747.09,hectares,46
+municipality,CAPIZ,District 1,MA AYON,declared_rice_area,5870.0778,hectares,46
+municipality,CAPIZ,District 1,MA AYON,physical_corn_area,4338.31,hectares,46
+municipality,CAPIZ,District 1,MA AYON,physical_rice_area,4485.0,hectares,46
+municipality,CAPIZ,District 1,MA AYON,rice_verification_percent,0.6118573021181717,ratio,46
+municipality,CAPIZ,District 1,MA AYON,verified_corn_area,5301.76,hectares,46
+municipality,CAPIZ,District 1,MA AYON,verified_rice_area,2744.18,hectares,46
+municipality,CAPIZ,District 1,PANAY,corn_verification_percent,0.2040256175663312,ratio,47
+municipality,CAPIZ,District 1,PANAY,declared_corn_area,10.93,hectares,47
+municipality,CAPIZ,District 1,PANAY,declared_rice_area,3855.0407,hectares,47
+municipality,CAPIZ,District 1,PANAY,physical_corn_area,0.0,hectares,47
+municipality,CAPIZ,District 1,PANAY,physical_rice_area,3006.75,hectares,47
+municipality,CAPIZ,District 1,PANAY,rice_verification_percent,0.6706211025193315,ratio,47
+municipality,CAPIZ,District 1,PANAY,verified_corn_area,2.23,hectares,47
+municipality,CAPIZ,District 1,PANAY,verified_rice_area,2016.39,hectares,47
+municipality,CAPIZ,District 1,PANITAN,corn_verification_percent,0.48801306545051154,ratio,48
+municipality,CAPIZ,District 1,PANITAN,declared_corn_area,324.52,hectares,48
+municipality,CAPIZ,District 1,PANITAN,declared_rice_area,4312.7884,hectares,48
+municipality,CAPIZ,District 1,PANITAN,physical_corn_area,209.83,hectares,48
+municipality,CAPIZ,District 1,PANITAN,physical_rice_area,3558.5,hectares,48
+municipality,CAPIZ,District 1,PANITAN,rice_verification_percent,0.6192637347196853,ratio,48
+municipality,CAPIZ,District 1,PANITAN,verified_corn_area,158.37,hectares,48
+municipality,CAPIZ,District 1,PANITAN,verified_rice_area,2203.65,hectares,48
+municipality,CAPIZ,District 1,PILAR,corn_verification_percent,0.7841524825269438,ratio,49
+municipality,CAPIZ,District 1,PILAR,declared_corn_area,1515.19,hectares,49
+municipality,CAPIZ,District 1,PILAR,declared_rice_area,1951.2333,hectares,49
+municipality,CAPIZ,District 1,PILAR,physical_corn_area,1235.72,hectares,49
+municipality,CAPIZ,District 1,PILAR,physical_rice_area,1704.91,hectares,49
+municipality,CAPIZ,District 1,PILAR,rice_verification_percent,0.5396883119930084,ratio,49
+municipality,CAPIZ,District 1,PILAR,verified_corn_area,1188.14,hectares,49
+municipality,CAPIZ,District 1,PILAR,verified_rice_area,920.12,hectares,49
+municipality,CAPIZ,District 1,PONTEVEDRA,corn_verification_percent,0.4882781013362396,ratio,50
+municipality,CAPIZ,District 1,PONTEVEDRA,declared_corn_area,880.83,hectares,50
+municipality,CAPIZ,District 1,PONTEVEDRA,declared_rice_area,2111.3423,hectares,50
+municipality,CAPIZ,District 1,PONTEVEDRA,physical_corn_area,662.75,hectares,50
+municipality,CAPIZ,District 1,PONTEVEDRA,physical_rice_area,1647.29,hectares,50
+municipality,CAPIZ,District 1,PONTEVEDRA,rice_verification_percent,0.5319889029861167,ratio,50
+municipality,CAPIZ,District 1,PONTEVEDRA,verified_corn_area,430.09,hectares,50
+municipality,CAPIZ,District 1,PONTEVEDRA,verified_rice_area,876.34,hectares,50
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,corn_verification_percent,0.7371052450519461,ratio,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,declared_corn_area,1308.09,hectares,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,declared_rice_area,421.1905,hectares,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,physical_corn_area,660.0,hectares,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,physical_rice_area,316.0,hectares,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,rice_verification_percent,0.5907594936708861,ratio,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,verified_corn_area,964.2,hectares,51
+municipality,CAPIZ,District 1,PRESIDENT ROXAS,verified_rice_area,186.68,hectares,51
+municipality,CAPIZ,District 1,ROXAS CITY,corn_verification_percent,0.005135612261274273,ratio,52
+municipality,CAPIZ,District 1,ROXAS CITY,declared_corn_area,62.31,hectares,52
+municipality,CAPIZ,District 1,ROXAS CITY,declared_rice_area,2061.157,hectares,52
+municipality,CAPIZ,District 1,ROXAS CITY,physical_corn_area,0.0,hectares,52
+municipality,CAPIZ,District 1,ROXAS CITY,physical_rice_area,1761.85,hectares,52
+municipality,CAPIZ,District 1,ROXAS CITY,rice_verification_percent,0.34989925362545055,ratio,52
+municipality,CAPIZ,District 1,ROXAS CITY,verified_corn_area,0.32,hectares,52
+municipality,CAPIZ,District 1,ROXAS CITY,verified_rice_area,616.47,hectares,52
+district,CAPIZ,Distric 2,,corn_verification_percent,0.739565068282345,ratio,53
+district,CAPIZ,Distric 2,,declared_corn_area,11371.900000000001,hectares,53
+district,CAPIZ,Distric 2,,declared_rice_area,42156.5519,hectares,53
+district,CAPIZ,Distric 2,,physical_corn_area,9823.580000000002,hectares,53
+district,CAPIZ,Distric 2,,physical_rice_area,34065.72,hectares,53
+district,CAPIZ,Distric 2,,rice_verification_percent,0.6005236349033574,ratio,53
+district,CAPIZ,Distric 2,,verified_corn_area,8410.26,hectares,53
+district,CAPIZ,Distric 2,,verified_rice_area,20457.27,hectares,53
+municipality,CAPIZ,Distric 2,CUARTERO,corn_verification_percent,0.7178583882476015,ratio,54
+municipality,CAPIZ,Distric 2,CUARTERO,declared_corn_area,2236.82,hectares,54
+municipality,CAPIZ,Distric 2,CUARTERO,declared_rice_area,3665.5343,hectares,54
+municipality,CAPIZ,Distric 2,CUARTERO,physical_corn_area,2179.58,hectares,54
+municipality,CAPIZ,Distric 2,CUARTERO,physical_rice_area,2826.83,hectares,54
+municipality,CAPIZ,Distric 2,CUARTERO,rice_verification_percent,0.5601574908997003,ratio,54
+municipality,CAPIZ,Distric 2,CUARTERO,verified_corn_area,1605.72,hectares,54
+municipality,CAPIZ,Distric 2,CUARTERO,verified_rice_area,1583.47,hectares,54
+municipality,CAPIZ,Distric 2,DAO,corn_verification_percent,0.29165338645418326,ratio,55
+municipality,CAPIZ,Distric 2,DAO,declared_corn_area,502.0,hectares,55
+municipality,CAPIZ,Distric 2,DAO,declared_rice_area,4819.6162,hectares,55
+municipality,CAPIZ,Distric 2,DAO,physical_corn_area,605.0,hectares,55
+municipality,CAPIZ,Distric 2,DAO,physical_rice_area,3904.0,hectares,55
+municipality,CAPIZ,Distric 2,DAO,rice_verification_percent,0.666360143442623,ratio,55
+municipality,CAPIZ,Distric 2,DAO,verified_corn_area,146.41,hectares,55
+municipality,CAPIZ,Distric 2,DAO,verified_rice_area,2601.47,hectares,55
+municipality,CAPIZ,Distric 2,DUMALAG,corn_verification_percent,0.5455859473023839,ratio,56
+municipality,CAPIZ,Distric 2,DUMALAG,declared_corn_area,996.25,hectares,56
+municipality,CAPIZ,Distric 2,DUMALAG,declared_rice_area,3740.3717,hectares,56
+municipality,CAPIZ,Distric 2,DUMALAG,physical_corn_area,1150.0,hectares,56
+municipality,CAPIZ,Distric 2,DUMALAG,physical_rice_area,3779.5,hectares,56
+municipality,CAPIZ,Distric 2,DUMALAG,rice_verification_percent,0.44723376107950785,ratio,56
+municipality,CAPIZ,Distric 2,DUMALAG,verified_corn_area,543.54,hectares,56
+municipality,CAPIZ,Distric 2,DUMALAG,verified_rice_area,1690.32,hectares,56
+municipality,CAPIZ,Distric 2,DUMARAO,corn_verification_percent,0.7912623650973,ratio,57
+municipality,CAPIZ,Distric 2,DUMARAO,declared_corn_area,3177.29,hectares,57
+municipality,CAPIZ,Distric 2,DUMARAO,declared_rice_area,6572.6024,hectares,57
+municipality,CAPIZ,Distric 2,DUMARAO,physical_corn_area,1308.5,hectares,57
+municipality,CAPIZ,Distric 2,DUMARAO,physical_rice_area,5106.0,hectares,57
+municipality,CAPIZ,Distric 2,DUMARAO,rice_verification_percent,0.6012632197414807,ratio,57
+municipality,CAPIZ,Distric 2,DUMARAO,verified_corn_area,2514.07,hectares,57
+municipality,CAPIZ,Distric 2,DUMARAO,verified_rice_area,3070.05,hectares,57
+municipality,CAPIZ,Distric 2,IVISAN,corn_verification_percent,0.0,ratio,58
+municipality,CAPIZ,Distric 2,IVISAN,declared_corn_area,54.9,hectares,58
+municipality,CAPIZ,Distric 2,IVISAN,declared_rice_area,719.4984,hectares,58
+municipality,CAPIZ,Distric 2,IVISAN,physical_corn_area,0.0,hectares,58
+municipality,CAPIZ,Distric 2,IVISAN,physical_rice_area,830.0,hectares,58
+municipality,CAPIZ,Distric 2,IVISAN,rice_verification_percent,0.3587228915662651,ratio,58
+municipality,CAPIZ,Distric 2,IVISAN,verified_rice_area,297.74,hectares,58
+municipality,CAPIZ,Distric 2,JAMINDAN,corn_verification_percent,0.8137338978307771,ratio,59
+municipality,CAPIZ,Distric 2,JAMINDAN,declared_corn_area,1107.77,hectares,59
+municipality,CAPIZ,Distric 2,JAMINDAN,declared_rice_area,5289.8976,hectares,59
+municipality,CAPIZ,Distric 2,JAMINDAN,physical_corn_area,986.19,hectares,59
+municipality,CAPIZ,Distric 2,JAMINDAN,physical_rice_area,3883.54,hectares,59
+municipality,CAPIZ,Distric 2,JAMINDAN,rice_verification_percent,0.5898432873100315,ratio,59
+municipality,CAPIZ,Distric 2,JAMINDAN,verified_corn_area,901.43,hectares,59
+municipality,CAPIZ,Distric 2,JAMINDAN,verified_rice_area,2290.68,hectares,59
+municipality,CAPIZ,Distric 2,MAMBUSAO,corn_verification_percent,0.4462278804860963,ratio,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,declared_corn_area,328.33,hectares,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,declared_rice_area,4442.6809,hectares,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,physical_corn_area,358.31,hectares,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,physical_rice_area,3861.9,hectares,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,rice_verification_percent,0.6029467360625599,ratio,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,verified_corn_area,146.51,hectares,60
+municipality,CAPIZ,Distric 2,MAMBUSAO,verified_rice_area,2328.52,hectares,60
+municipality,CAPIZ,Distric 2,SAPI AN,corn_verification_percent,0.6805237776760886,ratio,61
+municipality,CAPIZ,Distric 2,SAPI AN,declared_corn_area,284.09,hectares,61
+municipality,CAPIZ,Distric 2,SAPI AN,declared_rice_area,2046.9527,hectares,61
+municipality,CAPIZ,Distric 2,SAPI AN,physical_corn_area,200.0,hectares,61
+municipality,CAPIZ,Distric 2,SAPI AN,physical_rice_area,1608.85,hectares,61
+municipality,CAPIZ,Distric 2,SAPI AN,rice_verification_percent,1.4473195139385275,ratio,61
+municipality,CAPIZ,Distric 2,SAPI AN,verified_corn_area,193.33,hectares,61
+municipality,CAPIZ,Distric 2,SAPI AN,verified_rice_area,2328.52,hectares,61
+municipality,CAPIZ,Distric 2,SIGMA,corn_verification_percent,0.5485230289494754,ratio,62
+municipality,CAPIZ,Distric 2,SIGMA,declared_corn_area,474.62,hectares,62
+municipality,CAPIZ,Distric 2,SIGMA,declared_rice_area,4878.6647,hectares,62
+municipality,CAPIZ,Distric 2,SIGMA,physical_corn_area,886.0,hectares,62
+municipality,CAPIZ,Distric 2,SIGMA,physical_rice_area,3804.0,hectares,62
+municipality,CAPIZ,Distric 2,SIGMA,rice_verification_percent,0.5987355415352261,ratio,62
+municipality,CAPIZ,Distric 2,SIGMA,verified_corn_area,260.34,hectares,62
+municipality,CAPIZ,Distric 2,SIGMA,verified_rice_area,2277.59,hectares,62
+municipality,CAPIZ,Distric 2,TAPAZ,corn_verification_percent,0.9498060936814143,ratio,63
+municipality,CAPIZ,Distric 2,TAPAZ,declared_corn_area,2209.83,hectares,63
+municipality,CAPIZ,Distric 2,TAPAZ,declared_rice_area,5980.733,hectares,63
+municipality,CAPIZ,Distric 2,TAPAZ,physical_corn_area,2150.0,hectares,63
+municipality,CAPIZ,Distric 2,TAPAZ,physical_rice_area,4461.1,hectares,63
+municipality,CAPIZ,Distric 2,TAPAZ,rice_verification_percent,0.44583398713321826,ratio,63
+municipality,CAPIZ,Distric 2,TAPAZ,verified_corn_area,2098.91,hectares,63
+municipality,CAPIZ,Distric 2,TAPAZ,verified_rice_area,1988.91,hectares,63
+province,GUIMARAS,,,corn_verification_percent,0.16085643460652194,ratio,64
+province,GUIMARAS,,,declared_corn_area,1145.6799999999998,hectares,64
+province,GUIMARAS,,,declared_rice_area,11286.896799999999,hectares,64
+province,GUIMARAS,,,physical_corn_area,500.27,hectares,64
+province,GUIMARAS,,,physical_rice_area,11831.79,hectares,64
+province,GUIMARAS,,,rice_verification_percent,0.42514192696117786,ratio,64
+province,GUIMARAS,,,verified_corn_area,184.29000000000002,hectares,64
+province,GUIMARAS,,,verified_rice_area,5030.189999999995,hectares,64
+municipality,GUIMARAS,,BUENAVISTA,corn_verification_percent,0.12530050567852113,ratio,65
+municipality,GUIMARAS,,BUENAVISTA,declared_corn_area,241.26,hectares,65
+municipality,GUIMARAS,,BUENAVISTA,declared_rice_area,2638.4662,hectares,65
+municipality,GUIMARAS,,BUENAVISTA,physical_corn_area,83.89,hectares,65
+municipality,GUIMARAS,,BUENAVISTA,physical_rice_area,1887.0,hectares,65
+municipality,GUIMARAS,,BUENAVISTA,rice_verification_percent,0.5101112877583471,ratio,65
+municipality,GUIMARAS,,BUENAVISTA,verified_corn_area,30.230000000000008,hectares,65
+municipality,GUIMARAS,,BUENAVISTA,verified_rice_area,962.5800000000011,hectares,65
+municipality,GUIMARAS,,JORDAN,corn_verification_percent,0.019289060347203086,ratio,66
+municipality,GUIMARAS,,JORDAN,declared_corn_area,254.03,hectares,66
+municipality,GUIMARAS,,JORDAN,declared_rice_area,682.93,hectares,66
+municipality,GUIMARAS,,JORDAN,physical_corn_area,46.38,hectares,66
+municipality,GUIMARAS,,JORDAN,physical_rice_area,946.9,hectares,66
+municipality,GUIMARAS,,JORDAN,rice_verification_percent,0.25473650860703334,ratio,66
+municipality,GUIMARAS,,JORDAN,verified_corn_area,4.9,hectares,66
+municipality,GUIMARAS,,JORDAN,verified_rice_area,241.20999999999987,hectares,66
+municipality,GUIMARAS,,NUEVA VALENCIA,corn_verification_percent,0.4518205399173793,ratio,67
+municipality,GUIMARAS,,NUEVA VALENCIA,declared_corn_area,312.27,hectares,67
+municipality,GUIMARAS,,NUEVA VALENCIA,declared_rice_area,1903.6418,hectares,67
+municipality,GUIMARAS,,NUEVA VALENCIA,physical_corn_area,195.0,hectares,67
+municipality,GUIMARAS,,NUEVA VALENCIA,physical_rice_area,1595.21,hectares,67
+municipality,GUIMARAS,,NUEVA VALENCIA,rice_verification_percent,0.6990490280276579,ratio,67
+municipality,GUIMARAS,,NUEVA VALENCIA,verified_corn_area,141.09000000000003,hectares,67
+municipality,GUIMARAS,,NUEVA VALENCIA,verified_rice_area,1115.13,hectares,67
+municipality,GUIMARAS,,SAN LORENZO,corn_verification_percent,0.046773704937897606,ratio,68
+municipality,GUIMARAS,,SAN LORENZO,declared_corn_area,165.05,hectares,68
+municipality,GUIMARAS,,SAN LORENZO,declared_rice_area,3352.6316,hectares,68
+municipality,GUIMARAS,,SAN LORENZO,physical_corn_area,110.0,hectares,68
+municipality,GUIMARAS,,SAN LORENZO,physical_rice_area,3415.68,hectares,68
+municipality,GUIMARAS,,SAN LORENZO,rice_verification_percent,0.45154991099868813,ratio,68
+municipality,GUIMARAS,,SAN LORENZO,verified_corn_area,7.720000000000001,hectares,68
+municipality,GUIMARAS,,SAN LORENZO,verified_rice_area,1542.349999999999,hectares,68
+municipality,GUIMARAS,,SIBUNAG,corn_verification_percent,0.002022303114346796,ratio,69
+municipality,GUIMARAS,,SIBUNAG,declared_corn_area,173.07,hectares,69
+municipality,GUIMARAS,,SIBUNAG,declared_rice_area,2709.2272,hectares,69
+municipality,GUIMARAS,,SIBUNAG,physical_corn_area,65.0,hectares,69
+municipality,GUIMARAS,,SIBUNAG,physical_rice_area,3987.0,hectares,69
+municipality,GUIMARAS,,SIBUNAG,rice_verification_percent,0.2931828442437911,ratio,69
+municipality,GUIMARAS,,SIBUNAG,verified_corn_area,0.35,hectares,69
+municipality,GUIMARAS,,SIBUNAG,verified_rice_area,1168.919999999995,hectares,69
+province,ILOILO,,,corn_verification_percent,0.3706246655864164,ratio,70
+province,ILOILO,,,declared_corn_area,38182.51,hectares,70
+province,ILOILO,,,declared_rice_area,143817.75999999998,hectares,70
+province,ILOILO,,,physical_corn_area,23032.951399999998,hectares,70
+province,ILOILO,,,physical_rice_area,136554.82,hectares,70
+province,ILOILO,,,rice_verification_percent,0.49647965556982904,ratio,70
+province,ILOILO,,,verified_corn_area,14151.38,hectares,70
+province,ILOILO,,,verified_rice_area,67796.69,hectares,70
+district,ILOILO,District 1,,corn_verification_percent,0.032176352559854,ratio,71
+district,ILOILO,District 1,,declared_corn_area,7710.01,hectares,71
+district,ILOILO,District 1,,declared_rice_area,23546.25,hectares,71
+district,ILOILO,District 1,,physical_corn_area,1336.45,hectares,71
+district,ILOILO,District 1,,physical_rice_area,24857.410000000003,hectares,71
+district,ILOILO,District 1,,rice_verification_percent,0.38136957953382905,ratio,71
+district,ILOILO,District 1,,verified_corn_area,248.07999999999998,hectares,71
+district,ILOILO,District 1,,verified_rice_area,9479.859999999999,hectares,71
+municipality,ILOILO,District 1,GUIMBAL,corn_verification_percent,0.08129846500411546,ratio,72
+municipality,ILOILO,District 1,GUIMBAL,declared_corn_area,692.51,hectares,72
+municipality,ILOILO,District 1,GUIMBAL,declared_rice_area,1432.15,hectares,72
+municipality,ILOILO,District 1,GUIMBAL,physical_corn_area,360.25,hectares,72
+municipality,ILOILO,District 1,GUIMBAL,physical_rice_area,1261.27,hectares,72
+municipality,ILOILO,District 1,GUIMBAL,rice_verification_percent,0.46368343019337654,ratio,72
+municipality,ILOILO,District 1,GUIMBAL,verified_corn_area,56.3,hectares,72
+municipality,ILOILO,District 1,GUIMBAL,verified_rice_area,584.83,hectares,72
+municipality,ILOILO,District 1,IGBARAS,corn_verification_percent,0.03897932707038966,ratio,73
+municipality,ILOILO,District 1,IGBARAS,declared_corn_area,1533.89,hectares,73
+municipality,ILOILO,District 1,IGBARAS,declared_rice_area,2851.36,hectares,73
+municipality,ILOILO,District 1,IGBARAS,physical_corn_area,47.0,hectares,73
+municipality,ILOILO,District 1,IGBARAS,physical_rice_area,2615.42,hectares,73
+municipality,ILOILO,District 1,IGBARAS,rice_verification_percent,0.41393351737005907,ratio,73
+municipality,ILOILO,District 1,IGBARAS,verified_corn_area,59.79,hectares,73
+municipality,ILOILO,District 1,IGBARAS,verified_rice_area,1082.61,hectares,73
+municipality,ILOILO,District 1,MIAGAO,corn_verification_percent,0.006341937342244919,ratio,74
+municipality,ILOILO,District 1,MIAGAO,declared_corn_area,2048.27,hectares,74
+municipality,ILOILO,District 1,MIAGAO,declared_rice_area,4734.78,hectares,74
+municipality,ILOILO,District 1,MIAGAO,physical_corn_area,38.0,hectares,74
+municipality,ILOILO,District 1,MIAGAO,physical_rice_area,4713.6,hectares,74
+municipality,ILOILO,District 1,MIAGAO,rice_verification_percent,0.157662932790224,ratio,74
+municipality,ILOILO,District 1,MIAGAO,verified_corn_area,12.99,hectares,74
+municipality,ILOILO,District 1,MIAGAO,verified_rice_area,743.16,hectares,74
+municipality,ILOILO,District 1,OTON,corn_verification_percent,0.02347258130357872,ratio,75
+municipality,ILOILO,District 1,OTON,declared_corn_area,146.98,hectares,75
+municipality,ILOILO,District 1,OTON,declared_rice_area,4217.89,hectares,75
+municipality,ILOILO,District 1,OTON,physical_corn_area,50.7,hectares,75
+municipality,ILOILO,District 1,OTON,physical_rice_area,5697.66,hectares,75
+municipality,ILOILO,District 1,OTON,rice_verification_percent,0.53180077435298,ratio,75
+municipality,ILOILO,District 1,OTON,verified_corn_area,3.45,hectares,75
+municipality,ILOILO,District 1,OTON,verified_rice_area,3030.02,hectares,75
+municipality,ILOILO,District 1,SAN JOAQUIN,corn_verification_percent,0.05118020576572714,ratio,76
+municipality,ILOILO,District 1,SAN JOAQUIN,declared_corn_area,1492.96,hectares,76
+municipality,ILOILO,District 1,SAN JOAQUIN,declared_rice_area,3864.55,hectares,76
+municipality,ILOILO,District 1,SAN JOAQUIN,physical_corn_area,0.0,hectares,76
+municipality,ILOILO,District 1,SAN JOAQUIN,physical_rice_area,5026.98,hectares,76
+municipality,ILOILO,District 1,SAN JOAQUIN,rice_verification_percent,0.36502035019037277,ratio,76
+municipality,ILOILO,District 1,SAN JOAQUIN,verified_corn_area,76.41,hectares,76
+municipality,ILOILO,District 1,SAN JOAQUIN,verified_rice_area,1834.95,hectares,76
+municipality,ILOILO,District 1,TIGBAUAN,corn_verification_percent,0.0,ratio,77
+municipality,ILOILO,District 1,TIGBAUAN,declared_corn_area,664.35,hectares,77
+municipality,ILOILO,District 1,TIGBAUAN,declared_rice_area,4133.99,hectares,77
+municipality,ILOILO,District 1,TIGBAUAN,physical_corn_area,63.0,hectares,77
+municipality,ILOILO,District 1,TIGBAUAN,physical_rice_area,3547.9,hectares,77
+municipality,ILOILO,District 1,TIGBAUAN,rice_verification_percent,0.36380112179035484,ratio,77
+municipality,ILOILO,District 1,TIGBAUAN,verified_rice_area,1290.73,hectares,77
+municipality,ILOILO,District 1,TUBUNGAN,corn_verification_percent,0.03460501304097962,ratio,78
+municipality,ILOILO,District 1,TUBUNGAN,declared_corn_area,1131.05,hectares,78
+municipality,ILOILO,District 1,TUBUNGAN,declared_rice_area,2311.53,hectares,78
+municipality,ILOILO,District 1,TUBUNGAN,physical_corn_area,777.5,hectares,78
+municipality,ILOILO,District 1,TUBUNGAN,physical_rice_area,1994.58,hectares,78
+municipality,ILOILO,District 1,TUBUNGAN,rice_verification_percent,0.4580212375537707,ratio,78
+municipality,ILOILO,District 1,TUBUNGAN,verified_corn_area,39.14,hectares,78
+municipality,ILOILO,District 1,TUBUNGAN,verified_rice_area,913.56,hectares,78
+district,ILOILO,District 2,,corn_verification_percent,0.08096394321620745,ratio,79
+district,ILOILO,District 2,,declared_corn_area,3677.8100000000004,hectares,79
+district,ILOILO,District 2,,declared_rice_area,19608.629999999997,hectares,79
+district,ILOILO,District 2,,physical_corn_area,2210.46,hectares,79
+district,ILOILO,District 2,,physical_rice_area,19273.820000000003,hectares,79
+district,ILOILO,District 2,,rice_verification_percent,0.3983424147366738,ratio,79
+district,ILOILO,District 2,,verified_corn_area,297.77,hectares,79
+district,ILOILO,District 2,,verified_rice_area,7677.58,hectares,79
+municipality,ILOILO,District 2,ALIMODIAN,corn_verification_percent,0.2513362527850032,ratio,80
+municipality,ILOILO,District 2,ALIMODIAN,declared_corn_area,911.13,hectares,80
+municipality,ILOILO,District 2,ALIMODIAN,declared_rice_area,2388.95,hectares,80
+municipality,ILOILO,District 2,ALIMODIAN,physical_corn_area,751.5,hectares,80
+municipality,ILOILO,District 2,ALIMODIAN,physical_rice_area,1863.0,hectares,80
+municipality,ILOILO,District 2,ALIMODIAN,rice_verification_percent,0.6013794954374664,ratio,80
+municipality,ILOILO,District 2,ALIMODIAN,verified_corn_area,229.0,hectares,80
+municipality,ILOILO,District 2,ALIMODIAN,verified_rice_area,1120.37,hectares,80
+municipality,ILOILO,District 2,LEGANES,corn_verification_percent,0.0,ratio,81
+municipality,ILOILO,District 2,LEGANES,declared_corn_area,16.69,hectares,81
+municipality,ILOILO,District 2,LEGANES,declared_rice_area,1553.02,hectares,81
+municipality,ILOILO,District 2,LEGANES,physical_corn_area,21.0,hectares,81
+municipality,ILOILO,District 2,LEGANES,physical_rice_area,1568.23,hectares,81
+municipality,ILOILO,District 2,LEGANES,rice_verification_percent,0.5718740235807248,ratio,81
+municipality,ILOILO,District 2,LEGANES,verified_rice_area,896.83,hectares,81
+municipality,ILOILO,District 2,LEON,corn_verification_percent,0.027294928889527368,ratio,82
+municipality,ILOILO,District 2,LEON,declared_corn_area,2505.96,hectares,82
+municipality,ILOILO,District 2,LEON,declared_rice_area,4113.32,hectares,82
+municipality,ILOILO,District 2,LEON,physical_corn_area,951.5,hectares,82
+municipality,ILOILO,District 2,LEON,physical_rice_area,4284.9,hectares,82
+municipality,ILOILO,District 2,LEON,rice_verification_percent,0.09201381595836543,ratio,82
+municipality,ILOILO,District 2,LEON,verified_corn_area,68.4,hectares,82
+municipality,ILOILO,District 2,LEON,verified_rice_area,394.27,hectares,82
+municipality,ILOILO,District 2,NEW LUCENA,corn_verification_percent,0.0,ratio,83
+municipality,ILOILO,District 2,NEW LUCENA,declared_corn_area,40.71,hectares,83
+municipality,ILOILO,District 2,NEW LUCENA,declared_rice_area,2488.25,hectares,83
+municipality,ILOILO,District 2,NEW LUCENA,physical_corn_area,8.0,hectares,83
+municipality,ILOILO,District 2,NEW LUCENA,physical_rice_area,2153.0,hectares,83
+municipality,ILOILO,District 2,NEW LUCENA,rice_verification_percent,0.6138318625174175,ratio,83
+municipality,ILOILO,District 2,NEW LUCENA,verified_rice_area,1321.58,hectares,83
+municipality,ILOILO,District 2,PAVIA,corn_verification_percent,0.0,ratio,84
+municipality,ILOILO,District 2,PAVIA,declared_corn_area,33.75,hectares,84
+municipality,ILOILO,District 2,PAVIA,declared_rice_area,971.25,hectares,84
+municipality,ILOILO,District 2,PAVIA,physical_corn_area,0.0,hectares,84
+municipality,ILOILO,District 2,PAVIA,physical_rice_area,909.7,hectares,84
+municipality,ILOILO,District 2,PAVIA,rice_verification_percent,0.41393866109706495,ratio,84
+municipality,ILOILO,District 2,PAVIA,verified_rice_area,376.56,hectares,84
+municipality,ILOILO,District 2,SAN MIGUEL,corn_verification_percent,0.012865090403337968,ratio,85
+municipality,ILOILO,District 2,SAN MIGUEL,declared_corn_area,28.76,hectares,85
+municipality,ILOILO,District 2,SAN MIGUEL,declared_rice_area,1964.63,hectares,85
+municipality,ILOILO,District 2,SAN MIGUEL,physical_corn_area,57.96,hectares,85
+municipality,ILOILO,District 2,SAN MIGUEL,physical_rice_area,2230.5,hectares,85
+municipality,ILOILO,District 2,SAN MIGUEL,rice_verification_percent,0.3752028693118135,ratio,85
+municipality,ILOILO,District 2,SAN MIGUEL,verified_corn_area,0.37,hectares,85
+municipality,ILOILO,District 2,SAN MIGUEL,verified_rice_area,836.89,hectares,85
+municipality,ILOILO,District 2,SANTA BARBARA,corn_verification_percent,0.0,ratio,86
+municipality,ILOILO,District 2,SANTA BARBARA,declared_corn_area,128.21,hectares,86
+municipality,ILOILO,District 2,SANTA BARBARA,declared_rice_area,3931.37,hectares,86
+municipality,ILOILO,District 2,SANTA BARBARA,physical_corn_area,420.5,hectares,86
+municipality,ILOILO,District 2,SANTA BARBARA,physical_rice_area,4223.18,hectares,86
+municipality,ILOILO,District 2,SANTA BARBARA,rice_verification_percent,0.3109884021045752,ratio,86
+municipality,ILOILO,District 2,SANTA BARBARA,verified_rice_area,1313.36,hectares,86
+municipality,ILOILO,District 2,ZARRAGA,corn_verification_percent,0.0,ratio,87
+municipality,ILOILO,District 2,ZARRAGA,declared_corn_area,12.6,hectares,87
+municipality,ILOILO,District 2,ZARRAGA,declared_rice_area,2197.84,hectares,87
+municipality,ILOILO,District 2,ZARRAGA,physical_corn_area,0.0,hectares,87
+municipality,ILOILO,District 2,ZARRAGA,physical_rice_area,2041.31,hectares,87
+municipality,ILOILO,District 2,ZARRAGA,rice_verification_percent,0.694514796870637,ratio,87
+municipality,ILOILO,District 2,ZARRAGA,verified_rice_area,1417.72,hectares,87
+district,ILOILO,District 3,,corn_verification_percent,0.12435260916464362,ratio,88
+district,ILOILO,District 3,,declared_corn_area,4106.87,hectares,88
+district,ILOILO,District 3,,declared_rice_area,36543.58,hectares,88
+district,ILOILO,District 3,,physical_corn_area,2046.32,hectares,88
+district,ILOILO,District 3,,physical_rice_area,33284.86,hectares,88
+district,ILOILO,District 3,,rice_verification_percent,0.5434392693855404,ratio,88
+district,ILOILO,District 3,,verified_corn_area,510.69999999999993,hectares,88
+district,ILOILO,District 3,,verified_rice_area,18088.3,hectares,88
+municipality,ILOILO,District 3,BADIANGAN,corn_verification_percent,0.22455061494796594,ratio,89
+municipality,ILOILO,District 3,BADIANGAN,declared_corn_area,211.4,hectares,89
+municipality,ILOILO,District 3,BADIANGAN,declared_rice_area,2230.4,hectares,89
+municipality,ILOILO,District 3,BADIANGAN,physical_corn_area,178.0,hectares,89
+municipality,ILOILO,District 3,BADIANGAN,physical_rice_area,2349.56,hectares,89
+municipality,ILOILO,District 3,BADIANGAN,rice_verification_percent,0.6067859514121794,ratio,89
+municipality,ILOILO,District 3,BADIANGAN,verified_corn_area,47.47,hectares,89
+municipality,ILOILO,District 3,BADIANGAN,verified_rice_area,1425.68,hectares,89
+municipality,ILOILO,District 3,BINGAWAN,corn_verification_percent,0.32225383041373457,ratio,90
+municipality,ILOILO,District 3,BINGAWAN,declared_corn_area,200.37,hectares,90
+municipality,ILOILO,District 3,BINGAWAN,declared_rice_area,1688.96,hectares,90
+municipality,ILOILO,District 3,BINGAWAN,physical_corn_area,131.75,hectares,90
+municipality,ILOILO,District 3,BINGAWAN,physical_rice_area,1900.75,hectares,90
+municipality,ILOILO,District 3,BINGAWAN,rice_verification_percent,0.6459713271077206,ratio,90
+municipality,ILOILO,District 3,BINGAWAN,verified_corn_area,64.57,hectares,90
+municipality,ILOILO,District 3,BINGAWAN,verified_rice_area,1227.83,hectares,90
+municipality,ILOILO,District 3,CABATUAN,corn_verification_percent,0.18862766539092402,ratio,91
+municipality,ILOILO,District 3,CABATUAN,declared_corn_area,201.19,hectares,91
+municipality,ILOILO,District 3,CABATUAN,declared_rice_area,4572.68,hectares,91
+municipality,ILOILO,District 3,CABATUAN,physical_corn_area,374.0,hectares,91
+municipality,ILOILO,District 3,CABATUAN,physical_rice_area,4840.09,hectares,91
+municipality,ILOILO,District 3,CABATUAN,rice_verification_percent,0.45079740252763895,ratio,91
+municipality,ILOILO,District 3,CABATUAN,verified_corn_area,37.95,hectares,91
+municipality,ILOILO,District 3,CABATUAN,verified_rice_area,2181.9,hectares,91
+municipality,ILOILO,District 3,CALINOG,corn_verification_percent,0.08183862504684906,ratio,92
+municipality,ILOILO,District 3,CALINOG,declared_corn_area,373.54,hectares,92
+municipality,ILOILO,District 3,CALINOG,declared_rice_area,4645.43,hectares,92
+municipality,ILOILO,District 3,CALINOG,physical_corn_area,229.0,hectares,92
+municipality,ILOILO,District 3,CALINOG,physical_rice_area,3754.71,hectares,92
+municipality,ILOILO,District 3,CALINOG,rice_verification_percent,0.47847370369482595,ratio,92
+municipality,ILOILO,District 3,CALINOG,verified_corn_area,30.57,hectares,92
+municipality,ILOILO,District 3,CALINOG,verified_rice_area,1796.53,hectares,92
+municipality,ILOILO,District 3,JANIUAY,corn_verification_percent,0.13003555031530808,ratio,93
+municipality,ILOILO,District 3,JANIUAY,declared_corn_area,1119.54,hectares,93
+municipality,ILOILO,District 3,JANIUAY,declared_rice_area,4797.31,hectares,93
+municipality,ILOILO,District 3,JANIUAY,physical_corn_area,686.5,hectares,93
+municipality,ILOILO,District 3,JANIUAY,physical_rice_area,3621.97,hectares,93
+municipality,ILOILO,District 3,JANIUAY,rice_verification_percent,0.5442148885827327,ratio,93
+municipality,ILOILO,District 3,JANIUAY,verified_corn_area,145.58,hectares,93
+municipality,ILOILO,District 3,JANIUAY,verified_rice_area,1971.13,hectares,93
+municipality,ILOILO,District 3,LAMBUNAO,corn_verification_percent,0.07834379822491488,ratio,94
+municipality,ILOILO,District 3,LAMBUNAO,declared_corn_area,1224.73,hectares,94
+municipality,ILOILO,District 3,LAMBUNAO,declared_rice_area,6859.2,hectares,94
+municipality,ILOILO,District 3,LAMBUNAO,physical_corn_area,195.6,hectares,94
+municipality,ILOILO,District 3,LAMBUNAO,physical_rice_area,6305.81,hectares,94
+municipality,ILOILO,District 3,LAMBUNAO,rice_verification_percent,0.435125701535568,ratio,94
+municipality,ILOILO,District 3,LAMBUNAO,verified_corn_area,95.95,hectares,94
+municipality,ILOILO,District 3,LAMBUNAO,verified_rice_area,2743.82,hectares,94
+municipality,ILOILO,District 3,MAASIN,corn_verification_percent,0.1321611529151264,ratio,95
+municipality,ILOILO,District 3,MAASIN,declared_corn_area,532.91,hectares,95
+municipality,ILOILO,District 3,MAASIN,declared_rice_area,1725.75,hectares,95
+municipality,ILOILO,District 3,MAASIN,physical_corn_area,143.75,hectares,95
+municipality,ILOILO,District 3,MAASIN,physical_rice_area,1536.25,hectares,95
+municipality,ILOILO,District 3,MAASIN,rice_verification_percent,0.4898877135882832,ratio,95
+municipality,ILOILO,District 3,MAASIN,verified_corn_area,70.43,hectares,95
+municipality,ILOILO,District 3,MAASIN,verified_rice_area,752.59,hectares,95
+municipality,ILOILO,District 3,MINA,corn_verification_percent,0.17278156996587032,ratio,96
+municipality,ILOILO,District 3,MINA,declared_corn_area,70.32,hectares,96
+municipality,ILOILO,District 3,MINA,declared_rice_area,2836.92,hectares,96
+municipality,ILOILO,District 3,MINA,physical_corn_area,107.72,hectares,96
+municipality,ILOILO,District 3,MINA,physical_rice_area,2581.69,hectares,96
+municipality,ILOILO,District 3,MINA,rice_verification_percent,0.7017457556871661,ratio,96
+municipality,ILOILO,District 3,MINA,verified_corn_area,12.15,hectares,96
+municipality,ILOILO,District 3,MINA,verified_rice_area,1811.69,hectares,96
+municipality,ILOILO,District 3,POTOTAN,corn_verification_percent,0.03488170301382542,ratio,97
+municipality,ILOILO,District 3,POTOTAN,declared_corn_area,172.87,hectares,97
+municipality,ILOILO,District 3,POTOTAN,declared_rice_area,7186.93,hectares,97
+municipality,ILOILO,District 3,POTOTAN,physical_corn_area,0.0,hectares,97
+municipality,ILOILO,District 3,POTOTAN,physical_rice_area,6394.03,hectares,97
+municipality,ILOILO,District 3,POTOTAN,rice_verification_percent,0.65328595580565,ratio,97
+municipality,ILOILO,District 3,POTOTAN,verified_corn_area,6.03,hectares,97
+municipality,ILOILO,District 3,POTOTAN,verified_rice_area,4177.13,hectares,97
+district,ILOILO,District 4,,corn_verification_percent,0.26302225570518256,ratio,98
+district,ILOILO,District 4,,declared_corn_area,3185.7,hectares,98
+district,ILOILO,District 4,,declared_rice_area,30728.81,hectares,98
+district,ILOILO,District 4,,physical_corn_area,2225.2714,hectares,98
+district,ILOILO,District 4,,physical_rice_area,30591.5,hectares,98
+district,ILOILO,District 4,,rice_verification_percent,0.5091956916136835,ratio,98
+district,ILOILO,District 4,,verified_corn_area,837.9100000000001,hectares,98
+district,ILOILO,District 4,,verified_rice_area,15577.06,hectares,98
+municipality,ILOILO,District 4,ANILAO,corn_verification_percent,0.10282359816187213,ratio,99
+municipality,ILOILO,District 4,ANILAO,declared_corn_area,376.47,hectares,99
+municipality,ILOILO,District 4,ANILAO,declared_rice_area,2046.78,hectares,99
+municipality,ILOILO,District 4,ANILAO,physical_corn_area,346.1114,hectares,99
+municipality,ILOILO,District 4,ANILAO,physical_rice_area,2505.6,hectares,99
+municipality,ILOILO,District 4,ANILAO,rice_verification_percent,0.31536159003831415,ratio,99
+municipality,ILOILO,District 4,ANILAO,verified_corn_area,38.71,hectares,99
+municipality,ILOILO,District 4,ANILAO,verified_rice_area,790.17,hectares,99
+municipality,ILOILO,District 4,BANATE,corn_verification_percent,0.39210957016108194,ratio,100
+municipality,ILOILO,District 4,BANATE,declared_corn_area,232.18,hectares,100
+municipality,ILOILO,District 4,BANATE,declared_rice_area,2436.71,hectares,100
+municipality,ILOILO,District 4,BANATE,physical_corn_area,100.0,hectares,100
+municipality,ILOILO,District 4,BANATE,physical_rice_area,2635.98,hectares,100
+municipality,ILOILO,District 4,BANATE,rice_verification_percent,0.5374851099021996,ratio,100
+municipality,ILOILO,District 4,BANATE,verified_corn_area,91.04,hectares,100
+municipality,ILOILO,District 4,BANATE,verified_rice_area,1416.8,hectares,100
+municipality,ILOILO,District 4,BAROTAC NUEVO,corn_verification_percent,0.09083217966466697,ratio,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,declared_corn_area,130.02,hectares,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,declared_rice_area,4626.5,hectares,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,physical_corn_area,533.0,hectares,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,physical_rice_area,3762.1,hectares,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,rice_verification_percent,0.6215890061401876,ratio,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,verified_corn_area,11.81,hectares,101
+municipality,ILOILO,District 4,BAROTAC NUEVO,verified_rice_area,2338.48,hectares,101
+municipality,ILOILO,District 4,DINGLE,corn_verification_percent,0.6118866568304772,ratio,102
+municipality,ILOILO,District 4,DINGLE,declared_corn_area,264.33,hectares,102
+municipality,ILOILO,District 4,DINGLE,declared_rice_area,3728.13,hectares,102
+municipality,ILOILO,District 4,DINGLE,physical_corn_area,377.76,hectares,102
+municipality,ILOILO,District 4,DINGLE,physical_rice_area,4085.84,hectares,102
+municipality,ILOILO,District 4,DINGLE,rice_verification_percent,0.4985021439899751,ratio,102
+municipality,ILOILO,District 4,DINGLE,verified_corn_area,161.74,hectares,102
+municipality,ILOILO,District 4,DINGLE,verified_rice_area,2036.8,hectares,102
+municipality,ILOILO,District 4,DUENAS,corn_verification_percent,0.060663507109004734,ratio,103
+municipality,ILOILO,District 4,DUENAS,declared_corn_area,84.4,hectares,103
+municipality,ILOILO,District 4,DUENAS,declared_rice_area,2983.61,hectares,103
+municipality,ILOILO,District 4,DUENAS,physical_corn_area,6.0,hectares,103
+municipality,ILOILO,District 4,DUENAS,physical_rice_area,2324.5,hectares,103
+municipality,ILOILO,District 4,DUENAS,rice_verification_percent,0.6744805334480534,ratio,103
+municipality,ILOILO,District 4,DUENAS,verified_corn_area,5.12,hectares,103
+municipality,ILOILO,District 4,DUENAS,verified_rice_area,1567.83,hectares,103
+municipality,ILOILO,District 4,DUMANGAS,corn_verification_percent,0.0,ratio,104
+municipality,ILOILO,District 4,DUMANGAS,declared_corn_area,17.26,hectares,104
+municipality,ILOILO,District 4,DUMANGAS,declared_rice_area,5850.29,hectares,104
+municipality,ILOILO,District 4,DUMANGAS,physical_corn_area,15.399999999999999,hectares,104
+municipality,ILOILO,District 4,DUMANGAS,physical_rice_area,6173.75,hectares,104
+municipality,ILOILO,District 4,DUMANGAS,rice_verification_percent,0.5130803806438551,ratio,104
+municipality,ILOILO,District 4,DUMANGAS,verified_rice_area,3167.63,hectares,104
+municipality,ILOILO,District 4,CITY OF PASSI,corn_verification_percent,0.23207189621188595,ratio,105
+municipality,ILOILO,District 4,CITY OF PASSI,declared_corn_area,1577.83,hectares,105
+municipality,ILOILO,District 4,CITY OF PASSI,declared_rice_area,6107.5,hectares,105
+municipality,ILOILO,District 4,CITY OF PASSI,physical_corn_area,439.0,hectares,105
+municipality,ILOILO,District 4,CITY OF PASSI,physical_rice_area,6422.73,hectares,105
+municipality,ILOILO,District 4,CITY OF PASSI,rice_verification_percent,0.44015862413646534,ratio,105
+municipality,ILOILO,District 4,CITY OF PASSI,verified_corn_area,366.17,hectares,105
+municipality,ILOILO,District 4,CITY OF PASSI,verified_rice_area,2827.02,hectares,105
+municipality,ILOILO,District 4,SAN ENRIQUE,corn_verification_percent,0.32455634824427176,ratio,106
+municipality,ILOILO,District 4,SAN ENRIQUE,declared_corn_area,503.21,hectares,106
+municipality,ILOILO,District 4,SAN ENRIQUE,declared_rice_area,2949.29,hectares,106
+municipality,ILOILO,District 4,SAN ENRIQUE,physical_corn_area,408.0,hectares,106
+municipality,ILOILO,District 4,SAN ENRIQUE,physical_rice_area,2681.0,hectares,106
+municipality,ILOILO,District 4,SAN ENRIQUE,rice_verification_percent,0.5342521447221186,ratio,106
+municipality,ILOILO,District 4,SAN ENRIQUE,verified_corn_area,163.32,hectares,106
+municipality,ILOILO,District 4,SAN ENRIQUE,verified_rice_area,1432.33,hectares,106
+district,ILOILO,District 5,,corn_verification_percent,0.6305741070417897,ratio,107
+district,ILOILO,District 5,,declared_corn_area,19435.4,hectares,107
+district,ILOILO,District 5,,declared_rice_area,32283.16,hectares,107
+district,ILOILO,District 5,,physical_corn_area,15214.45,hectares,107
+district,ILOILO,District 5,,physical_rice_area,27888.61,hectares,107
+district,ILOILO,District 5,,rice_verification_percent,0.605472269862141,ratio,107
+district,ILOILO,District 5,,verified_corn_area,12255.460000000001,hectares,107
+district,ILOILO,District 5,,verified_rice_area,16885.780000000002,hectares,107
+municipality,ILOILO,District 5,AJUY,corn_verification_percent,0.7371941959955313,ratio,108
+municipality,ILOILO,District 5,AJUY,declared_corn_area,1494.83,hectares,108
+municipality,ILOILO,District 5,AJUY,declared_rice_area,3470.5,hectares,108
+municipality,ILOILO,District 5,AJUY,physical_corn_area,770.0,hectares,108
+municipality,ILOILO,District 5,AJUY,physical_rice_area,3673.2,hectares,108
+municipality,ILOILO,District 5,AJUY,rice_verification_percent,0.5357535663726452,ratio,108
+municipality,ILOILO,District 5,AJUY,verified_corn_area,1101.98,hectares,108
+municipality,ILOILO,District 5,AJUY,verified_rice_area,1967.93,hectares,108
+municipality,ILOILO,District 5,BALASAN,corn_verification_percent,0.7249436535334227,ratio,109
+municipality,ILOILO,District 5,BALASAN,declared_corn_area,350.51,hectares,109
+municipality,ILOILO,District 5,BALASAN,declared_rice_area,2353.67,hectares,109
+municipality,ILOILO,District 5,BALASAN,physical_corn_area,370.34,hectares,109
+municipality,ILOILO,District 5,BALASAN,physical_rice_area,2598.31,hectares,109
+municipality,ILOILO,District 5,BALASAN,rice_verification_percent,0.6355785106473054,ratio,109
+municipality,ILOILO,District 5,BALASAN,verified_corn_area,254.1,hectares,109
+municipality,ILOILO,District 5,BALASAN,verified_rice_area,1651.43,hectares,109
+municipality,ILOILO,District 5,BAROTAC VIEJO,corn_verification_percent,0.6073097695855667,ratio,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,declared_corn_area,2942.09,hectares,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,declared_rice_area,4748.85,hectares,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,physical_corn_area,2138.51,hectares,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,physical_rice_area,3853.32,hectares,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,rice_verification_percent,0.6038766570126539,ratio,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,verified_corn_area,1786.76,hectares,110
+municipality,ILOILO,District 5,BAROTAC VIEJO,verified_rice_area,2326.93,hectares,110
+municipality,ILOILO,District 5,BATAD,corn_verification_percent,0.5851701131759118,ratio,111
+municipality,ILOILO,District 5,BATAD,declared_corn_area,1145.12,hectares,111
+municipality,ILOILO,District 5,BATAD,declared_rice_area,1782.55,hectares,111
+municipality,ILOILO,District 5,BATAD,physical_corn_area,721.0,hectares,111
+municipality,ILOILO,District 5,BATAD,physical_rice_area,1129.28,hectares,111
+municipality,ILOILO,District 5,BATAD,rice_verification_percent,0.7296241853216209,ratio,111
+municipality,ILOILO,District 5,BATAD,verified_corn_area,670.09,hectares,111
+municipality,ILOILO,District 5,BATAD,verified_rice_area,823.95,hectares,111
+municipality,ILOILO,District 5,CARLES,corn_verification_percent,0.19957256258904946,ratio,112
+municipality,ILOILO,District 5,CARLES,declared_corn_area,98.26,hectares,112
+municipality,ILOILO,District 5,CARLES,declared_rice_area,1715.84,hectares,112
+municipality,ILOILO,District 5,CARLES,physical_corn_area,137.25,hectares,112
+municipality,ILOILO,District 5,CARLES,physical_rice_area,1783.68,hectares,112
+municipality,ILOILO,District 5,CARLES,rice_verification_percent,0.4488921779691424,ratio,112
+municipality,ILOILO,District 5,CARLES,verified_corn_area,19.61,hectares,112
+municipality,ILOILO,District 5,CARLES,verified_rice_area,800.68,hectares,112
+municipality,ILOILO,District 5,CONCEPCION,corn_verification_percent,0.5036293231643575,ratio,113
+municipality,ILOILO,District 5,CONCEPCION,declared_corn_area,679.19,hectares,113
+municipality,ILOILO,District 5,CONCEPCION,declared_rice_area,1514.11,hectares,113
+municipality,ILOILO,District 5,CONCEPCION,physical_corn_area,518.0,hectares,113
+municipality,ILOILO,District 5,CONCEPCION,physical_rice_area,1471.14,hectares,113
+municipality,ILOILO,District 5,CONCEPCION,rice_verification_percent,0.4972266405644602,ratio,113
+municipality,ILOILO,District 5,CONCEPCION,verified_corn_area,342.06,hectares,113
+municipality,ILOILO,District 5,CONCEPCION,verified_rice_area,731.49,hectares,113
+municipality,ILOILO,District 5,ESTANCIA,corn_verification_percent,0.483481404561363,ratio,114
+municipality,ILOILO,District 5,ESTANCIA,declared_corn_area,520.02,hectares,114
+municipality,ILOILO,District 5,ESTANCIA,declared_rice_area,912.72,hectares,114
+municipality,ILOILO,District 5,ESTANCIA,physical_corn_area,459.4,hectares,114
+municipality,ILOILO,District 5,ESTANCIA,physical_rice_area,700.0,hectares,114
+municipality,ILOILO,District 5,ESTANCIA,rice_verification_percent,0.6106428571428572,ratio,114
+municipality,ILOILO,District 5,ESTANCIA,verified_corn_area,251.42,hectares,114
+municipality,ILOILO,District 5,ESTANCIA,verified_rice_area,427.45,hectares,114
+municipality,ILOILO,District 5,LEMERY,corn_verification_percent,0.706203376220178,ratio,115
+municipality,ILOILO,District 5,LEMERY,declared_corn_area,3910.29,hectares,115
+municipality,ILOILO,District 5,LEMERY,declared_rice_area,4403.69,hectares,115
+municipality,ILOILO,District 5,LEMERY,physical_corn_area,2761.0,hectares,115
+municipality,ILOILO,District 5,LEMERY,physical_rice_area,3604.7,hectares,115
+municipality,ILOILO,District 5,LEMERY,rice_verification_percent,0.771822897883319,ratio,115
+municipality,ILOILO,District 5,LEMERY,verified_corn_area,2761.46,hectares,115
+municipality,ILOILO,District 5,LEMERY,verified_rice_area,2782.19,hectares,115
+municipality,ILOILO,District 5,SAN DIONISIO,corn_verification_percent,0.5869054347502751,ratio,116
+municipality,ILOILO,District 5,SAN DIONISIO,declared_corn_area,2017.02,hectares,116
+municipality,ILOILO,District 5,SAN DIONISIO,declared_rice_area,2922.62,hectares,116
+municipality,ILOILO,District 5,SAN DIONISIO,physical_corn_area,1987.64,hectares,116
+municipality,ILOILO,District 5,SAN DIONISIO,physical_rice_area,2880.75,hectares,116
+municipality,ILOILO,District 5,SAN DIONISIO,rice_verification_percent,0.46711446671873647,ratio,116
+municipality,ILOILO,District 5,SAN DIONISIO,verified_corn_area,1183.8,hectares,116
+municipality,ILOILO,District 5,SAN DIONISIO,verified_rice_area,1345.64,hectares,116
+municipality,ILOILO,District 5,SAN RAFAEL,corn_verification_percent,0.7369167890797534,ratio,117
+municipality,ILOILO,District 5,SAN RAFAEL,declared_corn_area,1000.71,hectares,117
+municipality,ILOILO,District 5,SAN RAFAEL,declared_rice_area,2026.66,hectares,117
+municipality,ILOILO,District 5,SAN RAFAEL,physical_corn_area,945.85,hectares,117
+municipality,ILOILO,District 5,SAN RAFAEL,physical_rice_area,1886.0,hectares,117
+municipality,ILOILO,District 5,SAN RAFAEL,rice_verification_percent,0.5454453870625663,ratio,117
+municipality,ILOILO,District 5,SAN RAFAEL,verified_corn_area,737.44,hectares,117
+municipality,ILOILO,District 5,SAN RAFAEL,verified_rice_area,1028.71,hectares,117
+municipality,ILOILO,District 5,SARA,corn_verification_percent,0.5962716206588142,ratio,118
+municipality,ILOILO,District 5,SARA,declared_corn_area,5277.36,hectares,118
+municipality,ILOILO,District 5,SARA,declared_rice_area,6431.95,hectares,118
+municipality,ILOILO,District 5,SARA,physical_corn_area,4405.46,hectares,118
+municipality,ILOILO,District 5,SARA,physical_rice_area,4308.23,hectares,118
+municipality,ILOILO,District 5,SARA,rice_verification_percent,0.6961977424603608,ratio,118
+municipality,ILOILO,District 5,SARA,verified_corn_area,3146.74,hectares,118
+municipality,ILOILO,District 5,SARA,verified_rice_area,2999.38,hectares,118
+district,ILOILO,Lone District,,corn_verification_percent,0.021882494004796162,ratio,119
+district,ILOILO,Lone District,,declared_corn_area,66.72,hectares,119
+district,ILOILO,Lone District,,declared_rice_area,1107.33,hectares,119
+district,ILOILO,Lone District,,physical_corn_area,0.0,hectares,119
+district,ILOILO,Lone District,,physical_rice_area,658.62,hectares,119
+district,ILOILO,Lone District,,rice_verification_percent,0.1337797212353102,ratio,119
+district,ILOILO,Lone District,,verified_corn_area,1.46,hectares,119
+district,ILOILO,Lone District,,verified_rice_area,88.11,hectares,119
+municipality,ILOILO,Lone District,ILOILO CITY,corn_verification_percent,0.021882494004796162,ratio,120
+municipality,ILOILO,Lone District,ILOILO CITY,declared_corn_area,66.72,hectares,120
+municipality,ILOILO,Lone District,ILOILO CITY,declared_rice_area,1107.33,hectares,120
+municipality,ILOILO,Lone District,ILOILO CITY,physical_corn_area,0.0,hectares,120
+municipality,ILOILO,Lone District,ILOILO CITY,physical_rice_area,658.62,hectares,120
+municipality,ILOILO,Lone District,ILOILO CITY,rice_verification_percent,0.1337797212353102,ratio,120
+municipality,ILOILO,Lone District,ILOILO CITY,verified_corn_area,1.46,hectares,120
+municipality,ILOILO,Lone District,ILOILO CITY,verified_rice_area,88.11,hectares,120

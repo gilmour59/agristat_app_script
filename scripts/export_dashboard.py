@@ -59,20 +59,32 @@ def main():
 
     write_commodity(db, args.output, "poultry", poultry)
     write_commodity(db, args.output, "fruit", lambda f, c, _l, _y: c if f == "mango_banana_volume.csv" else None)
+    write_commodity(db, args.output, "fruit_area", lambda f, c, _l, _y: c if f == "mango_banana_area_planted.csv" else None)
+    write_commodity(db, args.output, "fruit_trees", lambda f, c, _l, _y: c if f == "mango_banana_no_trees.csv" else None)
     write_commodity(db, args.output, "vegetables", lambda f, c, _l, _y: c if f == "vegetables_root_crops_volume.csv" else None)
+    write_commodity(db, args.output, "vegetables_area", lambda f, c, _l, _y: c if f == "vegetables_root_crops_area.csv" else None)
     write_commodity(db, args.output, "major", lambda f, c, _l, _y:
                     c if f == "major_crops_volume.csv" and not c.startswith(("Banana", "Mango")) else None)
 
-    with (args.output / "farmers.csv").open("w", newline="", encoding="utf-8") as handle:
+    with (args.output / "rsbsa_profiles.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle, lineterminator="\n")
-        writer.writerow(["Province", "Municipality", "District", "Male", "Female", "Total", "Average Age", "Seniors", "Farmers"])
-        for row in db.execute("""SELECT g.province,g.municipality,g.district,p.male,p.female,p.total,
-                                        p.average_age,p.senior,f.total
-                                 FROM rsbsa_geography g JOIN rsbsa_profile p
-                                   ON p.geography_id=g.id AND p.category='registrants'
-                                 LEFT JOIN rsbsa_profile f
-                                   ON f.geography_id=g.id AND f.category='farmers'
-                                 WHERE g.level='municipality' ORDER BY g.province,g.municipality"""):
+        writer.writerow(["level", "province", "district", "municipality", "category", "male", "female", "total", "average_age", "senior", "ip", "pwd", "four_ps", "arb", "source_row"])
+        for row in db.execute("""SELECT g.level,g.province,g.district,g.municipality,p.category,
+                                        p.male,p.female,p.total,p.average_age,p.senior,
+                                        CASE WHEN g.level='municipality' THEN NULL ELSE p.ip END,
+                                        CASE WHEN g.level='municipality' THEN NULL ELSE p.pwd END,
+                                        CASE WHEN g.level='municipality' THEN NULL ELSE p.four_ps END,
+                                        CASE WHEN g.level='municipality' THEN NULL ELSE p.arb END,g.source_row
+                                 FROM rsbsa_geography g JOIN rsbsa_profile p ON p.geography_id=g.id
+                                 ORDER BY g.source_row,p.category"""):
+            writer.writerow(["" if value is None else value for value in row])
+
+    with (args.output / "rsbsa_areas.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow(["level", "province", "district", "municipality", "measure", "value", "unit", "source_row"])
+        for row in db.execute("""SELECT g.level,g.province,g.district,g.municipality,a.measure,a.value,a.unit,g.source_row
+                                 FROM rsbsa_geography g JOIN rsbsa_area a ON a.geography_id=g.id
+                                 ORDER BY g.source_row,a.measure"""):
             writer.writerow(["" if value is None else value for value in row])
 
     db.close()
