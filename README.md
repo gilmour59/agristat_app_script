@@ -8,4 +8,4 @@ npm install
 npm run dev
 ```
 
-The earlier Google Apps Script files remain at the repository root for reference. See [`web/README.md`](web/README.md) for deployment details.
+The earlier Google Apps Script files remain at the repository root for reference. See [`web/README.md`](web/README.md) for deployment details and [`data/README.md`](data/README.md) for the new local PSA OpenSTAT/RSBSA database and its quality checks.
