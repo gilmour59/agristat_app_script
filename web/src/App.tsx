@@ -14,7 +14,7 @@ const nav: { key: Sector; label: string; icon: typeof Apple | typeof BananaIcon;
   { key: 'crops', label: 'Rice & corn', icon: RiceCornIcon, description: 'Harvest and yield', defaultCommodity: 'Palay', scope: 'Region + provinces' },
   { key: 'fruit', label: 'Fruit crops', icon: BananaIcon, description: 'Banana and mango', defaultCommodity: 'Banana', scope: 'Region + provinces' },
   { key: 'vegetables', label: 'Vegetables', icon: VegetableIcon, description: 'Seven crop series', defaultCommodity: 'Eggplant', scope: 'Region + provinces' },
-  { key: 'major', label: 'Other crops', icon: Coffee, description: 'Coffee and cacao', defaultCommodity: 'Cacao', scope: 'Region only' },
+  { key: 'major', label: 'Other high value crops', icon: Coffee, description: 'Coffee and cacao', defaultCommodity: 'Cacao', scope: 'Region only' },
   { key: 'livestock', label: 'Livestock', icon: Beef, description: 'Four animal types', defaultCommodity: 'Hog', scope: 'Region + provinces from 2023' },
   { key: 'poultry', label: 'Poultry', icon: Bird, description: 'Chicken, duck and eggs', defaultCommodity: 'Chicken', scope: 'Chicken province detail' },
   { key: 'farmers', label: 'RSBSA profile', icon: UsersRound, description: 'People and places', scope: '101 municipalities' },
