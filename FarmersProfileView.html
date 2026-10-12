@@ -6,7 +6,7 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
       <div class="flex items-center gap-2">
         <div class="p-2 bg-emerald-100 rounded-xl text-da-green">
-          <i data-lucide="users" class="w-5 h-5"></i>
+          <svg class="agri-icon w-5 h-5" aria-hidden="true"><use href="#agri-farmer"></use></svg>
         </div>
         <div>
           <div class="flex items-center gap-2">
@@ -61,7 +61,7 @@
         </select>
       </div>
       <div>
-        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Gender Group</label>
+        <label class="flex items-center gap-1 text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1" for="fpCardGenderFilter"><svg class="agri-icon w-3.5 h-3.5" aria-hidden="true"><use href="#agri-female"></use></svg><svg class="agri-icon w-3.5 h-3.5" aria-hidden="true"><use href="#agri-male"></use></svg> Gender Group</label>
         <select id="fpCardGenderFilter" onchange="runGlobalAnalysisUpdate()" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-xs font-medium text-slate-700 focus:ring-1 focus:ring-da-green outline-none">
           <option value="ALL">All Genders</option>
           <option value="Male">Male</option>
@@ -79,7 +79,7 @@
         <h3 id="fpKpiTotal" class="text-2xl font-extrabold text-da-green mt-0.5 tracking-tight">0</h3>
         <p class="text-[10px] text-slate-500 mt-0.5">RSBSA DA Western Visayas</p>
       </div>
-      <div class="bg-emerald-100 p-3 rounded-2xl text-da-green"><i data-lucide="user-check" class="w-6 h-6"></i></div>
+      <div class="bg-emerald-100 p-3 rounded-2xl text-da-green"><svg class="agri-icon w-6 h-6" aria-hidden="true"><use href="#agri-farmer"></use></svg></div>
     </div>
 
     <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-emerald-600 flex items-center justify-between">
@@ -106,7 +106,7 @@
         <h3 id="fpKpiFemaleRatio" class="text-2xl font-extrabold text-indigo-700 mt-0.5 tracking-tight">0.0%</h3>
         <p class="text-[10px] text-slate-500 mt-0.5">Gender Inclusivity Ratio</p>
       </div>
-      <div class="bg-indigo-100 p-3 rounded-2xl text-indigo-700"><i data-lucide="heart-handshake" class="w-6 h-6"></i></div>
+      <div class="bg-indigo-100 p-3 rounded-2xl text-indigo-700"><svg class="agri-icon w-6 h-6" aria-hidden="true"><use href="#agri-female"></use></svg></div>
     </div>
   </div>
 
@@ -155,7 +155,7 @@
 
           <div>
             <div class="flex justify-between text-[10.5px] mb-1">
-              <span class="text-slate-300">Female Registry Inclusivity Target:</span>
+              <span class="text-slate-300 inline-flex items-center gap-1"><svg class="agri-icon w-3.5 h-3.5" aria-hidden="true"><use href="#agri-female"></use></svg> Female Registry Inclusivity Target:</span>
               <span id="simFemaleVal" class="font-bold text-emerald-400">40%</span>
             </div>
             <input type="range" id="simFemaleSlider" min="20" max="50" value="40" oninput="updateSimulation()" class="w-full accent-emerald-400 h-1 bg-white/20 rounded-lg cursor-pointer">
@@ -317,8 +317,8 @@
             <th onclick="sortFarmersTable('province')" class="p-2.5 hover:bg-emerald-800 transition-colors">Province Location &#x21D5;</th>
             <th onclick="sortFarmersTable('district')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">District &#x21D5;</th>
             <th onclick="sortFarmersTable('totalFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Total Registered &#x21D5;</th>
-            <th onclick="sortFarmersTable('maleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Male Count &#x21D5;</th>
-            <th onclick="sortFarmersTable('femaleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Female Count &#x21D5;</th>
+            <th onclick="sortFarmersTable('maleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors"><span class="inline-flex items-center gap-1"><svg class="agri-icon w-3.5 h-3.5" aria-hidden="true"><use href="#agri-male"></use></svg> Male Count &#x21D5;</span></th>
+            <th onclick="sortFarmersTable('femaleFarmers')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors"><span class="inline-flex items-center gap-1"><svg class="agri-icon w-3.5 h-3.5" aria-hidden="true"><use href="#agri-female"></use></svg> Female Count &#x21D5;</span></th>
             <th onclick="sortFarmersTable('avgAge')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Avg. Age &#x21D5;</th>
             <th onclick="sortFarmersTable('avgFarmSize')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Avg. Farm Size (Ha) &#x21D5;</th>
             <th onclick="sortFarmersTable('landownerPct')" class="p-2.5 text-center hover:bg-emerald-800 transition-colors">Landowner Ratio &#x21D5;</th>
