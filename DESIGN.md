@@ -1,6 +1,6 @@
 ---
-name: Western Visayas Agriculture Data Portal
-description: An editorial data desk for Philippine agriculture.
+name: DAWV Agri Portal
+description: An editorial data desk with a separate executive layout preview for Western Visayas agriculture.
 colors:
   forest: "#133a2b"
   leaf: "#15583b"
@@ -58,6 +58,8 @@ Literata gives findings an editorial voice. DM Sans supports controls, annotatio
 ## Layout
 
 Desktop uses a 272px navigation rail and one report column. Trends receive full width. Rankings can use two columns; on mobile, navigation scrolls horizontally and content flows in one column. Tables scroll within their own area.
+
+The `/preview` route is an alternate executive layout. It uses a 220px rail, a green top bar, a pale harvest metric strip, and a compact two-column data workspace. It shares the same PSA data, labels, filters, and coverage explanations as the primary view. On narrow screens, its content becomes one column. The RSBSA navigation opens the separate public Power BI report.
 
 ## Elevation & Depth
 

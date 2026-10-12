@@ -3,10 +3,7 @@ import { Apple, ArrowDownRight, ArrowUpRight, Beef, Bird, Coffee, Download, MapP
 import { BananaIcon, RiceCornIcon, VegetableIcon } from './CommodityIcons';
 import { cleanName, fetchTab, normalizePeriod, parseCommoditySheet, sortYears, totalFor } from './data';
 import type { CommodityRow, CommoditySheet, DataFile, Period, Sector } from './data';
-import RsbsaPage, { parseAreas, parseProfiles } from './RsbsaPage';
-import type { AreaRow, ProfileRow } from './RsbsaPage';
-
-type Loaded = { kind: 'commodity'; sheet: CommoditySheet; area?: CommoditySheet; trees?: CommoditySheet } | { kind: 'farmers'; profiles: ProfileRow[]; areas: AreaRow[] };
+type Loaded = { sheet: CommoditySheet; area?: CommoditySheet; trees?: CommoditySheet };
 type Point = { label: string; value: number };
 type Rank = { name: string; value: number };
 
@@ -17,8 +14,9 @@ const nav: { key: Sector; label: string; icon: typeof Apple | typeof BananaIcon;
   { key: 'major', label: 'Other high value crops', icon: Coffee, description: 'Coffee and cacao', defaultCommodity: 'Cacao', scope: 'Region only' },
   { key: 'livestock', label: 'Livestock', icon: Beef, description: 'Four animal types', defaultCommodity: 'Hog', scope: 'Region + provinces from 2023' },
   { key: 'poultry', label: 'Poultry', icon: Bird, description: 'Chicken, duck and eggs', defaultCommodity: 'Chicken', scope: 'Chicken province detail' },
-  { key: 'farmers', label: 'RSBSA profile', icon: UsersRound, description: 'People and places', scope: '101 municipalities' },
 ];
+
+const RSBSA_URL = 'https://app.powerbi.com/view?r=eyJrIjoiMDk5MDdkMDgtNjU4Mi00MjNiLTg4NDUtMTY0ZjFkNTMwMWNhIiwidCI6IjI1MzYzMDI3LTUyNjQtNGE1Mi04MmRjLTgzYWNiZTMwY2M4YiIsImMiOjEwfQ%3D%3D';
 
 const fmt = (value: number, digits = 0) => new Intl.NumberFormat('en-PH', { maximumFractionDigits: digits }).format(value);
 const compact = (value: number) => value >= 1_000_000 ? `${fmt(value / 1_000_000, 2)}M` : value >= 1_000 ? `${fmt(value / 1_000, 1)}K` : fmt(value);
@@ -71,9 +69,8 @@ function RankedBars({ data, unit, color = 'green' }: { data: Rank[]; unit: strin
   </ol>;
 }
 
-function parseLoaded(sector: Sector, csv: string, areaCsv?: string, treeCsv?: string): Loaded {
-  if (sector === 'farmers') return { kind: 'farmers', profiles: parseProfiles(csv), areas: parseAreas(areaCsv || '') };
-  return { kind: 'commodity', sheet: parseCommoditySheet(csv), area: areaCsv ? parseCommoditySheet(areaCsv) : undefined, trees: treeCsv ? parseCommoditySheet(treeCsv) : undefined };
+function parseLoaded(csv: string, areaCsv?: string, treeCsv?: string): Loaded {
+  return { sheet: parseCommoditySheet(csv), area: areaCsv ? parseCommoditySheet(areaCsv) : undefined, trees: treeCsv ? parseCommoditySheet(treeCsv) : undefined };
 }
 
 function sourceRows(rows: CommodityRow[], commodity: string, level: 'country' | 'regional' | 'provincial') {
@@ -140,7 +137,7 @@ function downloadCsv(filename: string, rows: (string | number)[][]) {
   URL.revokeObjectURL(url);
 }
 
-function CommodityPage({ sector, data }: { sector: Exclude<Sector, 'farmers'>; data: Extract<Loaded, { kind: 'commodity' }> }) {
+function CommodityPage({ sector, data }: { sector: Sector; data: Loaded }) {
   const { sheet, area, trees } = data;
   const commodities = useMemo(() => [...new Set(sheet.rows.map(row => row.commodity))].sort(), [sheet]);
   const section = nav.find(item => item.key === sector)!;
@@ -227,6 +224,7 @@ function CommodityPage({ sector, data }: { sector: Exclude<Sector, 'farmers'>; d
 }
 
 export default function App() {
+  const preview = window.location.pathname === '/preview';
   const [sector, setSector] = useState<Sector>('crops');
   const [loaded, setLoaded] = useState<Partial<Record<Sector, Loaded>>>({});
   const [error, setError] = useState('');
@@ -236,19 +234,32 @@ export default function App() {
     if (loaded[sector]) return;
     let cancelled = false;
     setLoading(true); setError('');
-    const tabs: DataFile[] = sector === 'crops' ? ['crops', 'area'] : sector === 'fruit' ? ['fruit', 'fruit_area', 'fruit_trees'] : sector === 'vegetables' ? ['vegetables', 'vegetables_area'] : sector === 'farmers' ? ['rsbsa_profiles', 'rsbsa_areas'] : [sector];
+    const tabs: DataFile[] = sector === 'crops' ? ['crops', 'area'] : sector === 'fruit' ? ['fruit', 'fruit_area', 'fruit_trees'] : sector === 'vegetables' ? ['vegetables', 'vegetables_area'] : [sector];
     Promise.all(tabs.map(fetchTab))
-      .then(([csv, areaCsv, treeCsv]) => { if (!cancelled) setLoaded(previous => ({ ...previous, [sector]: parseLoaded(sector, csv, areaCsv, treeCsv) })); })
+      .then(([csv, areaCsv, treeCsv]) => { if (!cancelled) setLoaded(previous => ({ ...previous, [sector]: parseLoaded(csv, areaCsv, treeCsv) })); })
       .catch(reason => { if (!cancelled) setError(reason instanceof Error ? reason.message : 'Unable to read the workbook.'); })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
   }, [sector, reload]);
   const current = loaded[sector];
   const section = nav.find(item => item.key === sector)!;
-  return <div className={`app-shell theme-${sector}`}>
-    <aside className="sidebar"><div className="brand"><img className="brand-logo" src="/assets/dawv-logo.png" alt="Department of Agriculture Western Visayas logo" /><div><strong>AGRICULTURE PORTAL</strong><small>WESTERN VISAYAS</small></div></div><div className="sidebar-rule" /><p className="nav-caption">EXPLORE THE DATA</p><nav aria-label="Main navigation">{nav.map(item => { const Icon = item.icon; return <button key={item.key} className={`nav-item nav-${item.key} ${sector === item.key ? 'selected' : ''}`} onClick={() => setSector(item.key)} aria-current={sector === item.key ? 'page' : undefined}><Icon size={20} strokeWidth={1.8} /><span><strong>{item.label}</strong><small>{item.description}</small></span><span className="nav-arrow">↗</span></button>; })}<a className="nav-item nav-external" href="https://app.powerbi.com/view?r=eyJrIjoiMTE4ZDU2OWItMTAxMi00ZDllLWFhMWMtZDMyOWQ4OTBmNWZjIiwidCI6IjI1MzYzMDI3LTUyNjQtNGE1Mi04MmRjLTgzYWNiZTMwY2M4YiIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer"><RiceCornIcon size={20} /><span><strong>Weekly Rice Price Monitoring</strong><small>Open Power BI report</small></span><span className="nav-arrow" aria-hidden="true">↗</span></a></nav><div className="sidebar-bottom"><p className="sidebar-stamp">NSM <span>2026</span></p><p>Western Visayas agriculture, presented for National Statistics Month.</p></div></aside>
-    <main className="main"><header className="topline"><div><span className="topline-mark"><MapPin size={15} /> WESTERN VISAYAS</span><span className="topline-divider" /> <span>DEPARTMENT OF AGRICULTURE</span></div><span>PSA OpenSTAT + RSBSA snapshot</span></header><div className="content"><div className="page-heading"><div><h1>{section.label}</h1><p>{section.scope} · Source figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
-      {loading && !current ? <div className="loading-state" role="status"><span className="loading-bar" /><h2>Reading the data snapshot…</h2><p>Preparing the figures and comparisons.</p></div> : error ? <div className="error-state" role="alert"><h2>We couldn’t load this section.</h2><p>{error}</p><p>The published data file may be unavailable.</p><button onClick={() => setReload(value => value + 1)}>Try again</button></div> : current?.kind === 'farmers' ? <RsbsaPage key={sector} profiles={current.profiles} areas={current.areas} /> : current?.kind === 'commodity' ? <CommodityPage key={sector} sector={sector as Exclude<Sector, 'farmers'>} data={current} /> : null}
-      <footer><span>AGRICULTURE PORTAL / DA · NSM 2026</span><span>Source: supplied PSA OpenSTAT exports and RSBSA workbook. Snapshot built 12 Oct 2026.</span></footer></div></main>
+  return <div className={`app-shell theme-${sector}${preview ? ' preview-shell' : ''}`}>
+    <aside className="sidebar">
+      <div className="brand"><img className="brand-logo" src="/assets/dawv-logo.png" alt="Department of Agriculture Western Visayas logo" /><div><strong>DAWV AGRI PORTAL</strong><small>WESTERN VISAYAS</small></div></div>
+      <div className="sidebar-rule" /><p className="nav-caption">EXPLORE THE DATA</p>
+      <nav aria-label="Main navigation">
+        {nav.map(item => { const Icon = item.icon; return <button key={item.key} className={`nav-item nav-${item.key} ${sector === item.key ? 'selected' : ''}`} onClick={() => setSector(item.key)} aria-current={sector === item.key ? 'page' : undefined}><Icon size={20} strokeWidth={1.8} /><span><strong>{item.label}</strong><small>{item.description}</small></span><span className="nav-arrow">↗</span></button>; })}
+        <a className="nav-item nav-external" href={RSBSA_URL} target="_blank" rel="noopener noreferrer"><UsersRound size={20} strokeWidth={1.8} /><span><strong>RSBSA profile</strong><small>Open Power BI report</small></span><span className="nav-arrow" aria-hidden="true">↗</span></a>
+        <a className="nav-item nav-external" href="https://app.powerbi.com/view?r=eyJrIjoiMTE4ZDU2OWItMTAxMi00ZDllLWFhMWMtZDMyOWQ4OTBmNWZjIiwidCI6IjI1MzYzMDI3LTUyNjQtNGE1Mi04MmRjLTgzYWNiZTMwY2M4YiIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer"><RiceCornIcon size={20} /><span><strong>Weekly Rice Price Monitoring</strong><small>Open Power BI report</small></span><span className="nav-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <div className="sidebar-bottom"><p className="sidebar-stamp">NSM <span>2026</span></p><p>Western Visayas agriculture, presented for National Statistics Month.</p></div>
+    </aside>
+    <main className="main">
+      <header className="topline"><div><span className="topline-mark"><MapPin size={15} /> WESTERN VISAYAS</span><span className="topline-divider" /> <span>DEPARTMENT OF AGRICULTURE</span></div><div><span>PSA OpenSTAT snapshot</span><a className="design-link" href={preview ? '/' : '/preview'}>{preview ? 'Current design' : 'Preview new design'} ↗</a></div></header>
+      <div className="content"><div className="page-heading"><div>{preview && <span className="preview-eyebrow">ALTERNATE DESIGN · PSA DATA</span>}<h1>{section.label}</h1><p>{section.scope} · Source figures are presented at their reported geographic level.</p></div><button className="refresh" onClick={() => { setLoaded(previous => ({ ...previous, [sector]: undefined })); setReload(value => value + 1); }} aria-label="Refresh data" title="Refresh data"><RefreshCw size={19} /></button></div>
+        {loading && !current ? <div className="loading-state" role="status"><span className="loading-bar" /><h2>Reading the data snapshot…</h2><p>Preparing the figures and comparisons.</p></div> : error ? <div className="error-state" role="alert"><h2>We couldn’t load this section.</h2><p>{error}</p><p>The published data file may be unavailable.</p><button onClick={() => setReload(value => value + 1)}>Try again</button></div> : current ? <CommodityPage key={sector} sector={sector} data={current} /> : null}
+        <footer><span>DAWV AGRI PORTAL / DA · NSM 2026</span><span>Source: supplied PSA OpenSTAT exports. Snapshot built 12 Oct 2026.</span></footer>
+      </div>
+    </main>
   </div>;
 }

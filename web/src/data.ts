@@ -1,4 +1,4 @@
-export type Sector = 'crops' | 'fruit' | 'vegetables' | 'major' | 'livestock' | 'poultry' | 'farmers';
+export type Sector = 'crops' | 'fruit' | 'vegetables' | 'major' | 'livestock' | 'poultry';
 export type DataFile = Sector | 'area' | 'fruit_area' | 'fruit_trees' | 'vegetables_area' | 'rsbsa_profiles' | 'rsbsa_areas';
 export type Period = 'Annual' | 'Quarter 1' | 'Quarter 2' | 'Quarter 3' | 'Quarter 4';
 

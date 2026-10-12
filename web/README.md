@@ -1,8 +1,8 @@
-# Western Visayas Agriculture Data Portal
+# DAWV Agri Portal
 
-React + TypeScript dashboard for the Department of Agriculture NSM submission. The Vercel project at [agristat-nsm.vercel.app](https://agristat-nsm.vercel.app) uses `web` as its root directory and deploys pushes to `main`.
+React + TypeScript dashboard for the Department of Agriculture NSM submission. The Vercel project at [dawvagri-portal.vercel.app](https://dawvagri-portal.vercel.app) uses `web` as its root directory and deploys pushes to `main`. The alternate design at `/preview` uses the same PSA figures and filters as the main dashboard.
 
-The public site reads versioned CSV snapshots in `public/data/` generated from the local SQLite database. It does not depend on the review Google Sheet being public. The source database combines the supplied PSA OpenSTAT exports and the RSBSA workbook. The portal shows crop production and area, fruit bearing plants, and RSBSA people and land measures. Public municipality rows omit IP, PWD, 4Ps, and ARB counts. National rice and corn stock data remain in the local database and are excluded from the Western Visayas pages.
+The public site reads versioned CSV snapshots in `public/data/` generated from the local SQLite database. It does not depend on the review Google Sheet being public. The source database combines the supplied PSA OpenSTAT exports and the RSBSA workbook. The portal shows PSA crop production and area and fruit bearing plants; its RSBSA navigation opens a separate public Power BI report. Public municipality rows in the retained snapshot omit IP, PWD, 4Ps, and ARB counts. National rice and corn stock data remain in the local database and are excluded from the Western Visayas pages.
 
 ## Run locally
 
