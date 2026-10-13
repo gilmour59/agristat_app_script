@@ -41,7 +41,7 @@ export default function ProvinceMap({ data, unit, year, measure }: { data: Rank[
   const active = selected && values.has(selected) ? selected : data[0] ? cleanName(data[0].name) : null;
   const activeValue = active ? values.get(active) : undefined;
   const color = (value: number | undefined) => value === undefined ? '#e5eae8' :
-    `hsl(151 43% ${Math.round(87 - 51 * (max ? value / max : 0))}%)`;
+    `color-mix(in srgb, var(--accent) ${Math.round(18 + 77 * (max ? value / max : 0))}%, white)`;
 
   return <div className="province-map">
     <svg viewBox="0 0 560 400" role="group" aria-label={`${measure} by province in ${year}. ${data.map(item => `${cleanName(item.name)}: ${format(item.value)} ${unit}`).join('; ')}`}>
